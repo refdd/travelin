@@ -69,7 +69,7 @@ function ContectFooter() {
             <Link href={"/"}>Payment Policy</Link>
           </li>
           <li className="text-xl text-white font-serif transition-all ease-in-out   hover:text-[#029e9d]">
-            <Link href={"/Egpyt"}>Egypt</Link>
+            <Link href={"/Egypt"}>Egypt</Link>
           </li>
 
 
