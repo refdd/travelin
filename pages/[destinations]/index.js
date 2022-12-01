@@ -15,7 +15,7 @@ import PackageTyps from "../../components/PackageTyps";
 import Carousel from "../../components/headers/sliderImage/Carousel";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Loding from "../../components/helper/Loding";
- const array = ["egypt" , "prise"]
+ const array = ["cairo" , "prise"]
 function Destination({destinations}) {
 
  
