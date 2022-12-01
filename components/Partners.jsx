@@ -15,7 +15,8 @@ function Partners({partners}) {
      <div className=' flex w-full gap-2  md:justify-around justify-center items-center  '>
       {partners && partners.map(item => {
            return (
-            <Image
+            <Image 
+            key={item.id}
            className='object-contain mr-[15px]'
            loader={() =>{
               return `https://api.nilecruisez.com/${item.icon}`;

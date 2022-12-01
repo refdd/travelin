@@ -17,7 +17,6 @@ function FandQ({dataFandQ}) {
   if(!dataFandQ){
     return  
   }
-  useEffect(()=>{
    const gtiDta= dataFandQ.map(item => {
   return   {
     title: <h2 className="text-[#17233e] text-lg  font-Poppins  py-3 capitalize"> {item.question}</h2>,
@@ -25,16 +24,16 @@ function FandQ({dataFandQ}) {
   }
    })
 
-   setTitle(gtiDta)
+ 
 
-  }, [dataFandQ])
+
 
 
 
   const data = {
  
     rows: [
-      ...gitTitel
+      ...gtiDta
     ],
     styles : {
       // bgColor: 'white',
