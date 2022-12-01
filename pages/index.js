@@ -18,6 +18,9 @@ import { useEffect } from "react";
 
 export default function Home({ FandQAPI , partners}) {
   const { sectionFAQ ,setSectionFAQ} = useStateContextApi()
+  useEffect(()=>{
+    setSectionFAQ(FandQAPI)
+  },[FandQAPI])
 
   return (
     <div> 
