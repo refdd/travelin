@@ -50,10 +50,10 @@ function InquireNow() {
       <HeaderParts typeList="Inquire Now" />
       <div className="container w-[70%] mx-auto pt-10">
         <div className="flex flex-col justify-center items-center gap-3">
-          <h1 className="text-[#17233e] font-serif text-3xl capitalize text-center font-bold">
+          <h1 className="text-[#17233e] font-Poppins text-3xl capitalize text-center font-bold">
             Plan Your Next Trip!
           </h1>
-          <p className="text-[#777] text-lg font-serif capitalize text-center">
+          <p className="text-[#777] text-lg font-Poppins capitalize text-center">
             Jot down your answers in the form below, and one of our travel
             experts will get back to you in under 24 hours.
           </p>
@@ -253,7 +253,7 @@ function InquireNow() {
               </div>
               {/* buttom supmit */}
               <div className="flex justify-center items-center ">
-                <button className="w-[90%] bg-[#029e9d] text-white font-serif text-2xl rounded-lg py-2">
+                <button className="w-[90%] bg-[#029e9d] text-white font-Poppins text-2xl rounded-lg py-2">
                   Inquire now!
                 </button>
               </div>

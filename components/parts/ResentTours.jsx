@@ -19,7 +19,7 @@ function ResentTours() {
          />
         </div>
         <div className='flex flex-col gap-1'>
-          <h4 className='text-xl text-[#17233e] font-serif font-bold '>An Incredibly Easy Method That Works For All</h4>
+          <h4 className='text-xl text-[#17233e] font-Poppins font-bold '>An Incredibly Easy Method That Works For All</h4>
           <span className='text-[#777] font-mono text-lg'>0 Apr 2021</span>
         </div>
         </div>
@@ -36,7 +36,7 @@ function ResentTours() {
          />
         </div>
         <div className='flex flex-col gap-3'>
-          <h4 className='text-xl text-[#17233e] font-serif font-bold '>An Incredibly Easy Method That Works For All</h4>
+          <h4 className='text-xl text-[#17233e] font-Poppins font-bold '>An Incredibly Easy Method That Works For All</h4>
           <span className='text-[#777] font-mono text-lg'>0 Apr 2021</span>
         </div>
         </div>
@@ -53,7 +53,7 @@ function ResentTours() {
          />
         </div>
         <div className='flex flex-col gap-3'>
-          <h4 className='text-xl text-[#17233e] font-serif font-bold '>An Incredibly Easy Method That Works For All</h4>
+          <h4 className='text-xl text-[#17233e] font-Poppins font-bold '>An Incredibly Easy Method That Works For All</h4>
           <span className='text-[#777] font-mono text-lg'>0 Apr 2021</span>
         </div>
         </div>

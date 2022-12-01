@@ -5,12 +5,12 @@ const data = {
   rows: [
     { 
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Charitable Giving
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
           sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
           Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. In
@@ -22,12 +22,12 @@ const data = {
     },
     {
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Prices:{" "}
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Nunc maximus, magna at ultricies elementum, risus turpis vulputate
           quam, vitae convallis ex tortor sed dolor..
         </p>
@@ -35,12 +35,12 @@ const data = {
     },
     {
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Notes:{" "}
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
           sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
           Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. In
@@ -52,12 +52,12 @@ const data = {
     },
     {
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Payment:{" "}
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
           sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
           Curabitur est nibh, varius in tellus nec, mattis pulvinar metus.
@@ -66,12 +66,12 @@ const data = {
     },
     {
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Transportation:{" "}
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
           sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
           Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. In
@@ -81,12 +81,12 @@ const data = {
     },
     {
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Tour Guides:{" "}
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
           sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
           Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. In
@@ -96,12 +96,12 @@ const data = {
     },
     {
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Travelling with Children:{" "}
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
           sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
           Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. Fusce
@@ -111,12 +111,12 @@ const data = {
     },
     {
       title: (
-        <h2 className="text-[#17233e] text-xl font-serif  py-3 capitalize">
+        <h2 className="text-[#17233e] text-xl font-Poppins  py-3 capitalize">
           Wheelchair Travellers:{" "}
         </h2>
       ),
       content: (
-        <p className="text-[#777] text-lg font-serif capitalize ">
+        <p className="text-[#777] text-lg font-Poppins capitalize ">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
           sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
           Curabitur est nibh, varius in tellus n Fusce sed commodo purus, at

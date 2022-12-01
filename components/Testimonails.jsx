@@ -39,13 +39,13 @@ const handelRightArrow=()=>{
               height={100}
               className={"rounded-full "}
             />
-            <h1 className=" text-xl font-bold font-serif text-[#029e9d] mt-4">{testimonialsData[selected].name}</h1>
+            <h1 className=" text-xl font-bold font-Poppins text-[#029e9d] mt-4">{testimonialsData[selected].name}</h1>
             <h1 className="text-[#777]">{testimonialsData[selected].status}</h1>
           </div>
 
           {/* content  */}
           <div className="py-4 mx-2">
-            <div className="  ml-7  text-xl font-serif flex  gap-1  text-[#777] capitalize ">
+            <div className="  ml-7  text-xl font-Poppins flex  gap-1  text-[#777] capitalize ">
                <FaQuoteRight size={60} className='mt-[-10px]'  color="#029e9d"/> <p  className=" ">{testimonialsData[selected].review}</p>
             </div>
           </div>

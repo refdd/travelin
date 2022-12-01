@@ -16,7 +16,7 @@ function TabsTours() {
           }>
           <button
             onClick={() => handleClick("Highlight")}
-            className="text-xl font-serif text-center capitalize "
+            className="text-xl font-Poppins text-center capitalize "
           >
             Highlight
           </button>
@@ -30,7 +30,7 @@ function TabsTours() {
         >
           <button
             onClick={() => handleClick("Iternary")}
-            className="text-xl font-serif  text-center capitalize "
+            className="text-xl font-Poppins  text-center capitalize "
           >
             Iternary
           </button>
@@ -44,7 +44,7 @@ function TabsTours() {
         >
           <button
             onClick={() => handleClick("Prices")}
-            className="text-xl font-serif  text-center capitalize "
+            className="text-xl font-Poppins  text-center capitalize "
           >
             prices
           </button>

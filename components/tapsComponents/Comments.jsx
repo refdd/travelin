@@ -11,7 +11,7 @@ function Comments() {
   const {handleClickAvtiveLike ,activLike } = useStateContext()
   return (
     <div className="container mx-auto pt-10">
-      <h4 className="text-2xl text-[#17233e] font-serif capitalize font-bold py-4  border-b ">
+      <h4 className="text-2xl text-[#17233e] font-Poppins capitalize font-bold py-4  border-b ">
         Showing 16 Verified Guest Comments
       </h4>
       <div className=" relative flex flex-col md:flex-row gap-3 md:mt-4">
@@ -35,10 +35,10 @@ function Comments() {
         {/* comment */}
         <div className="flex flex-col p-3 bg-[#e6eef5] gap-3 rounded-lg  ">
        <div className=" md:flex md:justify-between">
-       <h2 className="text-[#17233e] text-xl font-serif capitalize text-center">
+       <h2 className="text-[#17233e] text-xl font-Poppins capitalize text-center">
             Hamada
           </h2>
-          <p className="text-[#777] text-center font-serif text-sm  ">
+          <p className="text-[#777] text-center font-Poppins text-sm  ">
             {" "}
             April 25, 2022 at 10:46 am
           </p>
@@ -52,7 +52,7 @@ function Comments() {
             <BsFillStarFill size={24} color="#ffbc00" />{" "}
             <BsFillStarFill size={24} color="#ffbc00" />{" "}
           </div>
-          <h5 className="text-[#777] text-xl font-serif font-bold text-center  md:text-left">
+          <h5 className="text-[#777] text-xl font-Poppins font-bold text-center  md:text-left">
             The worst hotel ever"
           </h5>
           <p className="text-[#777] text-center text-lg leading-6 mx-7 md:mx-0 md:text-left">
@@ -97,10 +97,10 @@ function Comments() {
         {/* comment */}
         <div className="flex flex-col p-3 bg-[#e6eef5] gap-3 rounded-lg  ">
        <div className=" md:flex md:justify-between">
-       <h2 className="text-[#17233e] text-xl font-serif capitalize text-center">
+       <h2 className="text-[#17233e] text-xl font-Poppins capitalize text-center">
             Hamada
           </h2>
-          <p className="text-[#777] text-center font-serif text-sm  ">
+          <p className="text-[#777] text-center font-Poppins text-sm  ">
             {" "}
             April 25, 2022 at 10:46 am
           </p>
@@ -114,7 +114,7 @@ function Comments() {
             <BsFillStarFill size={24} color="#ffbc00" />{" "}
             <BsFillStarFill size={24} color="#ffbc00" />{" "}
           </div>
-          <h5 className="text-[#777] text-xl font-serif font-bold text-center  md:text-left">
+          <h5 className="text-[#777] text-xl font-Poppins font-bold text-center  md:text-left">
             The worst hotel ever"
           </h5>
           <p className="text-[#777] text-center text-lg leading-6 mx-7 md:mx-0 md:text-left">
@@ -159,10 +159,10 @@ function Comments() {
         {/* comment */}
         <div className="flex flex-col p-3 bg-[#e6eef5] gap-3 rounded-lg  ">
        <div className=" md:flex md:justify-between">
-       <h2 className="text-[#17233e] text-xl font-serif capitalize text-center">
+       <h2 className="text-[#17233e] text-xl font-Poppins capitalize text-center">
             Hamada
           </h2>
-          <p className="text-[#777] text-center font-serif text-sm  ">
+          <p className="text-[#777] text-center font-Poppins text-sm  ">
             {" "}
             April 25, 2022 at 10:46 am
           </p>
@@ -176,7 +176,7 @@ function Comments() {
             <BsFillStarFill size={24} color="#ffbc00" />{" "}
             <BsFillStarFill size={24} color="#ffbc00" />{" "}
           </div>
-          <h5 className="text-[#777] text-xl font-serif font-bold text-center  md:text-left">
+          <h5 className="text-[#777] text-xl font-Poppins font-bold text-center  md:text-left">
             The worst hotel ever"
           </h5>
           <p className="text-[#777] text-center text-lg leading-6 mx-7 md:mx-0 md:text-left">

@@ -13,7 +13,7 @@ function DescSingleBlog() {
     <div className="container mx-auto pt-4">
         {/* decs and vido */}
       <div className="flex flex-col gap-4">
-        <p className="text-[#777] text-lg font-serif capitalizes text-center  md:w-[80%] md:mx-auto  ">
+        <p className="text-[#777] text-lg font-Poppins capitalizes text-center  md:w-[80%] md:mx-auto  ">
           The property, complete with a 30-seat screening room, a 100-seat
           amphitheater and a swimming pond with sandy beach and outdoor shower,
           was asking about $40 million. Lorem ipsum dolor sit amet, consectetur
@@ -61,7 +61,7 @@ function DescSingleBlog() {
         ) : (
           ""
         )}
-        <p className="text-[#777] text-lg font-serif capitalizes text-center  md:w-[80%] md:mx-auto  md:text-left ">
+        <p className="text-[#777] text-lg font-Poppins capitalizes text-center  md:w-[80%] md:mx-auto  md:text-left ">
           The property, complete with a 30-seat screening room, a 100-seat
           amphitheater and a swimming pond with sandy beach and outdoor shower,
           was asking about $40 million. Lorem ipsum dolor sit amet, consectetur
@@ -76,11 +76,11 @@ function DescSingleBlog() {
               <FaQuoteLeft color="#029e9d" className="" />{" "}
             </div>{" "}
           </div>
-          <p className="text-[24px] text-white font-serif text-center  px-3">
+          <p className="text-[24px] text-white font-Poppins text-center  px-3">
             “To take a trivial example, which ever undertakes laborious physical
             work exercise, except obtain some advantage blinded”{" "}
           </p>
-          <span className="text-xl text-white font-serif capitalize text-center">
+          <span className="text-xl text-white font-Poppins capitalize text-center">
             By Michael Delwell
           </span>
         </div>
@@ -109,7 +109,7 @@ function DescSingleBlog() {
           />
         </div>
         <div>
-          <p className="text-[#777] text-lg font-serif capitalizes text-center md:w-[80%] md:mx-auto ">
+          <p className="text-[#777] text-lg font-Poppins capitalizes text-center md:w-[80%] md:mx-auto ">
             as opposed to using 'Content here, content here', making it look
             like readable English. Many desktop publishing packages and web page
             editors now use Lorem Ipsum as their default model text, and a
@@ -121,7 +121,7 @@ function DescSingleBlog() {
       {/* social */}
       <div className="pt-6 ">
         <div className="px-4 py-6 bg-slate-200 rounded-lg flex flex-col gap-3 items-center md:flex-row md:gap-1 ">
-        <p className="text-[#777] text-lg text-center font-serif flex-1 "><span className="font-bold">Posted In:</span> Fashion, Beauty, Vacation, Travel, News</p>
+        <p className="text-[#777] text-lg text-center font-Poppins flex-1 "><span className="font-bold">Posted In:</span> Fashion, Beauty, Vacation, Travel, News</p>
           <div className="flex gap-3 items-center justify-center ">
          <span className="p-4 rounded-lg bg-[#3b5998] hover:bg-[#3b5998]/90 hover:shadow-lg transition-all"> <FaFacebook size={24} color="white"/> </span>
          <span className="p-4 rounded-lg bg-[#4285F4] hover:bg-[#4285F4]/90 hover:shadow-lg transition-all"> <FaGoogle size={24} color="white"/> </span>

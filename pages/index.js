@@ -12,9 +12,18 @@ import SelectPackagess from "../components/SelectPackagess";
 import PackageTyps from "../components/PackageTyps";
 import Testimonails from "../components/Testimonails";
 import { ToursOfTyps } from "../data/dammyData";
-export default function Home() {
+import {fetchApi,baseUrl}from '../utils/ferchApi'
+import { useStateContextApi } from '../contexts/ContextProvider'
+import { useEffect } from "react";
+
+export default function Home({ FandQAPI , partners}) {
+  const { sectionFAQ ,setSectionFAQ} = useStateContextApi()
+  useEffect(()=>{
+    setSectionFAQ(FandQAPI)
+  },[FandQAPI])
+
   return (
-    <div>
+    <div> 
       <NavBar />
       <Header />
       <BookingSearch />
@@ -51,11 +60,22 @@ export default function Home() {
         <MultiPackage Blogs={true} />
       </section>
 
-      <Explore />
-      <FandQ />
+      <Explore partners={partners} />
+      <FandQ  dataFandQ={FandQAPI}/>
 
       <Footer />
     </div>
   );
 }
 
+export  async  function getStaticProps(){
+  const FandQAPI = await fetchApi(`${baseUrl}/faqs`);
+  const partners = await fetchApi(`${baseUrl}/partners`);
+  return{
+    props:{
+      FandQAPI:FandQAPI.data,
+      partners:partners.data,
+    },
+    revalidate: 10,
+  }
+ }

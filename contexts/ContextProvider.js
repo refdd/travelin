@@ -63,3 +63,23 @@ export const ContextProvider = ({ children }) => {
 };
 
 export const useStateContext = () => useContext(StateContext);
+
+
+//context api  here 
+const apiContext = createContext();
+
+export const ContextProviderApi = ({ children }) => {
+  const [sectionFAQ ,setSectionFAQ] = useState(null)
+
+  return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
+    <apiContext.Provider
+      value={{ sectionFAQ ,setSectionFAQ}}
+    >
+      
+      {children}
+    </apiContext.Provider>
+  );
+};
+export const useStateContextApi = () => useContext(apiContext);
+

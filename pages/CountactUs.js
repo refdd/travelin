@@ -25,10 +25,10 @@ function CountactUs() {
       <NavBar />
       <HeaderParts typeList={"contact us"} />
       <div className="flex flex-col justify-center items-center gap-3">
-        <h1 className="text-[#17233e] font-serif text-3xl capitalize text-center font-bold">
+        <h1 className="text-[#17233e] font-Poppins text-3xl capitalize text-center font-bold">
           INFORMATION ABOUT US
         </h1>
-        <p className="text-[#777] text-lg font-serif capitalize text-center">
+        <p className="text-[#777] text-lg font-Poppins capitalize text-center">
           Sagittis posuere id nam quis vestibulum vestibulum a facilisi at elit
           hendrerit scelerisque sodales nam dis orci.
         </p>
@@ -38,17 +38,17 @@ function CountactUs() {
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="flex flex-col  gap-4 justify-center items-center border p-3 rounded-lg md:flex-1 ">
             <CiLocationOn size={100} color="#029e9d" />
-            <h2 className="text-xl font-serif text-[#17233e] capitalize font-semibold">
+            <h2 className="text-xl font-Poppins text-[#17233e] capitalize font-semibold">
               {" "}
               Office Location
             </h2>
-            <p className="text-center text-[#777] font-serif capitalize leading-7">
+            <p className="text-center text-[#777] font-Poppins capitalize leading-7">
               445 Mount Eden Road, Mt Eden Basundhara Chakrapath
             </p>
           </div>
           <div className="flex flex-col  gap-4 justify-center items-center border p-3 rounded-lg md:flex-1">
             <BiPhone size={100} color="#029e9d" />
-            <h2 className="text-xl font-serif text-[#17233e] capitalize font-semibold">
+            <h2 className="text-xl font-Poppins text-[#17233e] capitalize font-semibold">
               Phone Number
             </h2>
             <div>
@@ -64,7 +64,7 @@ function CountactUs() {
           </div>
           <div className="flex flex-col  gap-4 justify-center items-center border p-3 rounded-lg md:flex-1">
             <BiEnvelope size={100} color="#029e9d" />
-            <h2 className="text-xl font-serif text-[#17233e] capitalize font-semibold">
+            <h2 className="text-xl font-Poppins text-[#17233e] capitalize font-semibold">
               {" "}
               Email Address
             </h2>

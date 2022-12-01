@@ -48,7 +48,7 @@ function BlogList() {
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
           {/* left side */}
           <div className="flex flex-col md:flex-row gap-3  justify-center items-center md:justify-between ">
-            <p className=" text-center md:text-left md:pl-2  text-xl text-[#777] font-serif capitalize">
+            <p className=" text-center md:text-left md:pl-2  text-xl text-[#777] font-Poppins capitalize">
               showing 1-5 of 80 results
             </p>
             <div className="flex gap-3 w-[60%] md:w-auto justify-center items-center">

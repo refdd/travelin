@@ -99,7 +99,7 @@ function FormInquire() {
             <div className="mx-auto w-[90%] flex flex-col gap-3  rounded-xl overflow-hidden pb-4 border  ">
               {/* header */}
               <div className="w-full bg-[#029e9d] flex justify-center items-center py-5">
-                <div className="text-2xl capitalize font-serif text-white ">
+                <div className="text-2xl capitalize font-Poppins text-white ">
                   {" "}
                   inquire Now
                 </div>
@@ -278,7 +278,7 @@ function FormInquire() {
               </div>
               {/* botton supmit */}
               <div className="flex justify-center items-center ">
-                <button className="w-[90%] bg-[#029e9d] text-white font-serif text-2xl rounded-lg py-2">
+                <button className="w-[90%] bg-[#029e9d] text-white font-Poppins text-2xl rounded-lg py-2">
                   Inquire now!
                 </button>
               </div>

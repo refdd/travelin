@@ -34,10 +34,10 @@ function Test() {
       <NavBar />
       <HeaderParts typeList={"contact us"} />
       <div className="flex flex-col justify-center items-center gap-3">
-        <h1 className="text-[#17233e] font-serif text-3xl capitalize text-center font-bold">
+        <h1 className="text-[#17233e] font-Poppins text-3xl capitalize text-center font-bold">
           Thank you
         </h1>
-        <p className="text-[#777] text-lg font-serif capitalize text-center">
+        <p className="text-[#777] text-lg font-Poppins capitalize text-center">
           Sagittis posuere id nam quis vestibulum vestibulum a facilisi at elit
           hendrerit scelerisque sodales nam dis orci.
         </p>

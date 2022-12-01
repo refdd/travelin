@@ -70,7 +70,7 @@ function CardlistBlog({ packages, valueState }) {
                 }
               >
                 <Link href={`/blog/${item.id}`}>
-                  <h2 className="text-center md:text-left text-2xl capitalize font-serif cursor-pointer ">
+                  <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer ">
                     {" "}
                     {item.title}
                   </h2>

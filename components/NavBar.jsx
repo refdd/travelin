@@ -32,7 +32,7 @@ function NavBar() {
            
             {/* links  */}
             <div className=" w-3/5 flex   justify-center items-center">
-              <ul className=" hidden md:flex gap-4 font-serif   ">
+              <ul className=" hidden md:flex gap-4 font-Poppins   ">
                 <li className="text-lg uppercase text-[#777] transition  hover:text-[#029e9d] ">
                   <Link href="/">
                     <a>Home </a>
@@ -57,7 +57,7 @@ function NavBar() {
               </ul>
             </div>
             {/* button booking  */}
-            <div className=" hidden md:flex md:w-1/5  justify-center items-center">
+            {/* <div className=" hidden md:flex md:w-1/5  justify-center items-center">
               <div className=" flex">
                 <Link href="/InquireNow">
                   <a className="bg-[#029e9d]  text-center text-white text-lg rounded-2xl md:p-4 md:text-xl transition hover:bg-[#fdc703]">
@@ -65,6 +65,15 @@ function NavBar() {
                   </a>
                 </Link>
               </div>
+            </div> */}
+            <div className="  group hidden md:flex ">
+        <Link href={`/InquireNow`}>
+        <button className=" wrapper   w-40  group-hover:text-white bg-[#029e9d] px-4 py-1 rounded-2xl z-10 text-white overflow-hidden  ">
+                 <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
+                 Inquire now
+                  </button>
+        </Link>
+              
             </div>
             {/* menue bar  */}
            <div className='flex justify-center transition duration-700 ease-out  items-center md:hidden cursor-pointer  ' onClick={() => setmenuBar(!menueBar)}>

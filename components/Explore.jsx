@@ -3,7 +3,8 @@ import bg from "../public/assets/images/bg4.jpg";
 import { AiFillPlayCircle, AiFillCloseCircle } from "react-icons/ai";
 import { useState } from "react";
 import Partners from "./Partners";
-function Explore() {
+function Explore({partners}) {
+
   const [showvideo, setShowvideo] = useState(false);
   return (
     <>
@@ -15,11 +16,11 @@ function Explore() {
           <div className=" flex flex-col justify-between items-center h-full md:flex-row ">
             {/* content  */}
             <div className="flex flex-col gap-4  p-7 bg-[#029e9d] mt-0 h-3/5 md:h-full md:w-2/4 md:py-20  md:gap-6  ">
-              <h4 className="text-xl text-[#fff] text-center font-bold  capitalize font-serif md:text-2xl md:text-left ">
+              <h4 className="text-xl text-[#fff] text-center font-bold  capitalize font-Poppins md:text-2xl md:text-left ">
                 Best Selling Program in Egypt
               </h4>
               <h2
-                className="text-2xl font-serif font-bold capitalize
+                className="text-2xl font-Poppins font-bold capitalize
              text-[#fdc703] text-center md:text-5xl md:leading-[3.5rem] md:font-extrabold  md:text-left "
               >
                 Cairo, Nile Cruise and Hurghada
@@ -86,7 +87,7 @@ function Explore() {
           </div>
         </div>
       </div>
-      <Partners />
+      <Partners partners={partners} />
     </>
   );
 }

@@ -1,59 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import Faq from "react-faq-component";
 import HeaderSection from "./helper/HeaderSection";
 
-const data = {
- 
-  rows: [
-    {
-      title: <h2 className="text-[#17233e] text-lg  font-serif  py-3 capitalize">Lorem ipsum dolor sit amet</h2>
-      
-    
-      ,
-      content:  <p className="text-[#777] text-lg font-serif capitalize ">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
-      sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
-      Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. In
-      maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet
-      mauris tortor, sed egestas libero interdum vitae. Fusce sed commodo
-      purus, at tempus turpis.
-    </p>,
-    },
-    {
-      title: <h2 className="text-[#17233e] text-lg  font-serif  py-3 capitalize">Nunc maximus, magna at ultricies elementum</h2> ,
-      content:
-      <p className="text-[#777] text-lg font-serif capitalize ">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
-      sem. Aenean vel turpis feugiat, ultricies metus at, consequat velit.
-      Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. In
-      
-    </p>,
-    },
-    {
-      title: <h2 className="text-[#17233e] text-lg  font-serif  py-3 capitalize">Nunc maximus, magna at ultricies elementum</h2>,
-      content: <p className="text-[#777] text-lg font-serif capitalize ">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
-    
-      purus, at tempus turpis.
-    </p>,
-    },
-    {
-      title: <h2 className="text-[#17233e] text-lg  font-serif  py-3 capitalize">Nunc maximus, magna at ultricies elementum</h2>,
-      content:  <p className="text-[#777] text-lg font-serif capitalize ">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor
-    
-    </p>
-    },
 
-  ],
-  styles : {
-    // bgColor: 'white',
-    rowTitleColor: "#17233e",
-    titleTextSize: '48px',
-    // rowContentColor: 'grey',
-    // arrowColor: "red",
-  }
-};
 
 
 
@@ -62,7 +12,38 @@ const config = {
   // arrowIcon: "V",
   tabFocus: true
 };
-function FandQ() {
+function FandQ({dataFandQ}) {
+  const [gitTitel , setTitle] = useState("");
+  if(!dataFandQ){
+    return  
+  }
+  useEffect(()=>{
+   const gtiDta= dataFandQ.map(item => {
+  return   {
+    title: <h2 className="text-[#17233e] text-lg  font-Poppins  py-3 capitalize"> {item.question}</h2>,
+    content:  <p className="text-[#777] text-lg font-Poppins capitalize "> {item.answer} </p>
+  }
+   })
+
+   setTitle(gtiDta)
+
+  }, [dataFandQ])
+
+
+
+  const data = {
+ 
+    rows: [
+      ...gitTitel
+    ],
+    styles : {
+      // bgColor: 'white',
+      rowTitleColor: "#17233e",
+      titleTextSize: '48px',
+      // rowContentColor: 'grey',
+      // arrowColor: "red",
+    }
+  };
   return (
     <div className="h-auto " >
       <HeaderSection

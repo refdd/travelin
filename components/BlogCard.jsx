@@ -35,7 +35,7 @@ function BlogCard() {
             
             <Link href={`/blog/${item.id}`}>
             
-            <h2 className="font-serif  text-[#212529] text-2xl font-bold">
+            <h2 className="font-Poppins  text-[#212529] text-2xl font-bold">
             {item.title}
             </h2>
             </Link>
@@ -56,7 +56,7 @@ function BlogCard() {
                 className="rounded-full"
                 loading="lazy"
               />
-              <span className="text-xl text-[#777] font-serif ">{item.slag}</span>
+              <span className="text-xl text-[#777] font-Poppins ">{item.slag}</span>
             </div>
             <div className="  group flex justify-center items-center  ">
               <button className=" wrapper  group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">

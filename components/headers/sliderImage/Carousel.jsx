@@ -33,109 +33,31 @@ const settings = {
   nextArrow: <SampleNextArrow />,
   prevArrow: <SamplePrevArrow />
 };
-function Carousel() {
+function Carousel({gallery}) {
+  if(!gallery) {
+    return <p>wait</p>
+  }
   return (
     <div>
     <Slider {...settings}>
-      <div className='imageSlider justify-center items-center'>
+      { gallery && gallery.map(item =>{
+        return (
+          <div key={item.id} className='imageSlider justify-center items-center'>
        <Image
-       src={imageDestination}
+        loader={() =>{
+          return `${item.image}`;
+        }
+       }
+       src={`${item.image}`}
        width={500}  
        height={500}  
        className="rounded-lg"
        layout='intrinsic'
        />
-       
-  
-      
       </div>
-      <div className='imageSlider justify-center items-center'>
-       <Image
-       src={imageDestination}
-       width={500}  
-       height={500}  
-       className="rounded-lg"
-       layout='intrinsic'
-       />
+        )
        
-  
-      
-      </div>
-      <div className='imageSlider justify-center items-center'>
-       <Image
-       src={imageDestination}
-       width={500}  
-       height={500}  
-       className="rounded-lg"
-       layout='intrinsic'
-       />
-       
-  
-      
-      </div>
-      <div className='imageSlider justify-center items-center'>
-       <Image
-       src={imageDestination}
-       width={500}  
-       height={500}  
-       className="rounded-lg"
-       layout='intrinsic'
-       />
-       
-  
-      
-      </div>
-      <div className='imageSlider justify-center items-center'>
-       <Image
-       src={imageDestination}
-       width={500}  
-       height={500}  
-       className="rounded-lg"
-       layout='intrinsic'
-       />
-       
-  
-      
-      </div>
-      <div className='imageSlider justify-center items-center'>
-       <Image
-       src={imageDestination}
-       width={500}  
-       height={500}  
-       className="rounded-lg"
-       layout='intrinsic'
-       />
-       
-  
-      
-      </div>
-      <div className='imageSlider justify-center items-center'>
-       <Image
-       src={imageDestination}
-       width={500}  
-       height={500}  
-       className="rounded-lg"
-       layout='intrinsic'
-       />
-       
-  
-      
-      </div>
-      <div className='imageSlider justify-center items-center'>
-       <Image
-       src={imageDestination}
-       width={500}  
-       height={500}  
-       className="rounded-lg"
-       layout='intrinsic'
-       />
-       
-  
-      
-      </div>
-    
-      
-    
+      })}
     </Slider>
   </div>
   )

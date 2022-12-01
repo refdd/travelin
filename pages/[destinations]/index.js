@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Explore from "../../components/Explore";
 import FandQ from "../../components/FandQ";
 import Footer from "../../components/Footer";
@@ -13,38 +13,37 @@ import { ToursOfTyps } from "../../data/dammyData";
 import SelectPackagess from "../../components/SelectPackagess";
 import PackageTyps from "../../components/PackageTyps";
 import Carousel from "../../components/headers/sliderImage/Carousel";
+import { baseUrl, fetchApi } from "../../utils/ferchApi";
+import Loding from "../../components/helper/Loding";
+ const array = ["egypt" , "prise"]
+function Destination({destinations}) {
 
-function Destination() {
+ 
+  if(!destinations){
+    return <Loding/>
+    }
   return (
     <div>
       <NavBar />
-      <HeaderParts typeList={"Destination"} />
+      <HeaderParts typeList={destinations.title} />
       {/* content grid  */}
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         {/* left content side */}
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
-          <HeaderDestination titel={"Egpyt tours"}  />
+          <HeaderDestination titel={destinations.title}  />
           <div className="container mx-auto md:w-full ">
            
-            <Carousel/>
+            <Carousel gallery ={destinations.gallery}/>
           </div>
           <div className="container mx-auto flex flex-col  gap-1">
             <h4 className="my-5 text-3xl font-Poppins font-bold text-[#17233e] ">
               Description
             </h4>
             <p className="text-[#777] font-Poppins text-lg ">
-              Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-              used in laying out print, graphic or web designs. The passage is
-              attributed to an unknown typesetter in the 15th century who is
-              thought to have scrambled parts of Cicero's De Finibus Bonorum et
-              Malorum for use in a type specimen book.Lorem ipsum, or lipsum as
-              it is sometimes known, is dummy text used in laying out print,
-              graphic or web designs.
+          {destinations.description.replace(/<[^>]*>?/gm, '')}
             </p>
             <p className="text-[#777] font-Poppins text-lg ">
-              The passage is attributed to an unknown typesetter in the 15th
-              century who is thought to have scrambled parts of Cicero's De
-              Finibus Bonorum et Malorum for use in a type specimen book.
+            ابعت كمان 
             </p>
           </div>
           {/* price */}
@@ -134,3 +133,22 @@ function Destination() {
 }
 
 export default Destination;
+
+export async function getStaticPaths() {
+  return { 
+    paths: array.map(item =>({
+      params :{destinations : item.toString()}
+    })),
+    fallback: false
+  }
+}
+
+export  async  function getStaticProps(){
+  const destinations = await fetchApi(`${baseUrl}/destinations/1`);
+  return{
+    props:{
+      destinations:destinations.data,
+    },
+    revalidate: 10,
+  }
+ }

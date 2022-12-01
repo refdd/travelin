@@ -16,7 +16,7 @@ function BottomInquire() {
       <div
       onClick={handleShowBottom}
       className='twark flex justify-center items-center py-2 bg-[#029e9d] rounded-lg   '>
-            <button className='text-2xl text-white font-serif '>
+            <button className='text-2xl text-white font-Poppins '>
                 inquire now
             </button>
         </div>

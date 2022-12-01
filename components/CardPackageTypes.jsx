@@ -51,7 +51,7 @@ function CardPackageTypes({packages}) {
           <div className="flex flex-col gap-3 border-b mx-4 mt-5">
            <Link href={`/tour/${item.id}`}>
            
-            <h2 className="font-serif  text-[#212529] text-2xl font-bold cursor-pointer">
+            <h2 className="font-Poppins  text-[#212529] text-2xl font-bold cursor-pointer">
             {item.title}
             </h2>
             </Link>

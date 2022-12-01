@@ -22,7 +22,7 @@ function PerfectTour() {
            <div className='z-10'>
            <AiTwotoneFlag className='  duration-1000 group-hover:text-white text-[#029e9d]' size={70} />
            </div>
-           <h3 className='text-2xl text-[#17233e] font-serif font-bold z-10 duration-1000 group-hover:text-white  '>Choose Your Trip</h3> 
+           <h3 className='text-2xl text-[#17233e] font-Poppins font-bold z-10 duration-1000 group-hover:text-white  '>Choose Your Trip</h3> 
            <p className='text-center text-[#777] z-10 duration-1000 group-hover:text-white '>Choose, customize or just tell us about your perfect trip</p>
            <div className='w-full PrefectCard bg-[#029e9d]  absolute bottom-0 left-0  ' ></div>
            </div>
@@ -31,7 +31,7 @@ function PerfectTour() {
            <div className='z-10'>
            <AiTwotoneFlag className='  duration-1000 group-hover:text-white text-[#029e9d]' size={70} />
            </div>
-           <h3 className='text-2xl text-[#17233e] font-serif font-bold z-10 duration-1000 group-hover:text-white  '>Get Matched</h3> 
+           <h3 className='text-2xl text-[#17233e] font-Poppins font-bold z-10 duration-1000 group-hover:text-white  '>Get Matched</h3> 
            <p className='text-center text-[#777] z-10 duration-1000 group-hover:text-white '>Our local travel specialist will build your perfect itinerary.</p>
            <div className='w-full PrefectCard bg-[#029e9d]  absolute bottom-0 left-0  ' ></div>
            </div>
@@ -40,7 +40,7 @@ function PerfectTour() {
            <div className='z-10'>
            <AiTwotoneFlag className='  duration-1000 group-hover:text-white text-[#029e9d]' size={70} />
            </div>
-           <h3 className='text-2xl text-[#17233e] font-serif font-bold z-10 duration-1000 group-hover:text-white  '>Edit & Personalize</h3> 
+           <h3 className='text-2xl text-[#17233e] font-Poppins font-bold z-10 duration-1000 group-hover:text-white  '>Edit & Personalize</h3> 
            <p className='text-center text-[#777] z-10 duration-1000 group-hover:text-white '>Get your itinerary customized to fit all your needs & preferences.</p>
            <div className='w-full PrefectCard bg-[#029e9d]  absolute bottom-0 left-0  ' ></div>
            </div>
@@ -49,7 +49,7 @@ function PerfectTour() {
            <div className='z-10'>
            <AiTwotoneFlag className='  duration-1000 group-hover:text-white text-[#029e9d]' size={70} />
            </div>
-           <h3 className='text-2xl text-[#17233e] font-serif font-bold z-10 duration-1000 group-hover:text-white  '>Book And Pay</h3> 
+           <h3 className='text-2xl text-[#17233e] font-Poppins font-bold z-10 duration-1000 group-hover:text-white  '>Book And Pay</h3> 
            <p className='text-center text-[#777] z-10 duration-1000 group-hover:text-white '>Pay and book when you’re happy with the itinerary.</p>
            <div className='w-full PrefectCard bg-[#029e9d]  absolute bottom-0 left-0  ' ></div>
            </div>

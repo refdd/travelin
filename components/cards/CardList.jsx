@@ -55,11 +55,11 @@ if(valueState == "price"){
         "flex flex-col gap-2 justify-center items-center md:justify md:items-start md:flex-1 " 
     }>
       <Link href={`/tour/${item.id}`}>
-      <h2 className="text-center md:text-left text-2xl capitalize font-serif cursor-pointer "> {item.title}</h2>
+      <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer "> {item.title}</h2>
       </Link>
-     <p className="text-sm text-center md:text-left text-[#777] font-serif "> 6+ Days | Full Days tours</p>
-        <h4 className="text-xl text-[#777] font-serif capitalize text-center md:text-left">{item.type}</h4>
-        <p className="text-[#029e9d] text-center md:text-left text-lg font-serif ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, quo!</p>
+     <p className="text-sm text-center md:text-left text-[#777] font-Poppins "> 6+ Days | Full Days tours</p>
+        <h4 className="text-xl text-[#777] font-Poppins capitalize text-center md:text-left">{item.type}</h4>
+        <p className="text-[#029e9d] text-center md:text-left text-lg font-Poppins ">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus, quo!</p>
      </div>
      {/* left side */}
     <div className={desplaygrid ? "flex flex-col gap-2 justify-center items-center ":
@@ -72,12 +72,12 @@ if(valueState == "price"){
         <AiFillStar size={24} color="#ffc107"/>
         <AiFillStar size={24} color="#ffc107"/>
         </div>
-        <p className="text-right text-lg text-[#777] font-serif " >200 reviews</p>
+        <p className="text-right text-lg text-[#777] font-Poppins " >200 reviews</p>
         <div className="flex gap-3  md:flex-col">
-        <span className="text-[#777] font-serif text-lg md:text-right "> Start from</span>
+        <span className="text-[#777] font-Poppins text-lg md:text-right "> Start from</span>
         <h4 className="text-right font-mono font-bold text-xl"> ${item.price}</h4>
         </div>
-        <p className="text-right text-sm font-serif capitalize text-[#777]">Per Person</p>
+        <p className="text-right text-sm font-Poppins capitalize text-[#777]">Per Person</p>
         <Link href={`/`}>
         <button className=" wrapper w-full md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
                  <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>

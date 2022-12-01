@@ -7,10 +7,10 @@ import Image from "next/image";
 
 function PaymentFooter() {
   return (
-    <ul className="flex justify-center items-center gap-2">
+    <ul className="flex items-center gap-2">
 
       <li>
-      <span className="text-white text-lg font-serif ">We Support:</span>
+      <span className="text-white text-lg font-Poppins ">We Support:</span>
       </li>
       <li>
       <RiVisaFill color="#fff" size={24}/>
