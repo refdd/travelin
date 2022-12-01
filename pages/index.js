@@ -16,6 +16,19 @@ import {fetchApi,baseUrl}from '../utils/ferchApi'
 import { useStateContextApi } from '../contexts/ContextProvider'
 import { useEffect } from "react";
 
+export  async  function getStaticProps(){
+  const FandQAPI = await fetchApi(`${baseUrl}/faqs`);
+  const partners = await fetchApi(`${baseUrl}/partners`);
+  return{
+    props:{
+      FandQAPI:FandQAPI.data,
+      partners:partners.data,
+    },
+    revalidate: 10,
+  }
+ }
+
+
 export default function Home({ FandQAPI , partners}) {
   const { sectionFAQ ,setSectionFAQ} = useStateContextApi()
   // useEffect(()=>{
@@ -68,14 +81,3 @@ export default function Home({ FandQAPI , partners}) {
   );
 }
 
-// export  async  function getStaticProps(){
-//   const FandQAPI = await fetchApi(`${baseUrl}/faqs`);
-//   const partners = await fetchApi(`${baseUrl}/partners`);
-//   return{
-//     props:{
-//       FandQAPI:FandQAPI.data,
-//       partners:partners.data,
-//     },
-//     revalidate: 10,
-//   }
-//  }
