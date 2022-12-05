@@ -16,31 +16,33 @@ import { useStateContext } from "../../contexts/ContextProvider";
 import Explore from "../../components/Explore";
 import FandQ from "../../components/FandQ";
 import Footer from "../../components/Footer";
-
-function SingelTour() {
+import { baseUrl, fetchApi } from "../../utils/ferchApi";
+const array = ["1" , "2"]
+function SingelTour({singletour}) {
+  
   const {isClicked} =useStateContext()
   return (
     <div>
       <BottomInquire />
       <NavBar />
-      <HeaderParts typeList={"single tour"} />
+      <HeaderParts typeList={singletour.title} />
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         {/* left content side */}
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
           <HeaderDestination
-            titel={"Egpyt tours"}
-            location="Greater London, United Kingdom"
+            titel={singletour.title}
+            location={`Visited Cities : ${singletour.destinations} `}
             reviews={"(1,186 Reviews)"}
           />
-          <Carousel/>
+          <Carousel gallery={singletour.gallery} />
           <TabsTours/>
           <div className="container mx-auto pt-10" >
        {/* tabs components */}
        {/* {isClicked.AddReviwes && <AddRevews/> } */}
        {/* {isClicked.Comments && <Comments/> } */}
-       {isClicked.Highlight && <Highlifht/> }
-       {isClicked.Iternary && <Iternary/> }
-       {isClicked.Prices && <Prices/> }
+       {isClicked.Highlight && <Highlifht highlightData={singletour} /> }
+       {isClicked.Iternary && <Iternary iternaryData={singletour.itineraries} /> }
+       {isClicked.Prices && <Prices notsPrise={singletour.tour_notes} template_prices = {singletour.template_prices} /> }
        {/* {isClicked.Reviews && <Reviews/> } */}
           
           </div>
@@ -62,3 +64,20 @@ function SingelTour() {
 }
 
 export default SingelTour;
+export async function getStaticPaths() {
+  return { 
+    paths: array.map(item =>({
+      params :{id : item.toString()}
+    })),
+    fallback: false
+  }
+}
+export  async  function getStaticProps(params){
+  const singletour = await fetchApi(`${baseUrl}/tours/1`);
+  return{
+    props:{
+      singletour:singletour.data,
+    },
+    revalidate: 10,
+  }
+ }

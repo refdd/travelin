@@ -20,6 +20,7 @@ function CardlistBlog({ packages, valueState }) {
       setPackageBeforeSort(pacdageSortBy);
     }
   }, [valueState]);
+  console.log(packages)
   return (
     <>
       {gackageBeforeSort &&
@@ -29,7 +30,7 @@ function CardlistBlog({ packages, valueState }) {
             className={
               desplaygrid
                 ? "flex flex-col gap-2 w-[90%]  md:w-[45%]   bg-slate-100 p-5 rounded-xl mt-5 "
-                : "flex flex-col md:flex-row gap-2 justify-center md:justify-start items-center w-[70%] mx-auto md:w-[90%] md:mx-4 bg-slate-100 p-5 rounded-xl mt-5 "
+                : "flex flex-col md:flex-row gap-2 justify-center md:justify-start items-center w-[70%] mx-auto md:w-[90%] md:mx-auto bg-slate-100 p-5 rounded-xl mt-5 "
             }
           >
             {/* image */}
@@ -41,7 +42,11 @@ function CardlistBlog({ packages, valueState }) {
               }
             >
               <Image
-                src={item.imageUrl}
+              loader={() =>{
+                return `${item.image}`;
+              }
+             }
+                src={item.image}
                 alt="Picture of the author"
                 width={500}
                 height={500}
@@ -69,14 +74,14 @@ function CardlistBlog({ packages, valueState }) {
                     : "flex flex-col gap-2 justify-center items-center md:justify md:items-start md:flex-1 "
                 }
               >
-                <Link href={`/blog/${item.id}`}>
+                <Link href={`/blog/${item.slug}`}>
                   <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer ">
                     {" "}
                     {item.title}
                   </h2>
                 </Link>
-                <p className="text-[#777]  leading-6 mb-3  text-center ">
-                  {item.desc}
+                <p className="text-[#777]  leading-6 mb-3  text-center md:text-left ">
+                  {item.description.replace(/<[^>]*>?/gm, '').substring(0 , 120 )}
                 </p>
               </div>
               {/* left side */}
@@ -84,7 +89,7 @@ function CardlistBlog({ packages, valueState }) {
                 className={
                   desplaygrid
                     ? "flex  gap-7 justify-center items-center  "
-                    : "flex gap-7 md:justify-end md:items-end md:flex-col md:w-[40%] "
+                    : "flex gap-7 md:justify-end md:items-end md:flex-col md:w-[20%] "
                 }
               >
                 <Link href={`/blog/${item.id}`}>

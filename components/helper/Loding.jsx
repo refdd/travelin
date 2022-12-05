@@ -2,8 +2,8 @@ import React from 'react'
 
 function Loding() {
   return (
-<div aria-label="Loading..." role="status" class="flex items-center justify-center h-screen w-full space-x-2">
-  <svg class="h-14 w-14 animate-spin stroke-gray-500" viewBox="0 0 256 256">
+<div aria-label="Loading..." role="status" className="flex items-center justify-center h-screen w-full space-x-2">
+  <svg className="h-14 w-14 animate-spin stroke-gray-500" viewBox="0 0 256 256">
     <line x1="128" y1="32" x2="128" y2="64" stroke-linecap="round" stroke-linejoin="round" stroke-width="24"></line>
     <line
       x1="195.9"
@@ -41,7 +41,7 @@ function Loding() {
       stroke-linejoin="round"
       stroke-width="24"></line>
   </svg>
-  <span class="text-xl font-medium text-gray-500 ">Loading...</span>
+  <span className="text-xl font-medium text-gray-500 ">Loading...</span>
 </div>
   )
 }

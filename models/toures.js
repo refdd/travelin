@@ -15,10 +15,8 @@ class ToursTyps {
         this.partTwo = partTwo;
         this.descHeader = descHeader;
         this.listTours = listTours;
-        this.supType = supType;
+        this.supType = supType; 
         this.type = type;
-       
-
       }
 }
 export default ToursTyps;

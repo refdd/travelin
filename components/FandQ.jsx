@@ -23,13 +23,6 @@ function FandQ({dataFandQ}) {
     content:  <p className="text-[#777] text-lg font-Poppins capitalize "> {item.answer} </p>
   }
    })
-
- 
-
-
-
-
-
   const data = {
  
     rows: [

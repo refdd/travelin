@@ -6,23 +6,17 @@ import { useState } from "react";
 import { FaFacebook, FaGoogle, FaLinkedin, FaQuoteLeft, FaTwitter } from "react-icons/fa";
 import image1 from "../../public/assets/images/trending5.jpg";
 import image2 from "../../public/assets/images/hotels.jpg";
-function DescSingleBlog() {
+function DescSingleBlog({singelSlug}) {
   const [showvideo, setShowvideo] = useState(false);
 
   return (
     <div className="container mx-auto pt-4">
         {/* decs and vido */}
       <div className="flex flex-col gap-4">
-        <p className="text-[#777] text-lg font-Poppins capitalizes text-center  md:w-[80%] md:mx-auto  ">
-          The property, complete with a 30-seat screening room, a 100-seat
-          amphitheater and a swimming pond with sandy beach and outdoor shower,
-          was asking about $40 million. Lorem ipsum dolor sit amet, consectetur
-          adipis Vi ales elit vitae lo bortis faucibus. Lorem ipsum dolor sit
-          amet, conse dolor sit amet, consectetu ctetur adipis Viales. Lorem
-          ipsum dolor sit amet, cons sit amet, consectetur adi ectetur adipis
-          Vi.
+        <p className="text-[#777] text-lg font-Poppins capitalizes text-center md:text-left  md:w-[80%] md:mx-auto  ">
+         {singelSlug.description}
         </p>
-        <div className="relative flex justify-center items-center">
+        {/* <div className="relative flex justify-center items-center">
           <Image
             src={imageblog}
             width={500}
@@ -41,8 +35,8 @@ function DescSingleBlog() {
               />{" "}
             </div>
           </div>
-        </div>
-        {showvideo ? (
+        </div> */}
+        {/* {showvideo ? (
           <div className="  fixed top-[50%] left-[50%] translate-x-[-50%]  translate-y-[-50%]  h-full bg-[#0000007a] p-4 w-full z-[1000000] ">
             <span className="cursor-pointer  absolute top-[30%] right-5 rounded-full p-3 md:right-[84px] md:top-[29%]">
               <AiFillCloseCircle
@@ -60,8 +54,8 @@ function DescSingleBlog() {
           </div>
         ) : (
           ""
-        )}
-        <p className="text-[#777] text-lg font-Poppins capitalizes text-center  md:w-[80%] md:mx-auto  md:text-left ">
+        )} */}
+        {/* <p className="text-[#777] text-lg font-Poppins capitalizes text-center  md:w-[80%] md:mx-auto  md:text-left ">
           The property, complete with a 30-seat screening room, a 100-seat
           amphitheater and a swimming pond with sandy beach and outdoor shower,
           was asking about $40 million. Lorem ipsum dolor sit amet, consectetur
@@ -69,7 +63,7 @@ function DescSingleBlog() {
           amet, conse dolor sit amet, consectetu ctetur adipis Viales. Lorem
           ipsum dolor sit amet, cons sit amet, consectetur adi ectetur adipis
           Vi.
-        </p>
+        </p> */}
         <div className="flex flex-col gap-2 bg-[#029e9d] py-5 rounded-lg md:w-[80%] md:mx-auto  ">
           <div className="flex justify-center items-center ">
             <div className="p-6 rounded-full bg-white">
@@ -77,16 +71,15 @@ function DescSingleBlog() {
             </div>{" "}
           </div>
           <p className="text-[24px] text-white font-Poppins text-center  px-3">
-            “To take a trivial example, which ever undertakes laborious physical
-            work exercise, except obtain some advantage blinded”{" "}
+            “{singelSlug.author.bio}
           </p>
           <span className="text-xl text-white font-Poppins capitalize text-center">
-            By Michael Delwell
+            By {singelSlug.author.name}
           </span>
         </div>
       </div>
       {/* desc and image */}
-      <div className="flex flex-col gap-3 pt-5 items-center md:flex-row md:items-start md:justify-center md:flex-wrap">
+      {/* <div className="flex flex-col gap-3 pt-5 items-center md:flex-row md:items-start md:justify-center md:flex-wrap">
         <div className=" md:w-[40%]">
           <Image
             src={image1}
@@ -117,7 +110,7 @@ function DescSingleBlog() {
             infancy.
           </p>
         </div>
-      </div>
+      </div> */}
       {/* social */}
       <div className="pt-6 ">
         <div className="px-4 py-6 bg-slate-200 rounded-lg flex flex-col gap-3 items-center md:flex-row md:gap-1 ">

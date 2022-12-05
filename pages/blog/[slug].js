@@ -28,21 +28,29 @@ import Footer from "../../components/Footer";
 import HeaderSingelBlog from "../../components/parts/HeaderSingelBlog";
 import DescSingleBlog from "../../components/parts/DescSingleBlog";
 import RelatedTous from "../../components/parts/RelatedTous";
-
-function SingelBlog() {
+import { baseUrl, fetchApi } from "../../utils/ferchApi";
+ import Loding from "../../components/helper/Loding.jsx"
+function SingelBlog({singelSlug}) {
   const {isClicked} =useStateContext()
+  console.log('====================================');
+  console.log(singelSlug);
+  console.log('====================================');
+  if(!singelSlug){
+    return <Loding/>
+  }
   return (
     <div>
       <NavBar />
       <HeaderParts typeList={"single tour"} />
        
-       <HeaderSingelBlog/>   
+       <HeaderSingelBlog singelSlug={singelSlug} />   
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         {/* left content side */}
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
          
-          <DescSingleBlog />
-          <Comments/>
+          <DescSingleBlog singelSlug={singelSlug} />
+          <Comments singelSlugComments={singelSlug.comments} singelSlug={singelSlug}  />
+          
           <AddRevews/> 
         
         </div>
@@ -60,3 +68,22 @@ function SingelBlog() {
 }
 
 export default SingelBlog;
+export async function getStaticPaths() {
+  const listBlog = await fetchApi(`${baseUrl}/posts`);
+  return {
+    paths: listBlog.data.map((item) => ({
+      params: { slug: item.slug.toString() },
+    })),
+    fallback: false,
+  };
+}
+export async function getStaticProps({params}) {
+  const singelSlug = await fetchApi(`${baseUrl}/posts/${params.slug}`);
+  
+  return {
+    props: {
+      singelSlug: singelSlug.data,
+    },
+    revalidate: 10,
+  };
+}

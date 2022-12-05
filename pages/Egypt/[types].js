@@ -14,40 +14,49 @@ import FormInquire from "../../components/helper/FormInquire";
 import FandQ from "../../components/FandQ";
 import BottomInquire from "../../components/helper/BottomInquire";
 import { useStateContext } from "../../contexts/ContextProvider";
+import { baseUrl, fetchApi } from "../../utils/ferchApi";
+import Head from "next/head";
+import Loding from "../../components/helper/Loding"
+const array = ["egypt-tour-packages", "river-nile-cruises"];
 
 const options1 = [
   { value: "price", label: "price" },
   { value: "days ", label: "days" },
-  
 ];
-function PackageList() {
+function PackageList(typestour ) {
+  console.log(typestour.typestour)
   const { setdesplauGrid, desplaygrid } = useStateContext();
   const [valueState, setValueState] = useState("");
-  const [tourList, setTourList] = useState(null);
-  const [typeList, setTypeList] = useState(null);
+  const [selectedTyps, setselectedTyps] = useState(null);
   const router = useRouter();
   const { types } = router.query;
   useEffect(() => {
-    if (!types) {
-      return;
-    }
-    let alltour = ToursOfTyps.find((tour) => tour.type === types);
-    // const { listTours ,type } = alltour;
-    setTourList(alltour.listTours);
-    setTypeList(alltour.type);
-  }, [types]);
+  if (!typestour) return ;
+
+    let alltour = typestour.typestour.data.find((tour) => tour.slug == types);
+    setselectedTyps(alltour);
+  }, [types ]);
 
   const handler = (event) => {
     const value = event.value;
     setValueState(value);
   };
-  if (!types) return null;
+
+  if (!types) return <Loding/> ;
+  if (!selectedTyps) return <Loding/> ;
 
   return (
     <div className="">
+      <Head>
+        <meta
+          name="description"
+          content={selectedTyps.meta_description}
+        />
+        <title>{selectedTyps.meta_title} </title>
+      </Head>
       <BottomInquire />
       <NavBar />
-      <HeaderParts typeList={typeList} />
+      <HeaderParts typeList={selectedTyps.title} />
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
           {/* left side */}
@@ -82,13 +91,12 @@ function PackageList() {
                   defaultValue={options1[0].value}
                   options={options1}
                   onChange={handler}
-                  
                 />
               </div>
             </div>
           </div>
           {/* tour list */}
-          <CardTorList valueState={valueState} packages={tourList} />
+          <CardTorList valueState={valueState} packages={typestour.tours} />
         </div>
         <div className="  w-full col-start-1 col-end-6  md:col-start-5 md:col-end-7   ">
           <FormInquire />
@@ -102,3 +110,22 @@ function PackageList() {
 }
 
 export default PackageList;
+export async function getStaticPaths() {
+  return {
+    paths: array.map((item) => ({
+      params: { types: item.toString() },
+    })),
+    fallback: false,
+  };
+}
+export async function getStaticProps() {
+  const typesall = await fetchApi(`${baseUrl}/types`);
+  const tours = await fetchApi(`${baseUrl}/tours`);
+  return {
+    props: {
+      typestour: typesall,
+      tours: tours.data,
+    },
+    revalidate: 10,
+  };
+}

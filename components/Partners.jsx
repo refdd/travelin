@@ -19,10 +19,10 @@ function Partners({partners}) {
             key={item.id}
            className='object-contain mr-[15px]'
            loader={() =>{
-              return `https://api.nilecruisez.com/${item.icon}`;
+              return `${item.icon}`;
             }
            }
-           src={`https://api.nilecruisez.com/${item.icon}`}
+           src={`${item.icon}`}
            width={100}
            height={100}
            layout={"intrinsic"}

@@ -15,13 +15,14 @@ import FandQ from "../components/FandQ";
 import BottomInquire from "../components/helper/BottomInquire";
 import { useStateContext } from "../contexts/ContextProvider";
 import CardBlogList from "../components/cards/CardBlogList";
+import { baseUrl, fetchApi } from "../utils/ferchApi";
 
 const options1 = [
   { value: "price", label: "price" },
   { value: "days ", label: "days" },
   
 ];
-function BlogList() {
+function BlogList({listBlog}) {
   const { setdesplauGrid, desplaygrid } = useStateContext();
   const [valueState, setValueState] = useState("");
   const [tourList, setTourList] = useState(null);
@@ -38,12 +39,11 @@ function BlogList() {
     const value = event.value;
     setValueState(value);
   };
-  
   return (
     <div className="">
       <BottomInquire />
       <NavBar />
-      <HeaderParts typeList="blog" />
+      <HeaderParts typeList="Egypt Travel Blog" />
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
           {/* left side */}
@@ -84,7 +84,7 @@ function BlogList() {
             </div>
           </div>
           {/* tour list */}
-          <CardBlogList valueState={valueState} packages={blogsData} />
+          <CardBlogList valueState={valueState} packages={listBlog} />
         </div>
         <div className="  w-full col-start-1 col-end-6  md:col-start-5 md:col-end-7   ">
           <FormInquire />
@@ -98,3 +98,15 @@ function BlogList() {
 }
 
 export default BlogList;
+
+
+export  async  function getStaticProps(){
+  const listBlog = await fetchApi(`${baseUrl}/posts`);
+ 
+  return{
+    props:{
+      listBlog:listBlog.data,
+    },
+    revalidate: 10,
+  }
+ }

@@ -8,7 +8,7 @@ import HeaderSection from "./helper/HeaderSection";
 import OfferPackageCard from "./OfferPackageCard";
 import  BlogCard from "../components/BlogCard"
 import Link from "next/link";
-function MultiPackage({ offerSection , Blogs }) {
+function MultiPackage({ offerSection , Blogs , blogsList }) {
   const rowRef = useRef(null);
   const [isMoved, setIsMoved] = useState(false);
   const handleClick = (direction) => {
@@ -50,7 +50,7 @@ function MultiPackage({ offerSection , Blogs }) {
           ref={rowRef}
           className="flex  items-center gap-5 overflow-x-scroll scrollbar-hide sspace-x-2.5 pl-4"
         >
-        { !offerSection ? <BlogCard/>: <OfferPackageCard/>}      
+        { !offerSection ? <BlogCard blogsList={blogsList}/>: <OfferPackageCard/>}      
         </div>
         <BsFillArrowRightCircleFill
           className=" absolute top-0 bottom-0   right-2 z-40 m-auto h-9 w-9
@@ -60,7 +60,7 @@ function MultiPackage({ offerSection , Blogs }) {
       </div>
       <div className="  group w-full py-3  md:pt-1  md:pb-3 flex justify-center items-center  ">
         {!offerSection ? 
-      <Link href={`/BlogList`}>
+      <Link href={`/egypt-travel-blog`}>
       <button className=" wrapper w-[50%] md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
                <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
                 read more
