@@ -58,7 +58,7 @@ if(valueState == "price"){
      <div className={desplaygrid ? "flex flex-col gap-2 justify-center items-center ":
         "flex flex-col gap-2 justify-center items-center md:justify md:items-start md:flex-1 " 
     }>
-      <Link href={`/tour/${item.id}`}>
+      <Link href={`/tour/${item.slug}`}>
       <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer "> {item.title}</h2>
       </Link>
     <div className=" flex gap-3 flex-col md:flex-row items-center">

@@ -32,14 +32,13 @@ function Test() {
   return (
     <div>
       <NavBar />
-      <HeaderParts typeList={"contact us"} />
+      <HeaderParts typeList={"Thank you"} />
       <div className="flex flex-col justify-center items-center gap-3">
         <h1 className="text-[#17233e] font-Poppins text-3xl capitalize text-center font-bold">
           Thank you
         </h1>
         <p className="text-[#777] text-lg font-Poppins capitalize text-center">
-          Sagittis posuere id nam quis vestibulum vestibulum a facilisi at elit
-          hendrerit scelerisque sodales nam dis orci.
+        We received your Inquiry and will contact you shortly on your email (mohamed@gmail.com). If you didn't receive a replay withing the next 24H please check your spam, Junk.
         </p>
       </div>
     

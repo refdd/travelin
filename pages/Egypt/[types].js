@@ -23,17 +23,19 @@ const options1 = [
   { value: "price", label: "price" },
   { value: "days ", label: "days" },
 ];
-function PackageList(typestour ) {
-  console.log(typestour.typestour)
+function PackageList({typesall , tours } ) {
   const { setdesplauGrid, desplaygrid } = useStateContext();
   const [valueState, setValueState] = useState("");
   const [selectedTyps, setselectedTyps] = useState(null);
+  const [listTour, setlistTour] = useState(null);
   const router = useRouter();
   const { types } = router.query;
   useEffect(() => {
-  if (!typestour) return ;
+  if (!typesall) return ;
 
-    let alltour = typestour.typestour.data.find((tour) => tour.slug == types);
+    let alltour = typesall.find((tour) => tour.slug == types);
+    let listTour = tours.filter((tour) => tour.type_id == alltour.id);
+    setlistTour(listTour)
     setselectedTyps(alltour);
   }, [types ]);
 
@@ -41,6 +43,7 @@ function PackageList(typestour ) {
     const value = event.value;
     setValueState(value);
   };
+  console.log( listTour )
 
   if (!types) return <Loding/> ;
   if (!selectedTyps) return <Loding/> ;
@@ -96,7 +99,7 @@ function PackageList(typestour ) {
             </div>
           </div>
           {/* tour list */}
-          <CardTorList valueState={valueState} packages={typestour.tours} />
+          <CardTorList valueState={valueState} packages={listTour} />
         </div>
         <div className="  w-full col-start-1 col-end-6  md:col-start-5 md:col-end-7   ">
           <FormInquire />
@@ -123,7 +126,7 @@ export async function getStaticProps() {
   const tours = await fetchApi(`${baseUrl}/tours`);
   return {
     props: {
-      typestour: typesall,
+      typesall: typesall.data,
       tours: tours.data,
     },
     revalidate: 10,

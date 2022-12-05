@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "../public/assets/images/bg4.jpg";
+import bg from "../public/assets/images/bg4.webp";
 import { AiFillPlayCircle, AiFillCloseCircle } from "react-icons/ai";
 import { useState } from "react";
 import Partners from "./Partners";

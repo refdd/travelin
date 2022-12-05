@@ -1,5 +1,5 @@
 import React from 'react'
-import Background from "../public/assets/images/shape4.png"
+import Background from "../public/assets/images/shape4.webp"
 import {BiDirections ,BiLocationPlus } from 'react-icons/bi'
 import {AiOutlineCompass , AiTwotoneFlag  } from 'react-icons/ai'
 import HeaderSection from './helper/HeaderSection'

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import HeaderSection from "./helper/HeaderSection";
 import testimonialImage from "../public/assets/images/travel2.png"
-import bg from "../public/assets/images/testimonial.png";
+import bg from "../public/assets/images/testimonial.webp";
 import { AiOutlineRight ,AiOutlineLeft } from "react-icons/ai"
 import {FaQuoteRight } from "react-icons/fa"
  import {testimonialsData} from "../data/dammyData"

@@ -17,15 +17,15 @@ import Explore from "../../components/Explore";
 import FandQ from "../../components/FandQ";
 import Footer from "../../components/Footer";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
-const array = ["1" , "2"]
 function SingelTour({singletour}) {
-  
+  console.log(singletour)
   const {isClicked} =useStateContext()
   return (
     <div>
       <BottomInquire />
       <NavBar />
-      <HeaderParts typeList={singletour.title} />
+      <p className=' font-Poppins capitalize text-lg text-center md:text-left text-[#029e9d]   md:my-3 md:ml-2'><span className='' >Home</span> | {singletour.title } </p>
+
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         {/* left content side */}
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
@@ -53,6 +53,9 @@ function SingelTour({singletour}) {
         </div>
         {/* right form iqurire */}
         <div className="  w-full col-start-1 col-end-6  md:col-start-5 md:col-end-7   ">
+          <div className=" bg-[#029e9d] py-6 w-[90%] rounded-xl mx-auto cursor-pointer hover:opacity-90">
+          <p  className="capitalize  text-2xl text-center text-[#17233e] font-Poppins font-medium  " >start from <span className="text-[#fff]  "> $ {singletour.start_price } </span> </p>
+          </div>
           <FormInquire />
         </div>
       </div>
@@ -65,18 +68,19 @@ function SingelTour({singletour}) {
 
 export default SingelTour;
 export async function getStaticPaths() {
-  return { 
-    paths: array.map(item =>({
-      params :{id : item.toString()}
+  const listBlog = await fetchApi(`${baseUrl}/tours`);
+  return {
+    paths: listBlog.data.map((item) => ({
+      params: { slug: item.slug.toString() },
     })),
-    fallback: false
-  }
+    fallback: false,
+  };
 }
-export  async  function getStaticProps(params){
-  const singletour = await fetchApi(`${baseUrl}/tours/1`);
+export  async  function getStaticProps({params}){
+  const singletour = await fetchApi(`${baseUrl}/tours/${params.slug}`);
   return{
     props:{
-      singletour:singletour.data,
+      singletour:singletour.data
     },
     revalidate: 10,
   }

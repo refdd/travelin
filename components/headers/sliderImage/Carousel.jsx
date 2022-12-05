@@ -42,17 +42,18 @@ function Carousel({gallery}) {
     <Slider {...settings}>
       { gallery && gallery.map(item =>{
         return (
-          <div key={item.id} className='imageSlider justify-center items-center'>
+          <div key={item.id} className='imageSlider pl-3 justify-center items-center'>
        <Image
         loader={() =>{
           return `${item.image}`;
         }
        }
        src={`${item.image}`}
-       width={500}  
-       height={500}  
+       width={800}  
+       height={600}  
        className="rounded-lg"
        layout='intrinsic'
+       
        />
       </div>
         )
