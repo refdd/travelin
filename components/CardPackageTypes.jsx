@@ -21,7 +21,7 @@ function CardPackageTypes({packages}) {
     <>
     {ChooseType && ChooseType.map((item , index )=>{
       return(
-        <div key={item.id} className="wrapper h-full min-w-[350px] cursor-pointer  md:min-w-0 md:w-[39%]" >
+        <div key={item.id} className="wrapper h-full min-w-[350px] cursor-pointer  " >
            <Link href={`/tour/${item.slug}`}>
         <div className="relative flex flex-col gap-3  bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
           {/* image and days  */}
@@ -34,8 +34,8 @@ function CardPackageTypes({packages}) {
              }
                 src={item?.image}
                 alt="Picture of the author"
-                width={500}
-                height={500}
+                width={400}
+                height={300}
                 layout={"intrinsic"}
                 loading="lazy"
                 className=" transition duration-200 ease-out  md:hover:scale-105"

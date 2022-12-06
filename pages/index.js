@@ -19,7 +19,6 @@ import { useEffect } from "react";
 export default function Home({ FandQAPI , partners , types , categories , tours , plogList}) {
   const { sectionFAQ ,setSectionFAQ} = useStateContextApi()
   const { displayType ,setDisplayType } = useStateContext() 
-
   useEffect(()=>{
     setSectionFAQ(FandQAPI)
   },[FandQAPI])
