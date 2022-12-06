@@ -5,20 +5,21 @@ import PopularTours from './PopularTours';
 import ResentTours from './ResentTours';
 import TagsBlogs from './TagsBlogs';
 
-function RelatedTous() {
-    const { ToursShow  , setToursShow  } = useStateContext()
+function RelatedTous({relatedTous}) {
+    // const { ToursShow  , setToursShow  } = useStateContext()
     
-   useEffect(()=>{
-    setToursShow( {Popular : true} )
-   },[])
+  //  useEffect(()=>{
+  //   setToursShow( {Popular : true} )
+  //  },[])
   
   return (
     <div >
 
         <BottomToursShow/>
-        {ToursShow.Popular && <PopularTours/> }
-        {ToursShow.Recent && <ResentTours/> }
-        <TagsBlogs/>
+        {/* {ToursShow.Popular && <PopularTours/> } */}
+        {/* {ToursShow.Recent && <ResentTours/> } */}
+        <ResentTours  relatedTous={relatedTous}/> 
+        {/* <TagsBlogs/> */}
      </div>
   )
 }

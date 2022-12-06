@@ -5,7 +5,6 @@ import { BsCalendar3, BsStarFill } from "react-icons/bs";
 import { blogsData } from "../data/dammyData";
 function BlogCard({blogsList}) {
   const [blags,setBlogs ] = useState(null)
-  console.log(blogsList)
  
   return (
     <>

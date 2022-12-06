@@ -47,7 +47,7 @@ export default function Home({ FandQAPI , partners , types , categories , tours 
 
  
       <section className="  pt-11  md:pt-16  bg-[#e6eef5]  ">
-        <MultiPackage offerSection={true} />
+        <MultiPackage offerSection={true} tours={tours} />
       </section>
       <PerfectTour />
 
@@ -61,7 +61,7 @@ export default function Home({ FandQAPI , partners , types , categories , tours 
             "Best Places to visit, Things to do, Food to Eat and all what you need to know before visiting Egypt"
           }
         />
-        <MultiPackage blogsList= {plogList} Blogs={true} />
+        <MultiPackage blogsList= {plogList} Blogs={true}  />
       </section>
 
       <Explore partners={partners} />

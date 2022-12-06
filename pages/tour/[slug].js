@@ -25,15 +25,20 @@ function SingelTour({singletour}) {
       <BottomInquire />
       <NavBar />
       <p className=' font-Poppins capitalize text-lg text-center md:text-left text-[#029e9d]   md:my-3 md:ml-2'><span className='' >Home</span> | {singletour.title } </p>
-
+      
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         {/* left content side */}
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
-          <HeaderDestination
+         <div className=" flex flex-col gap-3 md:flex-row md:justify-between">
+         <HeaderDestination
             titel={singletour.title}
             location={`Visited Cities : ${singletour.destinations} `}
             reviews={"(1,186 Reviews)"}
           />
+          <div className=" flex justify-end items-center rounded-xl  cursor-pointer hover:opacity-90">
+          <p  className="capitalize  text-xl text-right text-[#029e9d] font-Poppins font-medium  " >start from <span className="text-gray-500"> $ {singletour.start_price } </span> </p>
+          </div>
+         </div>
           <Carousel gallery={singletour.gallery} />
           <TabsTours/>
           <div className="container mx-auto pt-10" >
@@ -53,9 +58,6 @@ function SingelTour({singletour}) {
         </div>
         {/* right form iqurire */}
         <div className="  w-full col-start-1 col-end-6  md:col-start-5 md:col-end-7   ">
-          <div className=" bg-[#029e9d] py-6 w-[90%] rounded-xl mx-auto cursor-pointer hover:opacity-90">
-          <p  className="capitalize  text-2xl text-center text-[#17233e] font-Poppins font-medium  " >start from <span className="text-[#fff]  "> $ {singletour.start_price } </span> </p>
-          </div>
           <FormInquire />
         </div>
       </div>

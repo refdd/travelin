@@ -4,13 +4,15 @@ import React, { useEffect, useState } from "react";
 import { BsCalendar3, BsStarFill } from "react-icons/bs";
 import { useStateContext } from "../contexts/ContextProvider";
 import { PackageS } from "../data/dammyData";
-function OfferPackageCard() {
+function OfferPackageCard({tours}) {
+  console.log(tours)
+
   const { displayType  } = useStateContext() 
   const [ChooseType,setChooseType ] = useState(null)
   const [offer,setOffer ] = useState(null)
   useEffect(() =>{
-    
-    const displayPackage = PackageS.filter((itme) => itme.offer !== 0 );
+    //  if(!descount) return
+    const displayPackage = tours.filter((itme) => itme.offer !== 0 );
  
      const offerdiscount = (discounnt , price) =>{
        return  parseInt(price)  * discounnt +  parseInt(price)     

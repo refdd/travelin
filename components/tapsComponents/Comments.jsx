@@ -13,7 +13,6 @@ function Comments({singelSlugComments , singelSlug}) {
   if(!singelSlugComments){
     return <Loding/>
   }
-  console.log(singelSlugComments)
   return (
     <div className="container mx-auto pt-10">
       <h4 className="text-2xl text-[#17233e] font-Poppins capitalize font-bold py-4  border-b ">

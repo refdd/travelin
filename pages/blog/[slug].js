@@ -33,7 +33,7 @@ import { baseUrl, fetchApi } from "../../utils/ferchApi";
 function SingelBlog({singelSlug}) {
   const {isClicked} =useStateContext()
   console.log('====================================');
-  console.log(singelSlug);
+  // console.log(singelSlug.tours );
   console.log('====================================');
   if(!singelSlug){
     return <Loding/>
@@ -57,7 +57,7 @@ function SingelBlog({singelSlug}) {
         {/* right form iqurire */}
         <div className="w-full col-start-1 col-end-6  md:col-start-5 md:col-end-7   ">
           
-          <RelatedTous />
+          <RelatedTous relatedTous={singelSlug.tours } />
         </div>
       </div>
       <Explore />

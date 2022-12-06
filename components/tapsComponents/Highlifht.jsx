@@ -12,7 +12,10 @@ function Highlifht({highlightData}) {
        <div className='flex flex-col gap-2 '>
         <h1 className='text-3xl text-[#17233e] font-semibold  font-Poppins capitalize  my-3 md:text-4xl '>Description</h1>
         <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'></p>
-        {highlightData.description}
+        
+        <div dangerouslySetInnerHTML={{__html:highlightData.description}} />
+
+        
             <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'>The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts 
                 of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
        </div>
@@ -51,7 +54,9 @@ function Highlifht({highlightData}) {
                   <ul className="felx flex-col gap-5 text-[#777]">
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}
-                      <BsCheckLg />{highlightData.included}
+                      <BsCheckLg />
+        <div dangerouslySetInnerHTML={{__html:highlightData.included}} />
+
                     </li>
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}

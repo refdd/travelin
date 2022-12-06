@@ -1,11 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import imageblog from "../../public/assets/images/bg4.jpg";
+import imageblog from "../../public/assets/images/bg4.webp";
 import { AiFillCloseCircle, AiFillPlayCircle } from "react-icons/ai";
 import { useState } from "react";
 import { FaFacebook, FaGoogle, FaLinkedin, FaQuoteLeft, FaTwitter } from "react-icons/fa";
-import image1 from "../../public/assets/images/trending5.jpg";
-import image2 from "../../public/assets/images/hotels.jpg";
 function DescSingleBlog({singelSlug}) {
   const [showvideo, setShowvideo] = useState(false);
 
