@@ -26,7 +26,7 @@ function CardPackageTypes({packages}) {
         <div className="relative flex flex-col gap-3  bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
           {/* image and days  */}
           <div className=" relative w-full first-letter:first-line:flex flex-col justify-center items-center  ">
-            <div className="relative  h-[300px]  cursor-pointer overflow-hidden">
+            <div className="relative  h-[267px]  cursor-pointer overflow-hidden">
               <Image
                loader={() =>{
                 return `${item.image}`;
@@ -42,7 +42,7 @@ function CardPackageTypes({packages}) {
               />
             </div>
             {/* layout */}
-            <div className=" absolute top-0 left-0 bg-[#000000] opacity-[0.4] w-full h-full"></div>
+            {/* <div className=" absolute top-0 left-0 bg-[#000000] opacity-[0.4] w-full h-full"></div> */}
             {/* days  */}
             <div className="absolute bottom-[-28px] right-3 flex justify-end">
               <div className=" flex justify-center gap-2 items-center bg-[#029e9d] p-3 px-9 rounded-xl">
