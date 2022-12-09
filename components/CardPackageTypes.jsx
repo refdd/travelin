@@ -17,7 +17,7 @@ if(!packagetype) return <Loding/>
     {packagetype && packagetype.map((item)=>{
       return(
         <div key={item.id} className="wrapper h-full min-w-[350px] cursor-pointer  " >
-           <Link href={`/tour/${item.slug}`}>
+           <Link href={`/egypt-tours/${item.slug}`}>
         <div className="relative flex flex-col gap-3  bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
           {/* image and days  */}
           <div className=" relative w-full first-letter:first-line:flex flex-col justify-center items-center  ">
