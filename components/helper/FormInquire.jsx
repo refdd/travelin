@@ -92,7 +92,6 @@ function FormInquire() {
 //  };
 
  if(data){
-  console.log(data)
   router.push('/Test')
  }
   return (

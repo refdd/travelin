@@ -28,7 +28,6 @@ function Test() {
         formState: { errors },
       } = useForm();
       const [data, setData] = useState("");
-      console.log(data);
   return (
     <div>
       <NavBar />

@@ -43,7 +43,6 @@ function PackageList({typesall , tours } ) {
     const value = event.value;
     setValueState(value);
   };
-  console.log( listTour )
 
   if (!types) return <Loding/> ;
   if (!selectedTyps) return <Loding/> ;

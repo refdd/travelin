@@ -30,16 +30,31 @@ import DescSingleBlog from "../../components/parts/DescSingleBlog";
 import RelatedTous from "../../components/parts/RelatedTous";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
  import Loding from "../../components/helper/Loding.jsx"
+ import StructuredData from "../../components/dataStructured/StructuredData"
 function SingelBlog({singelSlug}) {
   const {isClicked} =useStateContext()
-  console.log('====================================');
-  // console.log(singelSlug.tours );
-  console.log('====================================');
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: "post.title",
+    description: "post.description",
+    author: [
+      {
+        '@type': 'Person',
+        name: "post.author",
+      },
+    ],
+    image: "post.imageUrl",
+    datePublished: "post.publishedAt",
+  };
+
   if(!singelSlug){
     return <Loding/>
   }
   return (
     <div>
+      <StructuredData data={structuredData} />
+
       <NavBar />
       <HeaderParts typeList={"single tour"} />
        

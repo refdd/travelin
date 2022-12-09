@@ -5,13 +5,11 @@ import Select from 'react-select'
 function BookSearch() {
     const {register , handleSubmit , control} = useForm();
     const [data , setData] = useState("") ;
-    console.log(data)
     const options = [
       { value: 'Cruise', label: 'Nile Cruise' },
       { value: 'Travel ', label: 'Travel Package' },
      
     ]
-    console.log(data)
   return (
     <form onSubmit={handleSubmit((data)  => setData( JSON.stringify(data)) ) }
      className="flex flex-col gap-4 w-full h-full md:gap-6  ">

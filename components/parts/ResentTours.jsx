@@ -4,7 +4,6 @@ import image2 from "../../public/assets/images/trending5.jpg"
 import image3 from "../../public/assets/images/hotels.jpg"
 import Image from 'next/image'
 function ResentTours({relatedTous}) {
-  console.log(relatedTous)
   return (
     <div className='container mx-auto pt-7 '>
       {relatedTous.map(item =>(

@@ -19,7 +19,6 @@ import Footer from "../../components/Footer";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Testimonails from "../../components/Testimonails";
 function SingelTour({singletour}) {
-  console.log(singletour)
   const {isClicked} =useStateContext()
   return (
     <div>

@@ -27,7 +27,6 @@ const data = {
     tabFocus: true
   };
 function Iternary({iternaryData}) {
-// console.log(iternaryData)
   return (
 <>
 {iternaryData.map(item=>(

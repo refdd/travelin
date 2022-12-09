@@ -32,10 +32,7 @@ export default function Home({
     setSectionFAQ(FandQAPI);
   }, [FandQAPI]);
 
-  //  console.log(plogList )
-  //  console.log("+++++++++++++" )
-  //  console.log( categories )
-  console.log(categories)
+
   return (
     <div>
       <NavBar />

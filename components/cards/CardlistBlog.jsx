@@ -20,7 +20,6 @@ function CardlistBlog({ packages, valueState }) {
       setPackageBeforeSort(pacdageSortBy);
     }
   }, [valueState]);
-  console.log(packages)
   return (
     <>
       {gackageBeforeSort &&

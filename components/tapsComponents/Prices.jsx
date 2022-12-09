@@ -5,9 +5,7 @@ import { FaHotel } from "react-icons/fa";
 import { BiStar, BiDollarCircle } from "react-icons/bi";
 import NotsPriceSection from "./NotsPriceSection";
 function Prices({notsPrise , template_prices}) {
-  console.log('====================================');
-  console.log(template_prices);
-  console.log('====================================');
+
   const getNumberStar = num => {
    
     for (let i = 0; i < num; i++) {

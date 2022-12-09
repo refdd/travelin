@@ -9,7 +9,6 @@ function AddRevews() {
     formState: { errors },
   } = useForm();
   const [data, setData] = useState("");
-  console.log(data);
   return (
     <div className="container mx-auto pt-10">
       <h4 className="text-2xl text-[#17233e] font-Poppins capitalize font-bold py-4 ">

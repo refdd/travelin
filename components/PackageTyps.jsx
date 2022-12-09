@@ -20,12 +20,10 @@ function PackageTyps({type_id ,  Allpackage   }) {
   useEffect(()=>{
     
     
-      console.log("reafat")
    const tourtype= Allpackage.filter(item =>  item.type_id == type_id   )
    settourwithType(tourtype)
   },[displayType.id])
 
-  console.log(tourwithType ,displayType )
 
   const rowRef = useRef(null);
   const [isMoved, setIsMoved] = useState(false);
