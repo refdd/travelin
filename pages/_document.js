@@ -11,8 +11,6 @@ const structuredData = {
     ratingValue: "5",
     reviewCount: "745"
   },
-  datePublished: "post.publishedAt",
-  
 };
 function MyDocument() {
   
