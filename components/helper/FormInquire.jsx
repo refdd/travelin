@@ -80,6 +80,17 @@ function FormInquire() {
 
   const [data, setData] = useState("");
   const router = useRouter()
+//   const onSubmit = data => {
+//     axios
+//      .post(
+//          'http://localhost:8000/tran',
+//          data,
+//          { headers: { 'Content-Type': 'application/json' }}
+//       )
+//      .then(response => {console.log(response.data)})
+//      .catch(error => {console.log(error.data)});
+//  };
+
  if(data){
   console.log(data)
   router.push('/Test')

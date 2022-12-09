@@ -1,15 +1,32 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
-import PackageCard from "./PackageCard";
-import HeaderSection from "./helper/HeaderSection";
-import OfferPackageCard from "./OfferPackageCard";
-import  BlogCard from "../components/BlogCard"
-import CardPackageTypes from "./CardPackageTypes";
 import Link from "next/link";
-function    PackageTyps({packages , type}) {
+import CardPackageTypes from "../components/CardPackageTypes"
+import {useStateContext} from "../contexts/ContextProvider"
+
+function PackageTyps({type_id ,  Allpackage   }) {
+  const [tourwithType ,settourwithType ]= useState(null)
+  const {  displayType,setDisplayType,} = useStateContext()
+  // const [ChooseType,setChooseType ] = useState(null)
+  // useEffect(() =>{ 
+  //   const displayPackage = tours.filter(
+  //     (item) =>  item.type_id == 1
+  //   );
+  //   setChooseType(displayPackage)
+  // },[displayType])
+  useEffect(()=>{
+    
+    
+      console.log("reafat")
+   const tourtype= Allpackage.filter(item =>  item.type_id == type_id   )
+   settourwithType(tourtype)
+  },[displayType.id])
+
+  console.log(tourwithType ,displayType )
+
   const rowRef = useRef(null);
   const [isMoved, setIsMoved] = useState(false);
   const handleClick = (direction) => {
@@ -47,7 +64,7 @@ function    PackageTyps({packages , type}) {
           className="flex  items-center gap-5 overflow-x-scroll scrollbar-hide sspace-x-2.5 pl-1"
         >
         {/* {Blogs ? <BlogCard/> : !offerSection ? <PackageCard /> : <OfferPackageCard/>}       */}
-        <CardPackageTypes packages={packages}/>
+        <CardPackageTypes packagetype={tourwithType} displayType={displayType.id}/>
         </div>
         <BsFillArrowRightCircleFill
           className=" absolute top-0 bottom-0   right-2 z-40 m-auto h-9 w-9
@@ -56,7 +73,7 @@ function    PackageTyps({packages , type}) {
         />
       </div>
       <div className="  group w-full pt-10  md:pt-16 flex justify-center items-center  ">
-        <Link href={`/Egypt/${type}`}>
+        <Link href={`/Egypt/${""}`}>
         <button className=" wrapper w-[50%] md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
                  <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
                   See more

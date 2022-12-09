@@ -30,7 +30,7 @@ export const ContextProvider = ({ children }) => {
   const handleClick = (clicked) =>
   setIsClicked({ ...initialState, [clicked]: true });
 
-  const [displayType, setDisplayType] = useState(null);
+  const [displayType, setDisplayType] = useState(0);
   const [desplaygrid, setdesplauGrid] = useState(false);
 
  

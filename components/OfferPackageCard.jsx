@@ -5,7 +5,6 @@ import { BsCalendar3, BsStarFill } from "react-icons/bs";
 import { useStateContext } from "../contexts/ContextProvider";
 import { PackageS } from "../data/dammyData";
 function OfferPackageCard({tours}) {
-  console.log(tours)
 
   const { displayType  } = useStateContext() 
   const [ChooseType,setChooseType ] = useState(null)

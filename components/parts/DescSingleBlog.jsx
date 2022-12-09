@@ -11,9 +11,11 @@ function DescSingleBlog({singelSlug}) {
     <div className="container mx-auto pt-4">
         {/* decs and vido */}
       <div className="flex flex-col gap-4">
-        <p className="text-[#777] text-lg font-Poppins capitalizes text-center md:text-left  md:w-[80%] md:mx-auto  ">
+        {/* <p className="text-[#777] text-lg font-Poppins capitalizes text-center md:text-left  md:w-[80%] md:mx-auto  ">
          {singelSlug.description}
-        </p>
+        </p> */}
+          <div  className="text-[#777] text-xl"  dangerouslySetInnerHTML={{__html:singelSlug.description}} />
+
         {/* <div className="relative flex justify-center items-center">
           <Image
             src={imageblog}

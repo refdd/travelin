@@ -11,22 +11,33 @@ import PerfectTour from "../components/PerfectTour";
 import SelectPackagess from "../components/SelectPackagess";
 import PackageTyps from "../components/PackageTyps";
 import Testimonails from "../components/Testimonails";
-import { ToursOfTyps } from "../data/dammyData";
-import {fetchApi,baseUrl}from '../utils/ferchApi'
-import { useStateContext, useStateContextApi } from '../contexts/ContextProvider'
-import { useEffect } from "react";
+import { fetchApi, baseUrl } from "../utils/ferchApi";
+import {
+  useStateContext,
+  useStateContextApi,
+} from "../contexts/ContextProvider";
+import { useEffect, useState } from "react";
 
-export default function Home({ FandQAPI , partners , types , categories , tours , plogList}) {
-  const { sectionFAQ ,setSectionFAQ} = useStateContextApi()
-  const { displayType ,setDisplayType } = useStateContext() 
-  useEffect(()=>{
-    setSectionFAQ(FandQAPI)
-  },[FandQAPI])
-//  console.log(plogList )
-//  console.log("+++++++++++++" )
-//  console.log(types)
+export default function Home({
+  FandQAPI,
+  partners,
+  types,
+  categories,
+  tours,
+  plogList,
+}) {
+  const { sectionFAQ, setSectionFAQ } = useStateContextApi();
+
+  useEffect(() => {
+    setSectionFAQ(FandQAPI);
+  }, [FandQAPI]);
+
+  //  console.log(plogList )
+  //  console.log("+++++++++++++" )
+  //  console.log( categories )
+  console.log(categories)
   return (
-    <div> 
+    <div>
       <NavBar />
       <Header />
       <BookingSearch />
@@ -34,17 +45,17 @@ export default function Home({ FandQAPI , partners , types , categories , tours 
         types.map((item) => (
           <section key={item.id} className=" md:pt-16  bg-[#e6eef5]  ">
             <SelectPackagess
-             sypTypes={categories} 
-            id={item.id} 
-            partOne={item.partOne}
-            partTwo={item.title}
-            decs={item.description}
+              sypTypes={categories}
+              id={item.id}
+              partOne={item.partOne}
+              partTwo={item.title}
+              decs={item.description}
             />
-            <PackageTyps type={item.type} packages={tours} />
+
+            <PackageTyps  Allpackage={tours} type_id={item.id}   />
           </section>
         ))}
 
- 
       <section className="  pt-11  md:pt-16  bg-[#e6eef5]  ">
         <MultiPackage offerSection={true} tours={tours} />
       </section>
@@ -60,33 +71,33 @@ export default function Home({ FandQAPI , partners , types , categories , tours 
             "Best Places to visit, Things to do, Food to Eat and all what you need to know before visiting Egypt"
           }
         />
-        <MultiPackage blogsList= {plogList} Blogs={true}  />
+        <MultiPackage blogsList={plogList} Blogs={true} />
       </section>
 
       <Explore partners={partners} />
-      <FandQ  dataFandQ={FandQAPI}/>
+      <FandQ dataFandQ={FandQAPI} />
 
       <Footer />
     </div>
   );
 }
 
-export  async  function getStaticProps(){
+export async function getStaticProps() {
   const FandQAPI = await fetchApi(`${baseUrl}/faqs`);
   const partners = await fetchApi(`${baseUrl}/partners`);
   const types = await fetchApi(`${baseUrl}/types`);
   const categories = await fetchApi(`${baseUrl}/categories`);
   const tours = await fetchApi(`${baseUrl}/tours`);
   const plogList = await fetchApi(`${baseUrl}/posts`);
-  return{
-    props:{
-      FandQAPI:FandQAPI.data,
-      partners:partners.data,
-      types:types.data,
-      categories:categories.data,
-      tours:tours.data,
-      plogList:plogList.data,
+  return {
+    props: {
+      FandQAPI: FandQAPI.data,
+      partners: partners.data,
+      types: types.data,
+      categories: categories.data,
+      tours: tours.data,
+      plogList: plogList.data,
     },
     revalidate: 10,
-  }
- }
+  };
+}

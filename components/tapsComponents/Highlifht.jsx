@@ -16,8 +16,7 @@ function Highlifht({highlightData}) {
         <div dangerouslySetInnerHTML={{__html:highlightData.description}} />
 
         
-            <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'>The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts 
-                of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+            
        </div>
         {/*  */}
         <div className='pt-4'>
@@ -54,11 +53,10 @@ function Highlifht({highlightData}) {
                   <ul className="felx flex-col gap-5 text-[#777]">
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}
-                      <BsCheckLg />
         <div dangerouslySetInnerHTML={{__html:highlightData.included}} />
 
                     </li>
-                    <li className="flex gap-2 my-3 items-center ">
+                    {/* <li className="flex gap-2 my-3 items-center ">
                       {" "}
                       <BsCheckLg /> 3 Nights Hotel Accomodation
                     </li>
@@ -69,7 +67,7 @@ function Highlifht({highlightData}) {
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}
                       <BsCheckLg /> Entrance Fees
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>
@@ -82,9 +80,10 @@ function Highlifht({highlightData}) {
                   <ul className="felx flex-col gap-5 text-[#777]">
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}
-                      <GrFormClose size={24} color="#777" /> {highlightData.excluded}
+        <div dangerouslySetInnerHTML={{__html:highlightData.excluded}} />
+
                     </li>
-                    <li className="flex gap-2 my-3 items-center ">
+                    {/* <li className="flex gap-2 my-3 items-center ">
                       {" "}
                       <GrFormClose size={24} color="#777" /> 3 Nights Hotel
                       Accomodation
@@ -96,7 +95,7 @@ function Highlifht({highlightData}) {
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}
                       <GrFormClose size={24} color="#777" /> Entrance Fees
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
               </div>

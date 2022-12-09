@@ -2,24 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { BsCalendar3, BsStarFill } from "react-icons/bs";
-import { useStateContext } from "../contexts/ContextProvider";
-function CardPackageTypes({packages}) {
-  const { displayType  } = useStateContext() 
-  const [ChooseType,setChooseType ] = useState(null)
-  useEffect(() =>{
-    
-    const displayPackage = packages.filter(
-      (item) => item.category_id == displayType
-    );
-    
-    setChooseType(displayPackage)
-  },[displayType])
-  if(!packages){
-  return <p> slkjfklsjdl</p>
-  }
+import {useStateContext} from "../contexts/ContextProvider"
+import Loding from "../components/helper/Loding"
+ function CardPackageTypes({packagetype , displayType }) {
+  const [packagecat ,  setpackagecat ] = useState(null)
+//   useEffect(()=>{ 
+//  const tourtype= packagetype.map(item => item.category_id == displayType )
+//  setpackagecat(tourtype)
+// },[])
+if(!packagetype) return <Loding/>
+
   return (
     <>
-    {ChooseType && ChooseType.map((item , index )=>{
+    {packagetype && packagetype.map((item)=>{
       return(
         <div key={item.id} className="wrapper h-full min-w-[350px] cursor-pointer  " >
            <Link href={`/tour/${item.slug}`}>

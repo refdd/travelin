@@ -19,7 +19,7 @@ function SelectPackagess({sypTypes ,id,partOne , partTwo , decs }) {
         const activeElement = sypTypes.find((item , id)=> id === id )
     
         activeElement && setActiveId(id)
-         setDisplayType(id)
+         setDisplayType({ id : id , type : type })
        
       }
   return (
@@ -34,11 +34,11 @@ function SelectPackagess({sypTypes ,id,partOne , partTwo , decs }) {
         {/* tags Section */}
         <div className=' w-full h-[auto] '>
             <ul className='flex flex-wrap justify-center items-center gap-2 my-4 '>
-            {catagorys && catagorys.map(({title , id}) => (
+            {catagorys && catagorys.map(({title , id, type_id}) => (
               <li 
               className={ id === activeId  ?  "p-3 border rounded-xl flex justify-center w-[40%]  md:flex-1 bg-[#029e9d]" :" p-3 border rounded-xl flex justify-center w-[40%] md:flex-1" } 
               key={id}
-              onClick={handleClick(id)}
+              onClick={handleClick(id , type_id )}
               >
                 <button className={id === activeId  ? "text-[#fff]" : ""} > {title}</button>
               </li>
