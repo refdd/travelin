@@ -46,7 +46,6 @@ function PackageList({typesall , tours } ) {
 
   if (!types) return <Loding/> ;
   if (!selectedTyps) return <Loding/> ;
-
   return (
     <div className="">
       <Head>

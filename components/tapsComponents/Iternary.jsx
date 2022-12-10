@@ -38,14 +38,13 @@ function Iternary({iternaryData}) {
           of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
  </div>
  {item.days.map(day => (
- <div className='pt-5'>
+ <div key={day.id} className='pt-5'>
  <Faq data={{ ... data , styles  , 
   rows : [ { title : <h2 className="text-[#17233e] text-lg  py-3 font-Poppins capitalize"> {day.title}</h2> ,
-             content: <p  className="text-[#777] text-lg font-Poppins capitalize ">{day.description}</p>   } ]
+             content: <div dangerouslySetInnerHTML={{__html:day.description}} />   } ]
    }}  config={config} />
  </div>
  ))}
-
 
 </div>
  ))}

@@ -36,7 +36,7 @@ function BlogCard({blogsList}) {
           {/* content  */}
           <div className="flex flex-col gap-3 border-b mx-4 mt-5">
             
-            <Link href={`/blog/${item.id}`}>
+            <Link href={`/blog/${item.slug}`}>
             
             <h2 className="font-Poppins  text-[#212529] text-2xl font-bold">
             {item.title}

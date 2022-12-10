@@ -37,7 +37,7 @@ function CardlistBlog({ packages, valueState }) {
               className={
                 desplaygrid
                   ? "relative rounded-xl overflow-hidden w-full "
-                  : "relative rounded-xl overflow-hidden md:w-[30%] md:h-48  "
+                  : "relative rounded-xl overflow-hidden md:w-[30%] md:h-40  "
               }
             >
               <Image
@@ -47,15 +47,15 @@ function CardlistBlog({ packages, valueState }) {
              }
                 src={item.image}
                 alt="Picture of the author"
-                width={500}
-                height={500}
+                width={400}
+                height={300}
                 layout={"intrinsic"}
                 loading="lazy"
                 objectFit="fill"
                 className=" transition duration-200 ease-out  md:hover:scale-105  "
               />
               {/* layout */}
-              <div className="absolute top-0 left-0 w-full h-full bg-[#00000057]"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-[#00000024]"></div>
             </div>
             {/* content */}
             <div
@@ -80,7 +80,8 @@ function CardlistBlog({ packages, valueState }) {
                   </h2>
                 </Link>
                 <p className="text-[#777]  leading-6 mb-3  text-center md:text-left ">
-                  {item.description.replace(/<[^>]*>?/gm, '').substring(0 , 120 )}
+                  {item.description.replace(/<[^>]*>?/gm, '').substring(0 , 170 )}
+                  
                 </p>
               </div>
               {/* left side */}

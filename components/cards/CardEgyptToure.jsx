@@ -6,33 +6,16 @@ import { AiFillStar } from "react-icons/ai";
 import Link from "next/link";
 import {useStateContext} from "../../contexts/ContextProvider"
 
-function CardList({packages , valueState}) {
-  const [gackageBeforeSort, setPackageBeforeSort ] = useState(null)
+function CardEgyptToure({packages , valueState}) {
 const {desplaygrid , setdesplauGrid} = useStateContext()
-useEffect(()=>{
-  if(!valueState){
-    setPackageBeforeSort(packages)
-   }
-},[packages])
-useEffect(()=>{
-if(valueState == "price"){
-
-  let pacdageSortBy = packages.sort((a , b) => a.price - b.price )
-  setPackageBeforeSort(pacdageSortBy)
-}
-
-} , [  valueState  ])
   return (
     <>
     {
-      gackageBeforeSort && gackageBeforeSort.map((item) =>(
-        <div key={item.id} className={desplaygrid ? "flex flex-col gap-2 w-[90%]  md:w-[45%]   bg-slate-100 p-5 rounded-xl mt-5 "
-          :"flex flex-col md:flex-row gap-2 justify-center md:justify-start items-center w-[92%] mx-auto md:w-[100%]   md:mx-4 bg-slate-100 p-5 rounded-xl mt-5 "
+      packages && packages.map((item) =>(
+        <div key={item.id} className={ "flex flex-col gap-2 w-[90%]  md:w-[30%]   bg-slate-100 p-5 rounded-xl mt-5 "
       }>
     {/* image */}
-    <div className={desplaygrid ?"relative rounded-xl overflow-hidden w-full ":
-      "relative rounded-xl overflow-hidden md:w-[30%] md:h-44  "
-  }>
+    <div className={"relative rounded-xl overflow-hidden w-full "}>
       <Image
        loader={() =>{
         return `${item.image}`;
@@ -51,13 +34,9 @@ if(valueState == "price"){
       <div className="absolute top-0 left-0 w-full h-full bg-[#00000024]"></div>
     </div>
     {/* content */}
-    <div className={desplaygrid ?" flex flex-col gap-2 justify-center   items-center  " :
-      " flex flex-col md:flex-row gap-2 justify-center md:justify-start  items-center md:flex-1 "
-  }>
+    <div className={" flex flex-col gap-2 justify-center   items-center  " }>
       {/* right side */}
-     <div className={desplaygrid ? "flex flex-col gap-2 justify-center items-center ":
-        "flex flex-col gap-2 justify-center items-center md:justify md:items-start md:flex-1 " 
-    }>
+     <div className={"flex flex-col gap-2 justify-center items-center " }>
       <Link href={`/egypt-tours/${item.slug}`}>
       <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer "> {item.title}</h2>
       </Link>
@@ -68,10 +47,9 @@ if(valueState == "price"){
         <p className="text-[#029e9d] text-center md:text-left text-[16px] font-Poppins "> {item.overview}</p>
      </div>
      {/* left side */}
-    <div className={desplaygrid ? "flex flex-col gap-2 justify-center items-center md:flex-row md:flex-wrap ":
-        "flex flex-col gap-2 justify-center items-center  md:justify-end md:items-end"
+    <div className={ "flex flex-col gap-2 justify-center items-center md:flex-row md:flex-wrap "
   }>
-    <div className={desplaygrid ? "flex gap-2 w-full justify-center items-center md:justify-end md:w-[40%] " : "flex gap-2 w-full justify-center items-center md:justify-end "}>
+    <div className={ "flex gap-2 w-full justify-center items-center md:justify-end md:w-[40%] " }>
         <AiFillStar size={24} color="#ffc107"/>
         <AiFillStar size={24} color="#ffc107"/>
         <AiFillStar size={24} color="#ffc107"/>
@@ -79,9 +57,9 @@ if(valueState == "price"){
         <AiFillStar size={24} color="#ffc107"/>
         </div>
         <p className="text-right text-lg text-[#777] font-Poppins " >200 review</p>
-        <div className={desplaygrid ? "flex gap-3  md:flex-row" : "flex gap-3  md:flex-col"}>
+        <div className={ "flex gap-3  md:flex-row" }>
         <span className="text-[#777] font-Poppins text-lg md:text-right  "> Start from</span>
-        <h4 className="text-right font-mono font-bold text-xl"> $ {item.start_price  - item.start_price * item.discount / 100   }</h4>
+        <h4 className="text-right font-mono font-bold text-xl"> $ {item. start_price}</h4>
         </div>
         <p className="text-right text-sm font-Poppins capitalize  text-[#029e9d]">Per Person</p>
         <Link href={`/egypt-tours/${item.slug}`}>
@@ -100,4 +78,4 @@ if(valueState == "price"){
   );
 }
 
-export default CardList;
+export default CardEgyptToure;

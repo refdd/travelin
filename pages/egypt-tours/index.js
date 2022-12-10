@@ -17,6 +17,7 @@ import CardList from "../../components/cards/CardList";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import CardTorList from "../../components/cards/CardTorList";
 import Head from "next/head";
+import ListEgyptTour from "../../components/cards/ListEgyptTour";
 
 function Destination({tours}) {
   return (
@@ -45,7 +46,7 @@ function Destination({tours}) {
             </p>
            
           </div>
-     <CardTorList valueState={"valueState"} packages={tours} />
+     <ListEgyptTour valueState={"valueState"} packages={tours} />
       <Explore />
       <FandQ />
 

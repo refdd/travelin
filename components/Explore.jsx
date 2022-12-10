@@ -3,6 +3,7 @@ import bg from "../public/assets/images/bg4.webp";
 import { AiFillPlayCircle, AiFillCloseCircle } from "react-icons/ai";
 import { useState } from "react";
 import Partners from "./Partners";
+import Link from "next/link";
 function Explore({partners}) {
 
   const [showvideo, setShowvideo] = useState(false);
@@ -39,6 +40,8 @@ function Explore({partners}) {
                 of Egypt between Aswan and Luxor. End your tour with a relaxing
                 time on Hurghada beaches in the Red Sea.
               </p>
+              <Link href={"/egypt-tours/egypt-vacation-package"}>
+              
               <div className="  group flex justify-center items-center  md:justify-start ">
                 <button
                   style={{ background: "#17233e" }}
@@ -48,6 +51,7 @@ function Explore({partners}) {
                   read more
                 </button>
               </div>
+              </Link>
             </div>
 
             {/*vido popup   */}

@@ -9,12 +9,11 @@ import NavBar from "../../components/NavBar";
 import { BsCheckLg } from "react-icons/bs";
 import { GrFormClose } from "react-icons/gr";
 import FormInquire from "../../components/helper/FormInquire";
-import { ToursOfTyps } from "../../data/dammyData";
 import SelectPackagess from "../../components/SelectPackagess";
 import PackageTyps from "../../components/PackageTyps";
 import Carousel from "../../components/headers/sliderImage/Carousel";
 
-function Destination() {
+function Destination({tours}) {
   return (
     <div>
       <NavBar />
@@ -112,8 +111,8 @@ function Destination() {
         </div>
       </div>
       {/* package */}
-      {ToursOfTyps &&
-        ToursOfTyps.map((item, id) => (
+      {tours &&
+        tours.map((item, id) => (
           <section key={id} className=" md:pt-16  bg-[#e6eef5]  ">
             <SelectPackagess
               sypTypes={item.supType}
@@ -122,7 +121,7 @@ function Destination() {
               partTwo={item.partTwo}
               decs={item.descHeader}
             />
-            <PackageTyps type={item.type} packages={item.listTours} />
+               <PackageTyps  Allpackage={tours} type_id={item.id}   />
           </section>
         ))}
       <Explore />
@@ -134,3 +133,12 @@ function Destination() {
 }
 
 export default Destination;
+export async function getStaticProps() {
+  const tours = await fetchApi(`${baseUrl}/tours`);
+  return {
+    props: {
+      tours: tours.data,
+    },
+    revalidate: 10,
+  };
+}

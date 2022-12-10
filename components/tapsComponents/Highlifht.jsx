@@ -11,12 +11,8 @@ function Highlifht({highlightData}) {
     <div className='container mx-auto pt-4' >
        <div className='flex flex-col gap-2 '>
         <h1 className='text-3xl text-[#17233e] font-semibold  font-Poppins capitalize  my-3 md:text-4xl '>Description</h1>
-        <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'></p>
-        
-        <div dangerouslySetInnerHTML={{__html:highlightData.description}} />
-
-        
-            
+        <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'></p> 
+        <div dangerouslySetInnerHTML={{__html:highlightData.description}} /> 
        </div>
         {/*  */}
         <div className='pt-4'>
@@ -50,12 +46,13 @@ function Highlifht({highlightData}) {
                   <h6 className="text-2xl text-[#17233e] font-Poppins capitalize  my-3">
                     Price Includes
                   </h6>
-                  <ul className="felx flex-col gap-5 text-[#777]">
+                  {/* <ul className="felx flex-col gap-5 text-[#777]">
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}
-        <div dangerouslySetInnerHTML={{__html:highlightData.included}} />
 
-                    </li>
+                    </li> */}
+        <div dangerouslySetInnerHTML={{__html:highlightData.included}} />
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi repellendus nihil dicta eum eius ratione totam molestiae, \ <br/> \consequuntur placeat, fugiat velit aspernatur et neque, nam voluptatibus quia odio quas eveniet!</p>
                     {/* <li className="flex gap-2 my-3 items-center ">
                       {" "}
                       <BsCheckLg /> 3 Nights Hotel Accomodation
@@ -68,7 +65,7 @@ function Highlifht({highlightData}) {
                       {" "}
                       <BsCheckLg /> Entrance Fees
                     </li> */}
-                  </ul>
+                  {/* </ul> */}
                 </div>
               </div>
               {/* right side */}
@@ -77,12 +74,12 @@ function Highlifht({highlightData}) {
                   <h6 className="text-2xl text-[#17233e] font-Poppins capitalize  my-3">
                     Departure & Return Location
                   </h6>
-                  <ul className="felx flex-col gap-5 text-[#777]">
+                  {/* <ul className="felx flex-col gap-5 text-[#777]">
                     <li className="flex gap-2 my-3 items-center ">
                       {" "}
-        <div dangerouslySetInnerHTML={{__html:highlightData.excluded}} />
 
-                    </li>
+                    </li> */}
+        <div dangerouslySetInnerHTML={{__html:highlightData.excluded}} />
                     {/* <li className="flex gap-2 my-3 items-center ">
                       {" "}
                       <GrFormClose size={24} color="#777" /> 3 Nights Hotel
@@ -96,7 +93,7 @@ function Highlifht({highlightData}) {
                       {" "}
                       <GrFormClose size={24} color="#777" /> Entrance Fees
                     </li> */}
-                  </ul>
+                  {/* </ul> */}
                 </div>
               </div>
             </div>

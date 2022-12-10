@@ -18,10 +18,18 @@ import FandQ from "../../components/FandQ";
 import Footer from "../../components/Footer";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Testimonails from "../../components/Testimonails";
+import Head from "next/head";
 function SingelTour({singletour}) {
   const {isClicked} =useStateContext()
   return (
     <div>
+      <Head>
+        <meta
+          name="description"
+          content={singletour.meta_description}
+        />
+        <title>{singletour.meta_title} </title>
+      </Head>
       <BottomInquire />
       <NavBar />
       <p className=' font-Poppins capitalize text-lg text-center md:text-left text-[#029e9d]   md:my-3 md:ml-2'><span className='' >Home</span> | {singletour.title } </p>
@@ -36,7 +44,7 @@ function SingelTour({singletour}) {
             reviews={"(1,186 Reviews)"}
           />
           <div className=" flex justify-end items-center rounded-xl  cursor-pointer hover:opacity-90">
-          <p  className="capitalize  text-xl text-right text-[#029e9d] font-Poppins font-medium  " >start from <span className="text-gray-500"> $ {singletour.start_price } </span> </p>
+          <p  className="capitalize  text-xl text-right text-[#029e9d] font-Poppins font-medium  " >start from <span className="text-gray-500"> $ {singletour.start_price  - singletour.start_price * singletour.discount / 100   } </span> </p>
           </div>
          </div>
           <Carousel gallery={singletour.gallery} />

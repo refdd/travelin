@@ -16,6 +16,7 @@ import BottomInquire from "../components/helper/BottomInquire";
 import { useStateContext } from "../contexts/ContextProvider";
 import CardBlogList from "../components/cards/CardBlogList";
 import { baseUrl, fetchApi } from "../utils/ferchApi";
+import Head from "next/head";
 
 const options1 = [
   { value: "price", label: "price" },
@@ -41,6 +42,13 @@ function BlogList({listBlog}) {
   };
   return (
     <div className="">
+      <Head>
+        <meta
+          name="description"
+          content={"Meta description: The top Popular Egypt travel blog featuring travel tips, fashion, food and photography from around Egypt. Read before starting adventures. Read more!"}
+        />
+        <title>{"Meta Title : Egypt Travel Blog | Egypt Travel Advisory"} </title>
+      </Head>
       <BottomInquire />
       <NavBar />
       <HeaderParts typeList="Egypt Travel Blog" />

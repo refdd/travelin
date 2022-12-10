@@ -17,6 +17,7 @@ import {
   useStateContextApi,
 } from "../contexts/ContextProvider";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 
 export default function Home({
   FandQAPI,
@@ -35,6 +36,13 @@ export default function Home({
 
   return (
     <div>
+      <Head>
+        <title>Meta title: Nile Cruises | Nile Cruises 2023 | Travel to Egypt</title>
+        <meta
+          name="description"
+          content={"Meta description: Travel to Egypt, Explore the ancient Egyptian civilization through the best travel offers and nile cruises 2023. Book Today!"}
+        />
+      </Head>
       <NavBar />
       <Header />
       <BookingSearch />

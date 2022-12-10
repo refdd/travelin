@@ -31,6 +31,7 @@ import RelatedTous from "../../components/parts/RelatedTous";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
  import Loding from "../../components/helper/Loding.jsx"
  import StructuredData from "../../components/dataStructured/StructuredData"
+import Head from "next/head";
 function SingelBlog({singelSlug}) {
   const {isClicked} =useStateContext()
   const structuredData = {
@@ -53,7 +54,14 @@ function SingelBlog({singelSlug}) {
   }
   return (
     <div>
-      <StructuredData data={structuredData} />
+    <Head>
+    <StructuredData data={structuredData} />
+    <meta
+          name="description"
+          content={singelSlug.meta_description}
+        />
+        <title>{singelSlug.meta_title} </title>
+    </Head>
 
       <NavBar />
       <HeaderParts typeList={"single tour"} />
