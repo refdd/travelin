@@ -17,6 +17,7 @@ import { useStateContext } from "../../contexts/ContextProvider";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Head from "next/head";
 import Loding from "../../components/helper/Loding"
+import TableListTour from "../../components/cards/TableListTour";
 const array = ["egypt-tour-packages", "river-nile-cruises"];
 
 const options1 = [
@@ -103,6 +104,7 @@ function PackageList({typesall , tours } ) {
           <FormInquire />
         </div>
       </div>
+         <TableListTour listTour={listTour} />
       <Explore />
       <FandQ />
       <Footer />

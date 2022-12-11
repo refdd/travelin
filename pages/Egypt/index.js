@@ -12,6 +12,7 @@ import FormInquire from "../../components/helper/FormInquire";
 import SelectPackagess from "../../components/SelectPackagess";
 import PackageTyps from "../../components/PackageTyps";
 import Carousel from "../../components/headers/sliderImage/Carousel";
+import { baseUrl, fetchApi } from "../../utils/ferchApi";
 
 function Destination({tours}) {
   return (
@@ -111,7 +112,7 @@ function Destination({tours}) {
         </div>
       </div>
       {/* package */}
-      {tours &&
+      {/* {tours &&
         tours.map((item, id) => (
           <section key={id} className=" md:pt-16  bg-[#e6eef5]  ">
             <SelectPackagess
@@ -123,7 +124,7 @@ function Destination({tours}) {
             />
                <PackageTyps  Allpackage={tours} type_id={item.id}   />
           </section>
-        ))}
+        ))} */}
       <Explore />
       <FandQ />
 

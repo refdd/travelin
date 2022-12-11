@@ -20,6 +20,7 @@ export const ContextProvider = ({ children }) => {
   const [activLike , setActiveLike ] = useState(initialActiveLike)
   const [isClicked, setIsClicked] = useState(initialState);
   const [ToursShow, setToursShow] = useState(initialTours);
+  const [openSearch, setopenSearch] = useState(false);
   // to whow tour in single blog 
   const handleShowTours = (clicked) =>
   setToursShow({ ...initialTours, [clicked]: true });
@@ -51,7 +52,9 @@ export const ContextProvider = ({ children }) => {
         activLike,
         handleShowTours,
         ToursShow,
-        setToursShow
+        setToursShow,
+        openSearch, 
+        setopenSearch
       }}
     >
       {children}
@@ -68,6 +71,7 @@ const apiContext = createContext();
 export const ContextProviderApi = ({ children }) => {
   const [sectionFAQ ,setSectionFAQ] = useState(null)
 
+  
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <apiContext.Provider

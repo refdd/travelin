@@ -21,7 +21,6 @@ function OfferPackageCard({tours}) {
     setChooseType(displayPackage)
     setOffer(offerdiscount)
   },[displayType])
-  console.log(ChooseType)
   return (
     <>
     {ChooseType && ChooseType.map((item , index )=>{

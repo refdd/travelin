@@ -63,14 +63,15 @@ function ContectFooter() {
             <Link href={"/CountactUs"}>Contact Us</Link>
           </li>
           <li className="text-xl text-white font-Poppins transition-all ease-in-out   hover:text-[#029e9d]">
-            <Link href={"/"}>Terms & Conditions</Link>
+            <Link href={"/terms-and-conditions"}>Terms & Conditions</Link>
           </li>
           <li className="text-xl text-white font-Poppins transition-all ease-in-out   hover:text-[#029e9d]">
-            <Link href={"/"}>Payment Policy</Link>
+            <Link href={"/responsible-travel"}>Responsible Travel</Link>
           </li>
           <li className="text-xl text-white font-Poppins transition-all ease-in-out   hover:text-[#029e9d]">
             <Link href={"/Egypt"}>Egypt</Link>
           </li>
+         
 
 
         </ul>

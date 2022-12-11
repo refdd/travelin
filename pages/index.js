@@ -18,6 +18,7 @@ import {
 } from "../contexts/ContextProvider";
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import BoxSearch from "../components/helper/BoxSearch";
 
 export default function Home({
   FandQAPI,
@@ -28,6 +29,7 @@ export default function Home({
   plogList,
 }) {
   const { sectionFAQ, setSectionFAQ } = useStateContextApi();
+  const {openSearch, setopenSearch} = useStateContext()
 
   useEffect(() => {
     setSectionFAQ(FandQAPI);
@@ -46,6 +48,7 @@ export default function Home({
       <NavBar />
       <Header />
       <BookingSearch />
+     { openSearch &&   <BoxSearch/>}
       {types &&
         types.map((item) => (
           <section key={item.id} className=" md:pt-16  bg-[#e6eef5]  ">
