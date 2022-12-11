@@ -19,7 +19,7 @@ function BoxSearch() {
   if (isLoading) return <p>Loading...</p>
   if (!data) return <p>No profile data</p>
   // console.log('====================================');
-  // console.log(data);
+  console.log(data);
   // console.log('====================================');
   return (
     <div className='fixed top-0 left-0 w-full h-screen bg-[#00000052]'>

@@ -28,14 +28,7 @@ export default function Home({
   tours,
   plogList,
 }) {
-  const { sectionFAQ, setSectionFAQ } = useStateContextApi();
-  const {openSearch, setopenSearch} = useStateContext()
-
-  useEffect(() => {
-    setSectionFAQ(FandQAPI);
-  }, [FandQAPI]);
-
-
+  const {openSearch } = useStateContext()
   return (
     <div>
       <Head>
@@ -53,14 +46,13 @@ export default function Home({
         types.map((item) => (
           <section key={item.id} className=" md:pt-16  bg-[#e6eef5]  ">
             <SelectPackagess
-              sypTypes={categories}
+              sypTypes={ item.categories}
               id={item.id}
               partOne={item.partOne}
               partTwo={item.title}
               decs={item.description}
+              alltour= {tours}
             />
-
-            <PackageTyps  Allpackage={tours} type_id={item.id}   />
           </section>
         ))}
 

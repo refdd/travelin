@@ -111,20 +111,8 @@ function Destination({tours}) {
           <FormInquire />
         </div>
       </div>
-      {/* package */}
-      {/* {tours &&
-        tours.map((item, id) => (
-          <section key={id} className=" md:pt-16  bg-[#e6eef5]  ">
-            <SelectPackagess
-              sypTypes={item.supType}
-              titel={item.titleHeader}
-              partOne={item.partOne}
-              partTwo={item.partTwo}
-              decs={item.descHeader}
-            />
-               <PackageTyps  Allpackage={tours} type_id={item.id}   />
-          </section>
-        ))} */}
+      <PackageTyps  Allpackage={tours}    />
+      
       <Explore />
       <FandQ />
 

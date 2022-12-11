@@ -1,17 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 import { BsCalendar3, BsStarFill } from "react-icons/bs";
-import {useStateContext} from "../contexts/ContextProvider"
 import Loding from "../components/helper/Loding"
- function CardPackageTypes({packagetype , displayType }) {
-  const [packagecat ,  setpackagecat ] = useState(null)
-//   useEffect(()=>{ 
-//  const tourtype= packagetype.map(item => item.category_id == displayType )
-//  setpackagecat(tourtype)
-// },[])
+ function CardPackageTypes({packagetype  }) {
 if(!packagetype) return <Loding/>
-
   return (
     <>
     {packagetype && packagetype.map((item)=>{
