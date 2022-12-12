@@ -26,23 +26,20 @@ export default function Home({
   plogList,
 }) {
   const {openSearch } = useStateContext()
-  const dataFandQ = FandQAPI.map(item =>{
-   return {
-    "@type": "Question",
-    name: item.question ,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: item.answer
-    }
-   }
-  })
+ 
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity :[
-      dataFandQ
-
-    ]
+    mainEntity : FandQAPI.map(item => {
+      return {
+        "@type": "Question",
+        name:item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer
+        }
+      }
+    })
   };
 console.log('====================================');
 console.log(structuredData);
