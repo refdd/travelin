@@ -9,14 +9,11 @@ import MultiPackage from "../components/MultiPackage";
 import NavBar from "../components/NavBar";
 import PerfectTour from "../components/PerfectTour";
 import SelectPackagess from "../components/SelectPackagess";
-import PackageTyps from "../components/PackageTyps";
 import Testimonails from "../components/Testimonails";
 import { fetchApi, baseUrl } from "../utils/ferchApi";
 import {
   useStateContext,
-  useStateContextApi,
 } from "../contexts/ContextProvider";
-import { useEffect, useState } from "react";
 import Head from "next/head";
 import BoxSearch from "../components/helper/BoxSearch";
 
@@ -24,11 +21,30 @@ export default function Home({
   FandQAPI,
   partners,
   types,
-  categories,
   tours,
   plogList,
 }) {
   const {openSearch } = useStateContext()
+  const dataFandQ = FandQAPI.map(item =>{
+   return {
+    "@type": "Question",
+    name: item.question ,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer
+    }
+   }
+  })
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity :{
+      dataFandQ
+    }
+  };
+  console.log('====================================');
+  console.log(structuredData);
+  console.log('====================================');
   return (
     <div>
       <Head>
@@ -86,7 +102,6 @@ export async function getStaticProps() {
   const FandQAPI = await fetchApi(`${baseUrl}/faqs`);
   const partners = await fetchApi(`${baseUrl}/partners`);
   const types = await fetchApi(`${baseUrl}/types`);
-  const categories = await fetchApi(`${baseUrl}/categories`);
   const tours = await fetchApi(`${baseUrl}/tours`);
   const plogList = await fetchApi(`${baseUrl}/posts`);
   return {
@@ -94,7 +109,6 @@ export async function getStaticProps() {
       FandQAPI: FandQAPI.data,
       partners: partners.data,
       types: types.data,
-      categories: categories.data,
       tours: tours.data,
       plogList: plogList.data,
     },
