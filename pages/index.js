@@ -39,11 +39,14 @@ export default function Home({
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity :{
+    mainEntity :[
       dataFandQ
-    }
-  };
 
+    ]
+  };
+console.log('====================================');
+console.log(structuredData);
+console.log('====================================');
   return (
     <div>
       <Head>
