@@ -16,6 +16,7 @@ import {
 } from "../contexts/ContextProvider";
 import Head from "next/head";
 import BoxSearch from "../components/helper/BoxSearch";
+import StructuredData from "../components/dataStructured/StructuredData";
 
 export default function Home({
   FandQAPI,
@@ -42,9 +43,7 @@ export default function Home({
       dataFandQ
     }
   };
-  console.log('====================================');
-  console.log(structuredData);
-  console.log('====================================');
+
   return (
     <div>
       <Head>
@@ -52,7 +51,10 @@ export default function Home({
         <meta
           name="description"
           content={"Meta description: Travel to Egypt, Explore the ancient Egyptian civilization through the best travel offers and nile cruises 2023. Book Today!"}
+        
         />
+    <StructuredData data={structuredData} />
+
       </Head>
       <NavBar />
       <Header />
