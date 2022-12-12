@@ -9,7 +9,7 @@ function BoxSearch() {
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://api.nilecruisez.com/api/tours?search=Cairo&type_id=1')
       .then((res) => res.json())
       .then((data) => {
         setData(data)

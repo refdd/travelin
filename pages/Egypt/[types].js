@@ -50,6 +50,7 @@ function PackageList({typesall , tours } ) {
   return (
     <div className="">
       <Head>
+        
         <meta
           name="description"
           content={selectedTyps.meta_description}

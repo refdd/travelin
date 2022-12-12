@@ -34,19 +34,24 @@ import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Head from "next/head";
 function SingelBlog({singelSlug}) {
   const {isClicked} =useStateContext()
+  console.log('====================================');
+  // console.log(singelSlug);
+  console.log('====================================');
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    headline: "post.title",
-    description: "post.description",
+    headline:singelSlug.title ,
+    description: singelSlug.description.replace(/<[^>]*>?/gm, ''),
     author: [
       {
         '@type': 'Person',
-        name: "post.author",
+        name: singelSlug.author.name,
+        url:`https://www.nilecruisez.com/blog/${singelSlug.slug }`
       },
     ],
-    image: "post.imageUrl",
-    datePublished: "post.publishedAt",
+    image: singelSlug.image,
+    datePublished:singelSlug.created_at,
+    dateModified: singelSlug.created_at,
   };
 
   if(!singelSlug){
