@@ -2,19 +2,15 @@ import Image from "next/image";
 import React from "react";
 import imagehotel from "../../public/assets/images/hotels.jpg";
 import { FaHotel } from "react-icons/fa";
-import { BiStar, BiDollarCircle } from "react-icons/bi";
+import { BiDollarCircle } from "react-icons/bi";
+import { AiFillStar } from "react-icons/ai";
 import NotsPriceSection from "./NotsPriceSection";
 function Prices({notsPrise , template_prices}) {
 
-  const getNumberStar = num => {
-   
-    for (let i = 0; i < num; i++) {
-      return <BiStar key={i} size={24} color="#ffbc00" /> 
-      
-    }
-    
-  };
-  
+ 
+  console.log('====================================');
+  // console.log(Array(5).fill(<BiStar  size={24} color="#ffbc00" /> ));
+  console.log('====================================');
   return (
     <div className="container mx-auto pt-5 ">
       {template_prices.map(item => (
@@ -49,12 +45,15 @@ function Prices({notsPrise , template_prices}) {
  <p className="text-lg text-[#17233e] font-Poppins capitalize my-2">
   {hotel.title}
  </p>
- {hotel.stars}
  <div className="flex gap-2">
   {
     
   }
-  {getNumberStar(hotel.stars) }
+    {Array(hotel.stars).fill(<AiFillStar  size={24} color="#ffbc00" /> ).map(item =>{
+      return item
+    }) }
+
+  {/* <BiStar  size={24} color="#ffbc00" />  */}
  </div>
 </div>
 ))}
@@ -73,16 +72,16 @@ function Prices({notsPrise , template_prices}) {
    <div className=" flex flex-col gap-5 md:flex-row md:py-4 md:gap-7 ">
     {item.price_types.map(prise =>(
   <div key={prise.id} className="flex flex-col  gap-2 md:flex-1  ">
-  <h4 className="text-[#17233e] text-xl font-Poppins capitalize ">{prise.title}</h4>
+  <h4 className="text-[#17233e] text-xl font-bold font-Poppins capitalize ">{prise.title}</h4>
   <p  className={ prise.triple ? "text-[#777] font-Poppins capitalize text-lg" :" hidden text-[#777] font-Poppins capitalize text-lg"}>
-    <span  className="font-mono text-[#ffbc00]" >
+    <span  className="font-mono text-[#029e9d]" >
        $ {prise.triple}</span> Per Person in Triple Room
   </p>
   <p  className={ prise.double ? "text-[#777] font-Poppins capitalize text-lg" :" hidden text-[#777] font-Poppins capitalize text-lg"}>
-    <span  className="font-mono text-[#ffbc00]">$ {prise.double}</span> Per Person in Double Room
+    <span  className="font-mono text-[#029e9d]">$ {prise.double}</span> Per Person in Double Room
   </p>
   <p  className={ prise.single ? "text-[#777] font-Poppins capitalize text-lg" :" hidden text-[#777] font-Poppins capitalize text-lg"}>
-    <span className="font-mono text-[#ffbc00]">$ {prise.single}</span> One Person Traveling Alone
+    <span className="font-mono text-[#029e9d]">$ {prise.single}</span> One Person Traveling Alone
   </p>
 </div>
     ) )  }

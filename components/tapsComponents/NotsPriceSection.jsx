@@ -17,7 +17,7 @@ const  styles = {
 function NotsPriceSection({notsPrise}) {
   const gtiDta= notsPrise.map(item => {
     return   {
-      title: <h2 className="text-[#17233e] text-lg  font-Poppins  py-3 capitalize"> {item.title}</h2>,
+      title: <h2 className="text-[#17233e] text-[10px]  font-Poppins  py-3 capitalize"> {item.title}</h2>,
       content:  <p className="text-[#777] text-lg font-Poppins capitalize "> {item.description} </p>
     }
      })

@@ -6,7 +6,7 @@ import {CiLocationOn } from "react-icons/ci"
 
 function BookingSearch() {
   return (
-    <div className='w-full  bg-[#e6eef5]'>
+    <div className=' relative w-full  bg-[#e6eef5] '>
       <div className='flex flex-col  w-full md:flex-row md:justify-between  '>
            {/* from booking  */}
            <div className='w-[90%] mx-auto  h-max py-3 px-5   drop-shadow-xl md:filter-none" bg-[#fff] rounded-lg md:w-[30%] md:p-0  md:m-0 md:ml-16 md:translate-y-[-86px]'> 
@@ -23,9 +23,9 @@ function BookingSearch() {
            {/* right side constent search  */}
            <div className='w-[90%] mx-auto  h-max py-10 px-5  bg-[#e6eef5] rounded-lg md:w-[60%] md:p-0  md:m-0  '> 
            <div className='w-full h-full md:h-[300px] '>
-            <div className='flex flex-col gap-4 h-full w-full justify-center items-center p-4 md:items-start  '>
-              <h4 className='text-xl font-bold text-[#029e9d] font-Poppins '>Get To Know Us </h4>
-              <h2 className=' text-2xl text-center font-Poppins font-bold capitalize text-[#17233e] md:text-4xl md:text-left md:leading-[3.5rem] '>Explore All that Egypt has to offer With Us.</h2>
+            <div className='flex flex-col gap-4 h-auto w-full justify-center items-center p-4 md:p-2 md:items-start  '>
+              <h4 className='text-lg font-bold text-[#029e9d] font-Poppins '>Get To Know Us </h4>
+              <h2 className=' text-xl text-center font-Poppins font-bold capitalize text-[#17233e] md:text-2xl md:text-left md:leading-[3.5rem] '>Explore All that Egypt has to offer With Us.</h2>
               <p className='text-center leading-6 font-Poppins text-[#777] md:text-left '>
                 Mix your Nile Cruise from Luxor to Aswan with a joyful trip in Cairo and
                 Red Sea Relaxation; enjoying the
@@ -51,7 +51,9 @@ function BookingSearch() {
             </div>
            </div>
            </div>
+      <div className="w-[40%] mx-auto bg-yellow-300 h-1  absolute bottom-0 left-[30%]"></div>
       </div>
+
     </div>
   )
 }

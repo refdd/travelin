@@ -27,7 +27,7 @@ if(valueState == "price"){
     {
       gackageBeforeSort && gackageBeforeSort.map((item) =>(
         <div key={item.id} className={desplaygrid ? "flex flex-col gap-2 w-[90%]  md:w-[45%]   bg-slate-100 p-5 rounded-xl mt-5 "
-          :"flex flex-col md:flex-row gap-2 justify-center md:justify-start items-center w-[92%] mx-auto md:w-[100%]   md:mx-4 bg-slate-100 p-5 rounded-xl mt-5 "
+          :"flex flex-col md:flex-row gap-2  md:gap-4 justify-center md:justify-start items-center w-[92%] mx-auto md:w-[100%]   md:mx-4 bg-slate-100 p-5 rounded-xl mt-5  md:ml-9"
       }>
     {/* image */}
     <div className={desplaygrid ?"relative rounded-xl overflow-hidden w-full ":
@@ -71,17 +71,17 @@ if(valueState == "price"){
     <div className={desplaygrid ? "flex flex-col gap-2 justify-center items-center md:flex-row md:flex-wrap ":
         "flex flex-col gap-2 justify-center items-center  md:justify-end md:items-end"
   }>
-    <div className={desplaygrid ? "flex gap-2 w-full justify-center items-center md:justify-end md:w-[40%] " : "flex gap-2 w-full justify-center items-center md:justify-end "}>
-        <AiFillStar size={24} color="#ffc107"/>
-        <AiFillStar size={24} color="#ffc107"/>
-        <AiFillStar size={24} color="#ffc107"/>
-        <AiFillStar size={24} color="#ffc107"/>
-        <AiFillStar size={24} color="#ffc107"/>
+    <div className={desplaygrid ? "flex gap-2 w-full justify-center items-center md:justify-end md:w-[40%] " : "flex gap-1 w-full justify-center items-center md:justify-end "}>
+        <AiFillStar size={16} color="#ffc107"/>
+        <AiFillStar size={16} color="#ffc107"/>
+        <AiFillStar size={16} color="#ffc107"/>
+        <AiFillStar size={16} color="#ffc107"/>
+        <AiFillStar size={16} color="#ffc107"/>
         </div>
         <p className="text-right text-lg text-[#777] font-Poppins " >200 review</p>
         <div className={desplaygrid ? "flex gap-3  md:flex-row" : "flex gap-3  md:flex-col"}>
         <span className="text-[#777] font-Poppins text-lg md:text-right  "> Start from</span>
-        <h4 className="text-right font-mono font-bold text-xl"> $ {item.start_price  - item.start_price * item.discount / 100   }</h4>
+        <h4 className="text-right font-mono font-bold text-[24px] "> $ {item.start_price  - item.start_price * item.discount / 100   }</h4>
         </div>
         <p className="text-right text-sm font-Poppins capitalize  text-[#029e9d]">Per Person</p>
         <Link href={`/egypt-tours/${item.slug}`}>

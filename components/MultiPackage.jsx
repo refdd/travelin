@@ -31,7 +31,7 @@ function MultiPackage({ offerSection , tours , blogsList , descount }) {
   };
 
   return (
-    <div className="h-full space-y-0.5 md:space-y-2 bg-[#e6eef5]  ">
+    <div className="h-full space-y-0.5 md:space-y-2 bg-[#e6eef5] relative  ">
       {offerSection ? <HeaderSection 
       titel={"Top Offers"}
         partOne={" Egypt Special"}
@@ -71,6 +71,9 @@ function MultiPackage({ offerSection , tours , blogsList , descount }) {
       }
               
             </div>
+
+
+
     </div>
   );
 }

@@ -19,7 +19,7 @@ const handelRightArrow=()=>{
   selected === Tlenght - 1 ?setSelected(0) :setSelected((prev) => prev + 1)
 }
   return (
-    <div style={{ backgroundImage: `url(${bg.src})` }} className="py-16 bg-[#e6eef5]  ">
+    <div style={{ backgroundImage: `url(${bg.src})` }} className="py-16 bg-[#e6eef5]  relative ">
       <HeaderSection
         titel={"Our Testimonails "}
         partOne={"Good Reviews By"}
@@ -70,6 +70,8 @@ const handelRightArrow=()=>{
           </Link>
          </div>
       </div>
+      <div className="w-[40%] mx-auto bg-yellow-300 h-1  absolute bottom[-20px] left-[30%]"></div>
+
     </div>
   );
 }

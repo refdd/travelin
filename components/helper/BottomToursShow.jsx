@@ -19,7 +19,8 @@ function BottomToursShow() {
           className={ToursShow.Recent ? "flex-1 border rounded-lg text-xl font-Poppins font-bold bg-[#029e9d]  text-white   py-3" 
                     : "flex-1 border rounded-lg text-xl font-Poppins font-bold bg-[#029e9d] py-3"}
         >
-          Recent
+          Related Tours
+
         </button>
       </div>
     </div>

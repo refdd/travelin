@@ -28,7 +28,7 @@ settoursall(arOfTour)
   },[])
 
   return (
-    <div className=' w-full bg-[#e6eef5] '>
+    <div className=' relative w-full bg-[#e6eef5] '>
         {/* header seaction */}
         <HeaderSection
         partOne={partOne}
@@ -50,6 +50,8 @@ settoursall(arOfTour)
             </ul>
         </div>
             <PackageTyps  Allpackage={toursall}    />
+      <div className="w-[40%] mx-auto bg-yellow-300 h-1  absolute bottom-[-35px] left-[30%]"></div>
+
     </div>
   )
 }

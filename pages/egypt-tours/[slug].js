@@ -43,8 +43,8 @@ function SingelTour({singletour}) {
             location={`Visited Cities : ${singletour.destinations} `}
             reviews={"(1,186 Reviews)"}
           />
-          <div className=" flex justify-end items-center rounded-xl  cursor-pointer hover:opacity-90">
-          <p  className="capitalize  text-xl text-right text-[#029e9d] font-Poppins font-medium  " >start from <span className="text-gray-500"> $ {singletour.start_price  - singletour.start_price * singletour.discount / 100   } </span> </p>
+          <div className=" flex justify-center md:justify-end items-center rounded-xl  cursor-pointer hover:opacity-90">
+          <p  className="capitalize  text-xl  text-center  md:text-right text-[#029e9d] font-Poppins font-medium  " >start from <span className="text-gray-500"> $ {singletour.start_price  - singletour.start_price * singletour.discount / 100   } </span> </p>
           </div>
          </div>
           <Carousel gallery={singletour.gallery} />

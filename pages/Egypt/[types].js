@@ -18,6 +18,7 @@ import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Head from "next/head";
 import Loding from "../../components/helper/Loding"
 import TableListTour from "../../components/cards/TableListTour";
+import bgtour from "../../public/assets/images/slider-Egyptian-Museum.webp"
 const array = ["egypt-tour-packages", "river-nile-cruises"];
 
 const options1 = [
@@ -44,9 +45,9 @@ function PackageList({typesall , tours } ) {
     const value = event.value;
     setValueState(value);
   };
-
   if (!types) return <Loding/> ;
   if (!selectedTyps) return <Loding/> ;
+
   return (
     <div className="">
       <Head>
@@ -59,13 +60,13 @@ function PackageList({typesall , tours } ) {
       </Head>
       <BottomInquire />
       <NavBar />
-      <HeaderParts typeList={selectedTyps.title} />
+      <HeaderParts typeList={selectedTyps.title}  bgtour={selectedTyps.id == 1 && bgtour}/>
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
           {/* left side */}
           <div className="flex flex-col md:flex-row gap-3  justify-center items-center md:justify-between ">
             <p className=" text-center md:text-left md:pl-2  text-xl text-[#777] font-Poppins capitalize">
-              showing 1-5 of 80 results
+              showing {tours.length} tours
             </p>
             <div className="flex gap-3 w-[60%] md:w-auto justify-center items-center">
               <span

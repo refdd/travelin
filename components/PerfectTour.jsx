@@ -6,7 +6,7 @@ import HeaderSection from './helper/HeaderSection'
 function PerfectTour() { 
   return (
     <div style={{backgroundImage: `url(/_next/static/media/shape4.ef03d001.png)`}}
-     className="bg-no-repeat bg-cover bg-center  flex flex-col bg-[#e6eef5]   w-full  md:pt-20  pt-10 ">
+     className=" relative  bg-no-repeat bg-cover bg-center  flex flex-col bg-[#e6eef5]   w-full   md:pt-20  pt-10 ">
           {/* header seaction */}
           <HeaderSection
           titel="4 Steps Of The Perfect Tour"
@@ -55,6 +55,7 @@ function PerfectTour() {
            </div>
     
         </div>
+
         
   </div>
   )

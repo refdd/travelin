@@ -13,12 +13,21 @@ import SelectPackagess from "../../components/SelectPackagess";
 import PackageTyps from "../../components/PackageTyps";
 import Carousel from "../../components/headers/sliderImage/Carousel";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
+import Head from "next/head";
 
-function Destination({tours}) {
+function Destination({tours , Egypt}) {
+
   return (
     <div>
+       <Head>
+        <title>{Egypt.meta_title}</title>
+        <meta
+          name="description"
+          content={Egypt.meta_description}
+        />
+      </Head>
       <NavBar />
-      <HeaderParts typeList={"Destination"} />
+      <HeaderParts typeList={"Egypt tours"} />
       {/* content grid  */}
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         {/* left content side */}
@@ -26,7 +35,7 @@ function Destination({tours}) {
           <HeaderDestination titel={"Egpyt tours"}  />
           <div className="container mx-auto md:w-full ">
            
-            <Carousel/>
+            <Carousel gallery={Egypt.gallery}/>
           </div>
           <div className="container mx-auto flex flex-col  gap-1">
             <h4 className="my-5 text-3xl font-Poppins font-bold text-[#17233e] ">
@@ -124,9 +133,12 @@ function Destination({tours}) {
 export default Destination;
 export async function getStaticProps() {
   const tours = await fetchApi(`${baseUrl}/tours`);
+  const Egypt = await fetchApi(`${baseUrl}/destinations/1`)
+
   return {
     props: {
       tours: tours.data,
+      Egypt: Egypt.data,
     },
     revalidate: 10,
   };

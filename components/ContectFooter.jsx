@@ -1,5 +1,5 @@
 import React from "react";
-import logoFooter from "../public/assets/images/logo-new (2)-svg (1) (1).png";
+import logoFooter from "../public/assets/images/logo-new.svg";
 import bg from "../public/assets/images/background_patte.webp"
 import Image from "next/image";
 import Link from "next/link";

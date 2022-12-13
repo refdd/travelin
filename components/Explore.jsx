@@ -92,6 +92,7 @@ function Explore({partners}) {
         </div>
       </div>
       <Partners partners={partners} />
+      
     </>
   );
 }

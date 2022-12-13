@@ -10,7 +10,7 @@ function Partners({partners}) {
     return `https://api.nilecruisez.com/${item.icon}`;
   }
   return (
-   <div className='py-6 container mx-auto'>
+   <div className=' relative py-6 container mx-auto '>
     <HeaderSection titel="Our Partners" partOne="Our Awesome" partTwo="Partners" />
      <div className=' flex w-full gap-2  md:justify-around justify-center items-center  '>
       {partners && partners.map(item => {
@@ -35,6 +35,8 @@ function Partners({partners}) {
        
           
     </div>
+    <div className="w-[40%] mx-auto bg-yellow-300 h-1  absolute bottom-[7px] left-[30%]"></div>
+
    </div>
   )
 }

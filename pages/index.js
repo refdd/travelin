@@ -41,19 +41,17 @@ export default function Home({
       }
     })
   };
-console.log('====================================');
-console.log(structuredData);
-console.log('====================================');
+
   return (
     <div>
       <Head>
         <title>Meta title: Nile Cruises | Nile Cruises 2023 | Travel to Egypt</title>
+        <StructuredData data={structuredData} />
         <meta
           name="description"
           content={"Meta description: Travel to Egypt, Explore the ancient Egyptian civilization through the best travel offers and nile cruises 2023. Book Today!"}
         
         />
-    <StructuredData data={structuredData} />
 
       </Head>
       <NavBar />

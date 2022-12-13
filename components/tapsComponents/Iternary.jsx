@@ -40,7 +40,7 @@ function Iternary({iternaryData}) {
  {item.days.map(day => (
  <div key={day.id} className='pt-5'>
  <Faq data={{ ... data , styles  , 
-  rows : [ { title : <h2 className="text-[#17233e] text-lg  py-3 font-Poppins capitalize"> {day.title}</h2> ,
+  rows : [ { title : <h2 className="text-[#17233e] text-[10px]  py-3 font-Poppins capitalize"> {day.title}</h2> ,
              content: <div dangerouslySetInnerHTML={{__html:day.description}} />   } ]
    }}  config={config} />
  </div>

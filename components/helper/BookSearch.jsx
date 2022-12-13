@@ -4,7 +4,7 @@ import Select from 'react-select'
 import { useStateContext } from "../../contexts/ContextProvider";
 
 function BookSearch() {
-  const {setopenSearch} = useStateContext()
+  const {setopenSearch , dataSearch, setdataSearch} = useStateContext()
 
   const {
     register,
@@ -14,8 +14,8 @@ function BookSearch() {
   } = useForm();
     const [data , setData] = useState("") ;
     const options = [
-      { value: 'Cruise', label: 'Nile Cruise' },
-      { value: 'Travel ', label: 'Travel Package' },
+      { value: 2, label: 'Nile Cruise' },
+      { value: 1 , label: 'Travel Package' },
      
     ]
      
@@ -23,6 +23,7 @@ function BookSearch() {
   return (
     <form onSubmit={handleSubmit((data)  => {
       setData( JSON.stringify(data))
+      setdataSearch(data)
         setopenSearch(true)
     }) }
      className="flex flex-col gap-4 w-full h-full md:gap-6  ">

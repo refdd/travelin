@@ -6,7 +6,7 @@ import blogimage from "../../public/assets/images/trending4.jpg"
 function HeaderSingelBlog({singelSlug}) {
   return (
     <div className='container mx-auto pt-7'>
-   <div className='flex flex-col gap-4 md:flex-row  md:gap-7 '>
+   <div className='flex flex-col gap-4   md:gap-7 '>
         {/*content  */}
         <div className='flex flex-col gap-3 md:flex-1'>
           <div className='flex gap-7'>
@@ -20,7 +20,7 @@ function HeaderSingelBlog({singelSlug}) {
             </div>
         </div>
         {/* image */}
-        <div className='md:w-[50%]'>
+        {/* <div className='md:w-[100%]'>
           <Image
            loader={() =>{
             return `${singelSlug.image}`;
@@ -33,7 +33,20 @@ function HeaderSingelBlog({singelSlug}) {
           loading='lazy'
           className='rounded-lg '
           />
-        </div>
+        </div> */}
+        <div className=" w-full  h-48 md:h-96 relative bg-white rounded-t-lg">
+                <Image
+                 loader={() =>{
+                  return `${singelSlug.image}`;
+                }
+               }
+                src={singelSlug.image}
+              
+                 layout={"fill"}
+                  loading={"lazy"}
+                  className={"rounded-lg  "}
+                />
+                </div>
    </div>
     </div>
   )

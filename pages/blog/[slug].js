@@ -69,7 +69,7 @@ function SingelBlog({singelSlug}) {
     </Head>
 
       <NavBar />
-      <HeaderParts typeList={"single tour"} />
+      {/* <HeaderParts typeList={"single tour"} /> */}
        
        <HeaderSingelBlog singelSlug={singelSlug} />   
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">

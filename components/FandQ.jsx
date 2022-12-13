@@ -19,7 +19,7 @@ function FandQ({dataFandQ}) {
   }
    const gtiDta= dataFandQ.map(item => {
   return   {
-    title: <h2 className="text-[#17233e] whitespace-pre-wrap  font-Poppins  py-3 capitalize"> {item.question}</h2>,
+    title: <h2 className="text-[#17233e] whitespace-pre-wrap  text-[10px] font-Poppins  py-3 capitalize"> {item.question}</h2>,
     content:  <p className="text-[#777] text-lg font-Poppins capitalize "> {item.answer} </p>
   }
    })
@@ -37,7 +37,7 @@ function FandQ({dataFandQ}) {
     }
   };
   return (
-    <div className="h-auto " >
+    <div className="h-auto  md:pt-6" >
       <HeaderSection
       titel="FAQ"
       partOne="Frequently Asked "

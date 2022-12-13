@@ -26,16 +26,6 @@ const options1 = [
 function BlogList({listBlog}) {
   const { setdesplauGrid, desplaygrid } = useStateContext();
   const [valueState, setValueState] = useState("");
-  const [tourList, setTourList] = useState(null);
-  const [typeList, setTypeList] = useState(null);
-  const router = useRouter();
-  const { types } = router.query;
-  useEffect(() => {
-   
-  
-    
-  }, [types]);
-
   const handler = (event) => {
     const value = event.value;
     setValueState(value);
@@ -57,7 +47,7 @@ function BlogList({listBlog}) {
           {/* left side */}
           <div className="flex flex-col md:flex-row gap-3  justify-center items-center md:justify-between ">
             <p className=" text-center md:text-left md:pl-2  text-xl text-[#777] font-Poppins capitalize">
-              showing 1-5 of 80 results
+              showing {listBlog.length} articl
             </p>
             <div className="flex gap-3 w-[60%] md:w-auto justify-center items-center">
               <span

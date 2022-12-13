@@ -8,11 +8,11 @@ function TabsTours() {
     },[])
   return (
     <div className="pt-11 container mx-auto">
-      <ul className=" flex flex-wrap justify-center items-center gap-4 shadow-lg py-6 rounded-lg ">
+      <ul className=" flex flex-wrap justify-center items-center gap-1s md:gap-4 shadow-lg py-6 rounded-lg ">
         <li  className={
             isClicked.Highlight
-              ? "px-5 py-4  bg-[#029e9d]  rounded-xl flex-1 text-white"
-              : "px-5 py-4  rounded-xl flex-1 text-[#777]"
+              ? " px-1 md:px-5 py-1 flex justify-center items-center  md:py-4  bg-[#029e9d]  rounded-xl flex-1 text-white"
+              : " px-1 md:px-5 py-1 flex justify-center items-center  md:py-4  rounded-xl flex-1 text-[#777]"
           }>
           <button
             onClick={() => handleClick("Highlight")}
@@ -24,8 +24,8 @@ function TabsTours() {
         <li
           className={
             isClicked.Iternary
-              ? "px-5 py-4  bg-[#029e9d]  rounded-xl flex-1 text-white"
-              : "px-5 py-4  rounded-xl flex-1 text-[#777]"
+              ? " px-1 md:px-5 py-1 flex justify-center items-center  md:py-4  bg-[#029e9d]  rounded-xl flex-1 text-white"
+              : " px-1 md:px-5 py-1 flex justify-center items-center  md:py-4  rounded-xl flex-1 text-[#777]"
           }
         >
           <button
@@ -38,8 +38,8 @@ function TabsTours() {
         <li
           className={
             isClicked.Prices
-              ? "px-5 py-4  bg-[#029e9d]  rounded-xl flex-1 text-white"
-              : "px-5 py-4  rounded-xl flex-1 text-[#777]"
+              ? " px-1 md:px-5 py-1 flex justify-center items-center  md:py-4  bg-[#029e9d]  rounded-xl flex-1 text-white"
+              : " px-1 md:px-5 py-1 flex justify-center items-center  md:py-4  rounded-xl flex-1 text-[#777]"
           }
         >
           <button
