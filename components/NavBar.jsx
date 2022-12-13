@@ -95,12 +95,12 @@ function NavBar() {
                         </Link>
                     </li>
                     <li className='border-b-2 text-left w-full p-2 uppercase  transition-all hover:bg-[#cccccc] ' >
-                        <Link href={`/Egypt/cruises`}>
+                        <Link href={`/Egypt/river-nile-cruises`}>
                             <a> egypt Cruises  </a>
                         </Link>
                     </li>
                     <li className='border-b-2  text-left w-full p-2 uppercase  transition-all hover:bg-[#cccccc] ' >
-                        <Link href={`/BlogList`} >
+                        <Link href={`/egypt-travel-blog`} >
                             <a> Blog  </a>
                         </Link>
                     </li>

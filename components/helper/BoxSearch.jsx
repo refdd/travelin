@@ -23,9 +23,6 @@ function BoxSearch() {
   }, []);
   if (isLoading) return <Loding />;
   if (!data) return <p>No profile data</p>;
-  // console.log('====================================');
-  console.log(data);
-  // console.log('====================================');
   return (
     <div className="fixed top-0 left-0 w-full h-screen bg-[#00000052] z-[1000]">
       <div className=" w-[90%] h-[80%] overflow-y-auto mx-auto bg-slate-200 p-2 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 rounded-xl">
@@ -33,17 +30,17 @@ function BoxSearch() {
           className="absolute top-[11px] right-[18px] transform flex justify-end  cursor-pointer "
           onClick={() => setopenSearch(false)}
         >
-          {" "}
-          <AiFillCloseCircle size={30} color="#029e9d" />{" "}
+          <AiFillCloseCircle size={30} color="#029e9d" />
         </div>
         <h1 className="text-gray-900 text-lg text-center font-Poppins font-semibold capitalize">
-          {" "}
           your results
         </h1>
         {/* recults container */}
         <div className="flex flex-col gap-3 pt-4">
-          {/* results */}
-          {data.data.map((item) => {
+          {/* results */} 
+          
+           { data.data.length == 0 ?  <p className="text-center text-xl font-Poppins capitalize font-bold">  no tour her please search  again   </p>     : data.data.map((item) => {
+            
             return (
               <div
                 key={item.id}
