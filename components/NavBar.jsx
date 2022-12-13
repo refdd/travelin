@@ -90,7 +90,7 @@ function NavBar() {
                         </Link>
                     </li  >
                     <li className='border-b-2  text-left w-full p-2 uppercase transition-all hover:bg-[#cccccc] '>
-                        <Link href={`/Egypt/travel`} >
+                        <Link href={`/Egypt/egypt-tour-packages`} >
                             <a> Traval Packages </a>
                         </Link>
                     </li>
