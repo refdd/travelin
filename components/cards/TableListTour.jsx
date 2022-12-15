@@ -26,7 +26,7 @@ function TableListTour({listTour}) {
         </thead>
         <tbody>
             {listTour && listTour.map(item => (
-                    <tr className="bg-white  border border-gray-700  ">
+                    <tr  key={item.id}  className="bg-white  border border-gray-700  ">
                     <Link href={`/egypt-tours/${item.slug}`}>
                     <th scope="row" className="py-4 px-2  cursor-pointer text-[#029e9d] text-sm font-Poppins font-bold md:text-center md:text-lg ">
                          {item.title}

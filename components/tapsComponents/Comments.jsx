@@ -19,7 +19,7 @@ function Comments({singelSlugComments , singelSlug}) {
         Showing 16 Verified Guest Comments
       </h4>
       {singelSlugComments.map(item => (
-      <div className=" relative flex flex-col md:flex-row gap-3 md:mt-4">
+      <div key={item.id} className=" relative flex flex-col md:flex-row gap-3 md:mt-4">
       {/* arrow  */}
       {/* <div
       style={{ borderWidth:"31px", borderStyle: "solid", borderColor: "transparent #e6eef5 transparent transparent"}}
