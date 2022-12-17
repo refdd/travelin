@@ -1,13 +1,42 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const path = require("path");
+// const withVideos = require('next-videos');
+
+module.exports = {
+
   reactStrictMode: true,
+
   images: {
-    domains: ['api.nilecruisez.com'],
+    loader: "imgix",
+    path: "https://api.nilecruisez.com.imgix.net/",
   },
-}
 
-module.exports = nextConfig
-const withVideos = require('next-videos');
+  rules: [
+    {
+      test: /\.less$/,
+      use: [
+        {
+          loader: "style-loader",
+        },
+        {
+          loader: "css-loader", // translates CSS into CommonJS
+        },
+        {
+          loader: "less-loader", // compiles Less to CSS
+          options: {
+            lessOptions: {
+              // If you are using less-loader@5 please spread the lessOptions to options directly
+             
+              javascriptEnabled: true,
+            },
+          },
+        },
+      ],
+      // ...other rules
+    },
+  ],
 
-module.exports = withVideos()
+  // };
+};
 
+
+// module.exports = withVideos()

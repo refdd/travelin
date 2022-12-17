@@ -45,7 +45,7 @@ export default function Home({
   return (
     <div>
       <Head>
-        <title>Meta title: Nile Cruises | Nile Cruises 2023 | Travel to Egypt</title>
+        <title>Nile Cruises | Nile Cruises 2023 | Travel to Egypt</title>
         <StructuredData data={structuredData} />
         <meta
           name="description"

@@ -19,7 +19,6 @@ import CardTorList from "../../components/cards/CardTorList";
 import Head from "next/head";
 import ListEgyptTour from "../../components/cards/ListEgyptTour";
 import TableListTour from "../../components/cards/TableListTour";
-
 function Destination({tours}) {
   return (
     <div>
@@ -59,6 +58,7 @@ function Destination({tours}) {
 }
 
 export default Destination;
+
 export async function getStaticProps() {
   const tours = await fetchApi(`${baseUrl}/tours`);
   return {
