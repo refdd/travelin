@@ -1,7 +1,4 @@
 import React from 'react'
-import image1 from "../../public/assets/images/trending4.jpg"
-import image2 from "../../public/assets/images/trending5.jpg"
-import image3 from "../../public/assets/images/hotels.jpg"
 import Image from 'next/image'
 function ResentTours({relatedTous}) {
   return (

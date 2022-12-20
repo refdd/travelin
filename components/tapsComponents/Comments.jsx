@@ -1,12 +1,5 @@
-import Image from "next/image";
 import React from "react";
-import { useState } from "react";
-import { BsFillStarFill } from "react-icons/bs";
-import { FaThumbsDown, FaThumbsUp } from "react-icons/fa";
 import { useStateContext } from "../../contexts/ContextProvider";
-import commentImg from "../../public/assets/images/comnet1.jpg";
-import commentImg2 from "../../public/assets/images/commet2.jpg";
-import commentImg3 from "../../public/assets/images/coment3.jpg";
 import Loding from "../helper/Loding";
 function Comments({singelSlugComments , singelSlug}) {
   const {handleClickAvtiveLike ,activLike } = useStateContext()
