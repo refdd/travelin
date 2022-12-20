@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import imagehotel from "../../public/assets/images/hotels.jpg";
 import { FaHotel } from "react-icons/fa";
 import { BiDollarCircle } from "react-icons/bi";
 import { AiFillStar } from "react-icons/ai";
