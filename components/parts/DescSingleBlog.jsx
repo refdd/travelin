@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import imageblog from "../../public/assets/images/bg4.webp";
-import { AiFillCloseCircle, AiFillPlayCircle } from "react-icons/ai";
 import { useState } from "react";
 import { FaFacebook, FaGoogle, FaLinkedin, FaQuoteLeft, FaTwitter } from "react-icons/fa";
 function DescSingleBlog({singelSlug}) {

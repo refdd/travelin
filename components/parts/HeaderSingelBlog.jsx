@@ -2,7 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 import { BsClock, BsEye } from 'react-icons/bs'
 import { FaComment, FaUser } from 'react-icons/fa'
-import blogimage from "../../public/assets/images/trending4.jpg"
 function HeaderSingelBlog({singelSlug}) {
   return (
     <div className='container mx-auto pt-7'>

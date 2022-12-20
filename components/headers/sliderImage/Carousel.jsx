@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import React from 'react'
 import Slider from "react-slick";
-import imageDestination from "../../../public/assets/images/trending-large.jpg";
-import imageslider from "../../../public/assets/images/travel.png"
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
