@@ -1,5 +1,4 @@
 import Image from "next/image";
-import defaultImage from "../../public/assets/images/trending3.jpg"
 import React, { useEffect, useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { AiFillStar } from "react-icons/ai";

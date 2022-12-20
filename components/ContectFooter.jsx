@@ -10,10 +10,10 @@ function ContectFooter() {
     className=" container mx-auto grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 md:gap-2 w-full pt-12 bg-no-repeat  ">
       <div className=" flex flex-col justify-center items-start pl-4 gap-4  col-auto	lg:col-span-4 ">
         {/* image */}
-        <div className=" flex items-start justify-start h-auto">
+        <div className=" flex items-start justify-start h-auto bg-white rounded-xl  px-2 ">
           <Image
             src={logoFooter}
-            width={300}
+            width={400}
             height={100}
             alt="Logo"
             layout="intrinsic"

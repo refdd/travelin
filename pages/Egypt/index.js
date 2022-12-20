@@ -17,6 +17,9 @@ import Head from "next/head";
 
 function Destination({tours , Egypt}) {
 
+  console.log('====================================');
+  console.log(Egypt);
+  console.log('====================================');
   return (
     <div>
        <Head>
@@ -41,20 +44,8 @@ function Destination({tours , Egypt}) {
             <h4 className="my-5 text-3xl font-Poppins font-bold text-[#17233e] ">
               Description
             </h4>
-            <p className="text-[#777] font-Poppins text-lg ">
-              Lorem ipsum, or lipsum as it is sometimes known, is dummy text
-              used in laying out print, graphic or web designs. The passage is
-              attributed to an unknown typesetter in the 15th century who is
-              thought to have scrambled parts of Cicero's De Finibus Bonorum et
-              Malorum for use in a type specimen book.Lorem ipsum, or lipsum as
-              it is sometimes known, is dummy text used in laying out print,
-              graphic or web designs.
-            </p>
-            <p className="text-[#777] font-Poppins text-lg ">
-              The passage is attributed to an unknown typesetter in the 15th
-              century who is thought to have scrambled parts of Cicero's De
-              Finibus Bonorum et Malorum for use in a type specimen book.
-            </p>
+          
+           <div  className="text-[#777] text-xl"  dangerouslySetInnerHTML={{__html:Egypt.description}} />
           </div>
           {/* price */}
           <div className="container mx-auto  pt-12">
@@ -65,24 +56,7 @@ function Destination({tours , Egypt}) {
                   <h6 className="text-2xl text-[#17233e] font-Poppins capitalize  my-3">
                      Includes
                   </h6>
-                  <ul className="felx flex-col gap-5 text-[#777]">
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <BsCheckLg /> Air Fares
-                    </li>
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <BsCheckLg /> 3 Nights Hotel Accomodation
-                    </li>
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <BsCheckLg /> Tour Guide
-                    </li>
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <BsCheckLg /> Entrance Fees
-                    </li>
-                  </ul>
+                  <div  className="text-[#777] text-xl"  dangerouslySetInnerHTML={{__html:Egypt.included}} />
                 </div>
               </div>
               {/* right side */}
@@ -91,25 +65,7 @@ function Destination({tours , Egypt}) {
                   <h6 className="text-2xl text-[#17233e] font-Poppins capitalize  my-3">
                    Excluded
                   </h6>
-                  <ul className="felx flex-col gap-5 text-[#777]">
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <GrFormClose size={24} color="#777" /> Air Fares
-                    </li>
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <GrFormClose size={24} color="#777" /> 3 Nights Hotel
-                      Accomodation
-                    </li>
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <GrFormClose size={24} color="#777" /> Tour Guide
-                    </li>
-                    <li className="flex gap-2 my-3 items-center ">
-                      {" "}
-                      <GrFormClose size={24} color="#777" /> Entrance Fees
-                    </li>
-                  </ul>
+                  <div  className="text-[#777] text-xl"  dangerouslySetInnerHTML={{__html:Egypt.excluded}} />
                 </div>
               </div>
             </div>

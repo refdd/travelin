@@ -3,13 +3,12 @@ import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useRouter } from 'next/router'
+import {countary , CodeCountery } from "../../data/dammyData"
 
-const options = [
-  { value: "Egypt", label: "Egypt" },
-  { value: "cairo ", label: "cairo" },
-  { value: "prise ", label: "prise" },
-  { value: "banha ", label: "banha" },
-];
+
+const code = CodeCountery.map(item => {
+return  { value: item.dial_code , label: ` ${item.code } _ ${item.dial_code }`}
+})
 function FormInquire() {
   const [showform, setShowform] = useState(false);
   const [stopScroll, setStopScroll] = useState(-6095);
@@ -181,11 +180,11 @@ function FormInquire() {
                   render={({ field: { onChange, value, ref } }) => (
                     <Select
                       placeholder={<div>Nationailty *</div>}
-                      defaultValue={options[0].value}
+                      defaultValue={countary[0].value}
                       inputRef={ref}
                       classNamePrefix="addl-class"
-                      options={options}
-                      value={options.find((c) => c.value === value)}
+                      options={countary}
+                      value={countary.find((c) => c.value === value)}
                       onChange={(val) => onChange(val.value)}
                     />
                   )}
@@ -204,11 +203,11 @@ function FormInquire() {
                       render={({ field: { onChange, value, ref, } }) => (
                         <Select
                           placeholder={<div>code*</div>}
-                          defaultValue={options[0].value}
+                          defaultValue={code[0].value}
                           inputRef={ref}
                           classNamePrefix="addl-class"
-                          options={options}
-                          value={options.find((c) => c.value === value)}
+                          options={code}
+                          value={code.find((c) => c.value === value)}
                           onChange={(val) => onChange(val.value)}
                         />
                       )}

@@ -1,5 +1,5 @@
 import React from "react";
-import bg from "../public/assets/images/bg4.webp";
+import bg from "../public/assets/images/test.webp";
 import { AiFillPlayCircle, AiFillCloseCircle } from "react-icons/ai";
 import { useState } from "react";
 import Partners from "./Partners";
@@ -12,11 +12,11 @@ function Explore({partners}) {
       <div className=" relative container mx-auto px-4  py-14  ">
         <div
           style={{ backgroundImage: `url(${bg.src})` }}
-          className="h-screen w-full bg-cover	 bg-no-repeat bg-right rounded-2xl  overflow-hidden	  "
+          className=" h-[72vh] md:h-screen w-full bg-bottom bg-contain 	 bg-no-repeat md:bg-right-bottom   rounded-2xl  overflow-hidden	  "
         >
           <div className=" flex flex-col justify-between items-center h-full md:flex-row ">
             {/* content  */}
-            <div className="flex flex-col gap-4  p-7 bg-[#029e9d] mt-0 h-3/5 md:h-full md:w-2/4 md:py-20  md:gap-6  ">
+            <div className="flex flex-col gap-4  p-7 bg-[#029e9d] mt-0 h-[60%] md:h-full md:w-[40%] md:py-20  md:gap-6  ">
               <h4 className="text-xl text-[#fff] text-center font-bold  capitalize font-Poppins md:text-2xl md:text-left ">
                 Best Selling Program in Egypt
               </h4>
@@ -58,17 +58,17 @@ function Explore({partners}) {
 
             {showvideo ? (
               <div className="  fixed top-[50%] left-[50%] translate-x-[-50%]  translate-y-[-50%]  h-full bg-[#0000007a] p-4 w-full z-[1000000] ">
-                <span className="cursor-pointer  absolute top-[30%] right-5 rounded-full p-3 md:right-[84px] md:top-[29%]">
+                <span className="cursor-pointer  absolute top-[25%] right-5 rounded-full p-3 md:right-[84px] md:top-[4%]">
                   <AiFillCloseCircle
                     size={30}
                     color="#fff"
                     onClick={() => setShowvideo(false)}
                   />
                 </span>
-                <div className=" absolute top-[35%] right-5 p-3 w-full   ">
+                <div className=" absolute  top-[30%] md:top-[10%] right-5 p-3 w-full   ">
                   <iframe
-                    className=" w-full h-[299px]   ml-5 md:h-[350px]  md:m-auto md:w-[89%] "
-                    src=""
+                    className=" w-full h-[299px]   ml-5 md:h-[450px]  md:m-auto md:w-[89%] "
+                    src="https://www.youtube.com/embed/QZFu9LxUveM"
                   ></iframe>
                 </div>
               </div>

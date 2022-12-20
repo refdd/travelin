@@ -5,35 +5,34 @@ module.exports = {
 
   reactStrictMode: true,
 
-  images: {
-    loader: "imgix",
-    path: "https://api.nilecruisez.com.imgix.net/",
-  },
+  // images: {
+  //   loader: "imgix",
+  // },
 
-  rules: [
-    {
-      test: /\.less$/,
-      use: [
-        {
-          loader: "style-loader",
-        },
-        {
-          loader: "css-loader", // translates CSS into CommonJS
-        },
-        {
-          loader: "less-loader", // compiles Less to CSS
-          options: {
-            lessOptions: {
-              // If you are using less-loader@5 please spread the lessOptions to options directly
+  // rules: [
+  //   {
+  //     test: /\.less$/,
+  //     use: [
+  //       {
+  //         loader: "style-loader",
+  //       },
+  //       {
+  //         loader: "css-loader", // translates CSS into CommonJS
+  //       },
+  //       {
+  //         loader: "less-loader", // compiles Less to CSS
+  //         options: {
+  //           lessOptions: {
+  //             // If you are using less-loader@5 please spread the lessOptions to options directly
              
-              javascriptEnabled: true,
-            },
-          },
-        },
-      ],
-      // ...other rules
-    },
-  ],
+  //             javascriptEnabled: true,
+  //           },
+  //         },
+  //       },
+  //     ],
+  //     // ...other rules
+  //   },
+  // ],
 
   // };
 };

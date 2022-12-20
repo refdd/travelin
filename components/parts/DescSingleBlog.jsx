@@ -11,59 +11,10 @@ function DescSingleBlog({singelSlug}) {
     <div className="container mx-auto pt-4">
         {/* decs and vido */}
       <div className="flex flex-col gap-4">
-        {/* <p className="text-[#777] text-lg font-Poppins capitalizes text-center md:text-left  md:w-[80%] md:mx-auto  ">
-         {singelSlug.description}
-        </p> */}
+       
           <div  className="text-[#777] text-xl"  dangerouslySetInnerHTML={{__html:singelSlug.description}} />
 
-        {/* <div className="relative flex justify-center items-center">
-          <Image
-            src={imageblog}
-            width={500}
-            height={500}
-            loading="lazy"
-            layout="intrinsic"
-            className="rounded-lg"
-          />
-          <div className=" absolute top-[50%] left-[50%]  flex flex-col items-center justify-center h-2/5 md:w-2/4 transform -translate-x-1/2 -translate-y-1/2">
-            <div className="ripple">
-              {" "}
-              <AiFillPlayCircle
-                size={60}
-                color="#029e9d"
-                onClick={() => setShowvideo(true)}
-              />{" "}
-            </div>
-          </div>
-        </div> */}
-        {/* {showvideo ? (
-          <div className="  fixed top-[50%] left-[50%] translate-x-[-50%]  translate-y-[-50%]  h-full bg-[#0000007a] p-4 w-full z-[1000000] ">
-            <span className="cursor-pointer  absolute top-[30%] right-5 rounded-full p-3 md:right-[84px] md:top-[29%]">
-              <AiFillCloseCircle
-                size={30}
-                color="#fff"
-                onClick={() => setShowvideo(false)}
-              />
-            </span>
-            <div className=" absolute top-[35%] right-5 p-3 w-full   ">
-              <iframe
-                className=" w-full h-[299px]   ml-5 md:h-[350px]  md:m-auto md:w-[89%] "
-                src="https://www.youtube.com/embed/nOzJrJTyZ8Y"
-              ></iframe>
-            </div>
-          </div>
-        ) : (
-          ""
-        )} */}
-        {/* <p className="text-[#777] text-lg font-Poppins capitalizes text-center  md:w-[80%] md:mx-auto  md:text-left ">
-          The property, complete with a 30-seat screening room, a 100-seat
-          amphitheater and a swimming pond with sandy beach and outdoor shower,
-          was asking about $40 million. Lorem ipsum dolor sit amet, consectetur
-          adipis Vi ales elit vitae lo bortis faucibus. Lorem ipsum dolor sit
-          amet, conse dolor sit amet, consectetu ctetur adipis Viales. Lorem
-          ipsum dolor sit amet, cons sit amet, consectetur adi ectetur adipis
-          Vi.
-        </p> */}
+        
         <div className="flex flex-col gap-2 bg-[#029e9d] py-5 rounded-lg md:w-[80%] md:mx-auto  ">
           <div className="flex justify-center items-center ">
             <div className="p-6 rounded-full bg-white">

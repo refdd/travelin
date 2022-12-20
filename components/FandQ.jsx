@@ -19,7 +19,7 @@ function FandQ({dataFandQ}) {
   }
    const gtiDta= dataFandQ.map(item => {
   return   {
-    title: <h2 className="text-[#17233e] whitespace-pre-wrap  text-[10px] font-Poppins  py-3 capitalize"> {item.question}</h2>,
+    title:  <small  className=" text-[20px]  md:text-[30px] capitalize"> {item.question}</small> ,
     content:  <p className="text-[#777] text-lg font-Poppins capitalize "> {item.answer} </p>
   }
    })
@@ -31,8 +31,8 @@ function FandQ({dataFandQ}) {
     styles : {
       // bgColor: 'white',
       rowTitleColor: "#17233e",
-      titleTextSize: '48px',
-      // rowContentColor: 'grey',
+      titleTextSize: '30px',
+       // rowTitleTextSize: 'medium'
       // arrowColor: "red",
     }
   };
