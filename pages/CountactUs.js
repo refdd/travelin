@@ -10,6 +10,7 @@ import { useForm, Controller } from "react-hook-form";
 import Explore from "../components/Explore";
 import FandQ from "../components/FandQ";
 import Footer from "../components/Footer";
+import Head from "next/head";
 
 function CountactUs() {
     const {

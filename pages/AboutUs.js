@@ -8,6 +8,7 @@ import BottomInquire from "../components/helper/BottomInquire";
 import AboutSection from "../components/AboutSection";
 import PerfectTour from "../components/PerfectTour";
 import Testimonails from "../components/Testimonails";
+import Head from "next/head";
 
 
 function AboutUs() {
