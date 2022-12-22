@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /admin
+
+Allow: /
+sitemap : https://www.nilecruisez.com/sitemap.xml

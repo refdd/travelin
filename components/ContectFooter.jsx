@@ -22,7 +22,7 @@ function ContectFooter() {
         </div>
         <p className="text-sm text-white capitalize font-Poppins">
         Around Egypt Tours is a young innovative travel company yet matured and experienced. 
-        Founded in 2010, Around Egypt Tours has made a considerable impact on the Egyptian 
+        Founded in 2005, Around Egypt Tours has made a considerable impact on the Egyptian 
         tourism sector by promoting Egypt as one of the fascinating destinations in the world.
 
         </p>

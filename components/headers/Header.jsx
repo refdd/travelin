@@ -7,7 +7,7 @@ function Header() {
           {/* video and lay out  */}
           <div>
             <div className="w-full h-full ">
-             {/* <video className=" w-full h-full object-cover" src={require("../../public/assets/video/tour.mp4")} autoPlay loop muted/> */}
+             <video className=" w-full h-full object-cover" src="https://api.nilecruisez.com/video/slidervideo.mp4" autoPlay loop muted/>
             </div>
             <div className="absolute top-0 left-0 w-full h-full bg-[##0000005e]  " > </div>
           </div>

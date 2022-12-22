@@ -4,6 +4,7 @@ import Select from "react-select";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useRouter } from 'next/router'
 import {countary , CodeCountery } from "../../data/dammyData"
+import axios from "axios";
 
 
 const code = CodeCountery.map(item => {
@@ -79,28 +80,30 @@ function FormInquire() {
 
   const [data, setData] = useState("");
   const router = useRouter()
-//   const onSubmit = data => {
-//     axios
-//      .post(
-//          'http://localhost:8000/tran',
-//          data,
-//          { headers: { 'Content-Type': 'application/json' }}
-//       )
-//      .then(response => {console.log(response.data)})
-//      .catch(error => {console.log(error.data)});
-//  };
+  const onSubmit = data => {
+    axios
+     .post(
+         'https://api.nilecruisez.com/api/inquiries',
+         data,
+         { headers: { 'Content-Type': 'application/json' }}
+      )
+     .then(response => {console.log(response.data)})
+     .catch(error => {console.log(error.data)});
+ };
+
 
  if(data){
   router.push('/Test')
  }
+//  onSubmit={handleSubmit((data) =>
+//   setData({ ...data, aduies: aduitsNumber, cikdren: childrenNumber })
+  
+// )}
   return (
     <form
       id="InquireFrom"
       className="relative"
-      onSubmit={handleSubmit((data) =>
-        setData({ ...data, aduies: aduitsNumber, cikdren: childrenNumber })
-        
-      )}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <div ref={divfixrd}>
         <div className={showform ? ` md:fixed top-0` : " md:absolute md:top-20"}>

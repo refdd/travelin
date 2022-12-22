@@ -21,6 +21,13 @@ function CountactUs() {
       const [data, setData] = useState("");
   return (
     <div>
+        <Head>
+        <meta
+          name="description"
+          content={"Contact us now. All you have to do is fill the below form and tell us what your dream   "}
+        />
+        <title>Contact us | nilecruisez.com </title>
+      </Head>
       <NavBar />
       <HeaderParts typeList={"contact us"} />
       <div className="flex flex-col justify-center items-center gap-3">
@@ -28,8 +35,7 @@ function CountactUs() {
           INFORMATION ABOUT US
         </h1>
         <p className="text-[#777] text-lg font-Poppins capitalize text-center">
-          Sagittis posuere id nam quis vestibulum vestibulum a facilisi at elit
-          hendrerit scelerisque sodales nam dis orci.
+        Around Egypt Tours Is A Young Innovative Travel Company Yet Matured And Experienced. Founded In 2005, Around Egypt Tours Has Made A Considerable Impact On The Egyptian Tourism Sector By Promoting Egypt As One Of The Fascinating Destinations In The World.
         </p>
       </div>
       {/* contact info  */}
@@ -42,7 +48,7 @@ function CountactUs() {
               Office Location
             </h2>
             <p className="text-center text-[#777] font-Poppins capitalize leading-7">
-              445 Mount Eden Road, Mt Eden Basundhara Chakrapath
+            39 Zohair Sabry St., Branched from, El Tayaran St, Nasr City, Cairo Governorate 11765
             </p>
           </div>
           <div className="flex flex-col  gap-4 justify-center items-center border p-3 rounded-lg md:flex-1">
@@ -53,12 +59,9 @@ function CountactUs() {
             <div>
               <p className="text-center text-[#777] font-mono capitalize leading-7">
                 {" "}
-                977-444-666-888{" "}
+                +20127 770 8751{" "}
               </p>
-              <p className="text-center text-[#777] font-mono capitalize leading-7">
-                {" "}
-                977-444-222-000{" "}
-              </p>
+            
             </div>
           </div>
           <div className="flex flex-col  gap-4 justify-center items-center border p-3 rounded-lg md:flex-1">
@@ -70,11 +73,7 @@ function CountactUs() {
             <div>
               <p className="text-center text-[#777] font-mono capitalize leading-7">
                 {" "}
-                info@realshield.com
-              </p>
-              <p className="text-center text-[#777] font-mono capitalize leading-7">
-                {" "}
-                help@realshield.com
+                sales@aroundegypttours.com 
               </p>
             </div>
           </div>

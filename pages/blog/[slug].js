@@ -1,25 +1,7 @@
-// import React from 'react'
 
-// function SingelBlog() {
-//   return (
-//     <div>SingelBlog</div>
-//   )
-// }
-
-// export default SingelBlog
 import React from "react";
-import HeaderDestination from "../../components/headers/HeaderDestination";
-import HeaderParts from "../../components/headers/HeaderParts";
-import Carousel from "../../components/headers/sliderImage/Carousel";
-import TabsTours from "../../components/headers/TabsTours";
-import BottomInquire from "../../components/helper/BottomInquire";
-import FormInquire from "../../components/helper/FormInquire";
 import NavBar from "../../components/NavBar";
 import Comments from "../../components/tapsComponents/Comments";
-import Highlifht from "../../components/tapsComponents/Highlifht";
-import Iternary from "../../components/tapsComponents/Iternary";
-import Prices from "../../components/tapsComponents/Prices";
-import Reviews from "../../components/tapsComponents/Reviews";
 import AddRevews from "../../components/tapsComponents/AddRevews.jsx";
 import { useStateContext } from "../../contexts/ContextProvider";
 import Explore from "../../components/Explore";
@@ -33,10 +15,6 @@ import { baseUrl, fetchApi } from "../../utils/ferchApi";
  import StructuredData from "../../components/dataStructured/StructuredData"
 import Head from "next/head";
 function SingelBlog({singelSlug}) {
-  const {isClicked} =useStateContext()
-  console.log('====================================');
-  // console.log(singelSlug);
-  console.log('====================================');
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',

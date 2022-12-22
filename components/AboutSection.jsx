@@ -10,13 +10,7 @@ import Head from "next/head";
 function AboutSection() {
   return (
     <div className="pt-10 container mx-auto">
-       <Head>
-        <meta
-          name="description"
-          content={" Around Egypt Tours is a young innovative travel company yet matured and experienced. Founded in 2010 . read more "}
-        />
-        <title>About us | nilecruisez.com </title>
-      </Head>
+     
       <div className="flex flex-col md:flex-row justify-center items-center gap-3">
         {/* content */}
         <div className="flex flex-col gap-3 md:w-2/4 ">
@@ -28,7 +22,7 @@ function AboutSection() {
           <div className="flex flex-col justify-center items-center gap-4 border-y py-3">
             <p className="text-[#777] text-lg leading-7  font-Poppins capitalize text-center">
               Around Egypt Tours is a young innovative travel company yet
-              matured and experienced. Founded in 2010, Around Egypt Tours has
+              matured and experienced. Founded in 2005, Around Egypt Tours has
               made a considerable impact on the Egyptian tourism sector by
               promoting Egypt as one of the fascinating destinations in the
               world.

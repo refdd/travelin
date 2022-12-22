@@ -14,6 +14,13 @@ function AboutUs() {
   
   return (
     <div className="">
+        <Head>
+        <meta
+          name="description"
+          content={" Around Egypt Tours is a young innovative travel company yet matured and experienced. Founded in 2010 . read more "}
+        />
+        <title>About us | nilecruisez.com </title>
+      </Head>
       <BottomInquire />
       <NavBar />
       <HeaderParts typeList="About us " />
