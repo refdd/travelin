@@ -20,7 +20,7 @@ if(!packagetype) return <Loding/>
               }
              }
                 src={item?.image}
-                alt={item.meta_title}
+                alt="Picture of the author"
                 width={400}
                 height={300}
                 layout={"intrinsic"}

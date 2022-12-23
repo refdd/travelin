@@ -35,9 +35,9 @@ function BlogList({listBlog}) {
       <Head>
         <meta
           name="description"
-          content={" The top Popular Egypt travel blog featuring travel tips, fashion, food and photography from around Egypt. Read before starting adventures. Read more!"}
+          content={"Meta description: The top Popular Egypt travel blog featuring travel tips, fashion, food and photography from around Egypt. Read before starting adventures. Read more!"}
         />
-        <title>{" Egypt Travel Blog | Egypt Travel Advisory"} </title>
+        <title>{"Meta Title : Egypt Travel Blog | Egypt Travel Advisory"} </title>
       </Head>
       <BottomInquire />
       <NavBar />

@@ -7,7 +7,6 @@ import NavBar from "../components/NavBar";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import Head from "next/head";
 
 const options = [
   { value: "Egypt", label: "Egypt" },
@@ -47,13 +46,6 @@ function InquireNow() {
  
   return (
     <div>
-       <Head>
-        <meta
-          name="description"
-          content={"Are you planning to visit Egypt? We offer all that you need in Egypt, covering all cities and attractions, we will take care of all your needs. Inquire now!"}
-        />
-        <title>{" Egypt Trip Planning | Plan a Vacation to Egypt | Egypt Trip Planner"} </title>
-      </Head>
       <NavBar />
       <HeaderParts typeList="Inquire Now" />
       <div className="container w-[70%] mx-auto pt-10">

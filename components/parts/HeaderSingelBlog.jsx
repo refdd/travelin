@@ -18,7 +18,21 @@ function HeaderSingelBlog({singelSlug}) {
                <span className='flex items-center gap-1'> <FaUser/> {singelSlug.author.name} <FaComment/>50</span>
             </div>
         </div>
-      
+        {/* image */}
+        {/* <div className='md:w-[100%]'>
+          <Image
+           loader={() =>{
+            return `${singelSlug.image}`;
+          }
+         }
+          src={singelSlug.image}
+          width={500}
+          height={500}
+          layout="intrinsic"
+          loading='lazy'
+          className='rounded-lg '
+          />
+        </div> */}
         <div className=" w-full  h-48 md:h-96 relative bg-white rounded-t-lg">
                 <Image
                  loader={() =>{
@@ -26,7 +40,7 @@ function HeaderSingelBlog({singelSlug}) {
                 }
                }
                 src={singelSlug.image}
-                  alt={singelSlug.meta_title}
+              
                  layout={"fill"}
                   loading={"lazy"}
                   className={"rounded-lg  "}

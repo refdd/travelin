@@ -51,7 +51,7 @@ function Carousel({gallery}) {
        height={600}  
        className="rounded-lg"
        layout='intrinsic'
-       alt={item.meta_title}
+       
        />
       </div>
         )
