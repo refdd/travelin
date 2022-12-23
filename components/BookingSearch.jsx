@@ -25,7 +25,7 @@ function BookingSearch() {
            <div className='w-full h-full md:h-[300px] '>
             <div className='flex flex-col gap-4 h-auto w-full justify-center items-center p-4 md:p-2 md:items-start  '>
               <h4 className='text-lg font-bold text-[#029e9d] font-Poppins '>Get To Know Us </h4>
-              <h2 className=' text-xl text-center font-Poppins font-bold capitalize text-[#17233e] md:text-2xl md:text-left md:leading-[3.5rem] '>Explore All that Egypt has to offer With Us.</h2>
+              <h5 className=' text-xl text-center font-Poppins font-bold capitalize text-[#17233e] md:text-2xl md:text-left md:leading-[3.5rem] '>Explore All that Egypt has to offer With Us.</h5>
               <p className='text-center leading-6 font-Poppins text-[#777] md:text-left '>
                 Mix your Nile Cruise from Luxor to Aswan with a joyful trip in Cairo and
                 Red Sea Relaxation; enjoying the

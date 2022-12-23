@@ -1,13 +1,9 @@
-import { useRouter } from "next/router";
 import React from "react";
-import { useEffect } from "react";
+import dynamic from 'next/dynamic';
 import { useState } from "react";
-import HeaderParts from "../components/headers/HeaderParts";
 import NavBar from "../components/NavBar";
-import { blogsData } from "../data/dammyData";
 import Select from "react-select";
 import { BsFillGrid3X3GapFill, BsList } from "react-icons/bs";
-import CardTorList from "../components/cards/CardTorList";
 import Explore from "../components/Explore";
 import Footer from "../components/Footer";
 import FormInquire from "../components/helper/FormInquire";
@@ -17,7 +13,9 @@ import { useStateContext } from "../contexts/ContextProvider";
 import CardBlogList from "../components/cards/CardBlogList";
 import { baseUrl, fetchApi } from "../utils/ferchApi";
 import Head from "next/head";
-
+const HeaderParts = dynamic(() => {
+  return import('../components/headers/HeaderParts').then((result) => result.default);
+});
 const options1 = [
   { value: "price", label: "price" },
   { value: "days ", label: "days" },
@@ -35,9 +33,9 @@ function BlogList({listBlog}) {
       <Head>
         <meta
           name="description"
-          content={"Meta description: The top Popular Egypt travel blog featuring travel tips, fashion, food and photography from around Egypt. Read before starting adventures. Read more!"}
+          content={" The top Popular Egypt travel blog featuring travel tips, fashion, food and photography from around Egypt. Read before starting adventures. Read more!"}
         />
-        <title>{"Meta Title : Egypt Travel Blog | Egypt Travel Advisory"} </title>
+        <title>{" Egypt Travel Blog | Egypt Travel Advisory"} </title>
       </Head>
       <BottomInquire />
       <NavBar />

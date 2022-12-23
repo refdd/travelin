@@ -1,25 +1,19 @@
-import Image from "next/image";
 import React from "react";
+import dynamic from 'next/dynamic';
 import Explore from "../../components/Explore";
 import FandQ from "../../components/FandQ";
 import Footer from "../../components/Footer";
 import HeaderDestination from "../../components/headers/HeaderDestination";
-import HeaderParts from "../../components/headers/HeaderParts";
 import NavBar from "../../components/NavBar";
-import { BsCheckLg } from "react-icons/bs";
-import { GrFormClose } from "react-icons/gr";
 import FormInquire from "../../components/helper/FormInquire";
-import SelectPackagess from "../../components/SelectPackagess";
 import PackageTyps from "../../components/PackageTyps";
 import Carousel from "../../components/headers/sliderImage/Carousel";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Head from "next/head";
-
+const HeaderParts = dynamic(() => {
+  return import('../../components/headers/HeaderParts').then((result) => result.default);
+});
 function Destination({tours , Egypt}) {
-
-  console.log('====================================');
-  console.log(Egypt);
-  console.log('====================================');
   return (
     <div>
        <Head>

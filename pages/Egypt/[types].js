@@ -19,12 +19,15 @@ import Head from "next/head";
 import Loding from "../../components/helper/Loding"
 import TableListTour from "../../components/cards/TableListTour";
 import bgtour from "../../public/assets/images/slider-Egyptian-Museum.webp"
+import StructuredData from "../../components/dataStructured/StructuredData";
 const array = ["egypt-tour-packages", "river-nile-cruises"];
 
 const options1 = [
   { value: "price", label: "price" },
   { value: "days ", label: "days" },
 ];
+
+
 function PackageList({typesall , tours } ) {
   const { setdesplauGrid, desplaygrid } = useStateContext();
   const [valueState, setValueState] = useState("");
@@ -32,6 +35,28 @@ function PackageList({typesall , tours } ) {
   const [listTour, setlistTour] = useState(null);
   const router = useRouter();
   const { types } = router.query;
+ 
+  const structuredData =  tours.map(item => {
+     return  {
+      fields: [
+        {
+          name: "NAME TOUR",
+          type: "string",
+          description: item.title
+        },
+        {
+          name: "DAURATION",
+          type: "string",
+          description: `${item.duration} Days`
+        },
+        {
+          name: "PRICE FORM",
+          type: "integer",
+          description: ` $ ${item.start_price} `,
+        }
+      ]
+     }
+  } ) 
   useEffect(() => {
   if (!typesall) return ;
 
@@ -51,11 +76,13 @@ function PackageList({typesall , tours } ) {
   return (
     <div className="">
       <Head>
-        
+      
         <meta
           name="description"
           content={selectedTyps.meta_description}
         />
+        <StructuredData data={structuredData} />
+
         <title>{selectedTyps.meta_title} </title>
       </Head>
       <BottomInquire />

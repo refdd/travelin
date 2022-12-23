@@ -22,7 +22,7 @@ function ContectFooter() {
         </div>
         <p className="text-sm text-white capitalize font-Poppins">
         Around Egypt Tours is a young innovative travel company yet matured and experienced. 
-        Founded in 2010, Around Egypt Tours has made a considerable impact on the Egyptian 
+        Founded in 2005, Around Egypt Tours has made a considerable impact on the Egyptian 
         tourism sector by promoting Egypt as one of the fascinating destinations in the world.
 
         </p>
@@ -48,10 +48,10 @@ function ContectFooter() {
       <div className="  flex flex-col  items-start pl-4 gap-4 col-auto lg:col-start-5 lg:col-end-7">
         <ul className="flex flex-col gap-4">
           <li>
-            <h1 className="relative font-Poppins capitalize text-2xl text-white font-bold ">
+            <h5 className="relative font-Poppins capitalize text-2xl text-white font-bold ">
               Quick Link
               <span className=" absolute bottom-[-5px] left-0 h-1 w-[80%] bg-white"></span>
-            </h1>
+            </h5>
           </li>
 
         
@@ -79,10 +79,10 @@ function ContectFooter() {
       
       <div className=" flex flex-col items-start pl-4 gap-4 md:gap-8 col-auto	  lg:col-start-9 lg:col-end-13 ">
         <div>
-          <h1 className="relative font-Poppins capitalize text-2xl text-white font-bold ">
+          <h5 className="relative font-Poppins capitalize text-2xl text-white font-bold ">
             Newsletter
             <span className=" absolute bottom-[-5px] left-0 h-1 w-[80%] bg-white"></span>
-          </h1>
+          </h5>
         </div>
         <p className="text-lg font-Poppins text-white ">
         Jin our community of over 20,000 global readers who 

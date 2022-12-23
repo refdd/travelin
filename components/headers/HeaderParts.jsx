@@ -9,7 +9,7 @@ function HeaderParts({typeList ,  bgtour  }) {
      className='relative h-screen w-full bg-no-repeat bg-fixed bg-cover bg-top -z-10'>
         {/* content  */}
         <div className='h-full w-full flex flex-col justify-center items-center z-30'>
-            <h1 className='uppercase text-3xl md:text-5xl text-white font-bold font-Poppins text-center '>{typeList} </h1>
+            <h2 className='uppercase text-3xl md:text-5xl text-white font-bold font-Poppins text-center '>{typeList} </h2>
             <p className='text-white font-Poppins capitalize text-xl text-center'>
               <Link href={"/"}>
               <button className='  cursor-pointer text-[#029e9d]  ' >Home</button>

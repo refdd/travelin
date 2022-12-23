@@ -26,6 +26,7 @@ function Partners({partners}) {
            height={100}
            layout={"intrinsic"}
            loading="lazy"
+           alt='nilecruiez'
            />
            )
            

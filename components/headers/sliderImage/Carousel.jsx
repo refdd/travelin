@@ -35,6 +35,7 @@ function Carousel({gallery}) {
   if(!gallery) {
     return <p>wait</p>
   }
+
   return (
     <div>
     <Slider {...settings}>
@@ -51,7 +52,8 @@ function Carousel({gallery}) {
        height={600}  
        className="rounded-lg"
        layout='intrinsic'
-       
+       alt={item.meta_title ? item.meta_title : "Egypt tour " }
+       loading={'eager'}
        />
       </div>
         )

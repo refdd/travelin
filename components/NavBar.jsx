@@ -56,16 +56,7 @@ function NavBar() {
         
               </ul>
             </div>
-            {/* button booking  */}
-            {/* <div className=" hidden md:flex md:w-1/5  justify-center items-center">
-              <div className=" flex">
-                <Link href="/InquireNow">
-                  <a className="bg-[#029e9d]  text-center text-white text-lg rounded-2xl md:p-4 md:text-xl transition hover:bg-[#fdc703]">
-                  Inquire now
-                  </a>
-                </Link>
-              </div>
-            </div> */}
+           
             <div className="  group hidden md:flex ">
         <Link href={`/InquireNow`}>
         <button className=" wrapper   w-40  group-hover:text-white bg-[#029e9d] px-4 py-1 rounded-2xl z-10 text-white overflow-hidden  ">
@@ -102,6 +93,11 @@ function NavBar() {
                     <li className='border-b-2  text-left w-full p-2 uppercase  transition-all hover:bg-[#cccccc] ' >
                         <Link href={`/egypt-travel-blog`} >
                             <a> Blog  </a>
+                        </Link>
+                    </li>
+                    <li className='bg-[#029e9d] flex justify-center items-center text-white text-lg font-Poppins capitalize rounded-xl py-1 mt-2 cursor-pointer' >
+                        <Link href={`/InquireNow`} >
+                            <a> Inquire Now  </a>
                         </Link>
                     </li>
                 </ul>

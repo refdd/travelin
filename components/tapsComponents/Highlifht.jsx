@@ -3,14 +3,12 @@ import {MdOutlineWatchLater} from "react-icons/md"
 import {HiUserGroup} from "react-icons/hi"
 import {AiFillCalendar , AiOutlineUser , AiFillFileText} from "react-icons/ai"
 import {BiMapAlt} from "react-icons/bi"
-import { BsCheckLg } from 'react-icons/bs'
-import { GrFormClose } from 'react-icons/gr'
 function Highlifht({highlightData}) {
 
   return (
     <div className='container mx-auto pt-4' >
        <div className='flex flex-col gap-2 '>
-        <h1 className='text-3xl text-[#17233e] font-semibold  font-Poppins capitalize  my-3 md:text-4xl '>Description</h1>
+        <h5 className='text-3xl text-[#17233e] font-semibold  font-Poppins capitalize  my-3 md:text-4xl '>Description</h5>
         <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'></p> 
         <div dangerouslySetInnerHTML={{__html:highlightData.description}} /> 
        </div>

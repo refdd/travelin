@@ -20,7 +20,7 @@ const {desplaygrid , setdesplauGrid} = useStateContext()
       }
      }
        src={item.image }
-       alt="Picture of the author"
+       alt={item.meta_title}
        width={400}
        height={300}
        layout={"intrinsic"}

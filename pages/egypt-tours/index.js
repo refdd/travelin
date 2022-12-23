@@ -1,25 +1,40 @@
-import Image from "next/image";
 import React from "react";
+import dynamic from 'next/dynamic';
 import Explore from "../../components/Explore";
 import FandQ from "../../components/FandQ";
 import Footer from "../../components/Footer";
-import HeaderDestination from "../../components/headers/HeaderDestination";
-import HeaderParts from "../../components/headers/HeaderParts";
 import NavBar from "../../components/NavBar";
-import { BsCheckLg } from "react-icons/bs";
-import { GrFormClose } from "react-icons/gr";
-import FormInquire from "../../components/helper/FormInquire";
-import { ToursOfTyps } from "../../data/dammyData";
-import SelectPackagess from "../../components/SelectPackagess";
-import PackageTyps from "../../components/PackageTyps";
-import Carousel from "../../components/headers/sliderImage/Carousel";
-import CardList from "../../components/cards/CardList";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
-import CardTorList from "../../components/cards/CardTorList";
 import Head from "next/head";
 import ListEgyptTour from "../../components/cards/ListEgyptTour";
 import TableListTour from "../../components/cards/TableListTour";
+import StructuredData from "../../components/dataStructured/StructuredData";
+const HeaderParts = dynamic(() => {
+  return import('../../components/headers/HeaderParts').then((result) => result.default);
+});
+
 function Destination({tours}) {
+  const structuredData =  tours.map(item => {
+    return  {
+     fields: [
+       {
+         name: "NAME TOUR",
+         type: "string",
+         description: item.title
+       },
+       {
+         name: "DAURATION",
+         type: "string",
+         description: `${item.duration} Days`
+       },
+       {
+         name: "PRICE FORM",
+         type: "integer",
+         description: ` $ ${item.start_price} `,
+       }
+     ]
+    }
+ } ) 
   return (
     <div>
       <Head>
@@ -27,6 +42,7 @@ function Destination({tours}) {
           name="description"
           content={"Best Egypt Tours 2023 : Choose among wide range of Tours to Egypt & Visit Egypt like never before. Best Prices. Book Now!"}
         />
+        <StructuredData data={structuredData} />
         <title>Egypt Tours | Best Egypt Tours | Egypt Tours 2023</title>
       </Head>
       <NavBar />
@@ -35,7 +51,7 @@ function Destination({tours}) {
       
      {/* tour list */}
      <div className="flex flex-col gap-3 items-center justify-center">
-          <h1 className="text-3xl text-[#029e9d] font-Poppins capitalize text-center font-bold">  Best Egypt Tours </h1>
+          <h3 className="text-3xl text-[#029e9d] font-Poppins capitalize text-center font-bold">  Best Egypt Tours </h3>
        <p className=" text-lg text-[#777] font-Poppins font-medium capitalize text-center md:px-4">
        Best Egypt Tours 2023 : Choose among wide range of Tours to Egypt & Visit Egypt like never before. Best Prices. Book Now!
        </p>

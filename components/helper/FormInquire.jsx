@@ -4,6 +4,7 @@ import Select from "react-select";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useRouter } from 'next/router'
 import {countary , CodeCountery } from "../../data/dammyData"
+import axios from "axios";
 
 
 const code = CodeCountery.map(item => {
@@ -79,28 +80,30 @@ function FormInquire() {
 
   const [data, setData] = useState("");
   const router = useRouter()
-//   const onSubmit = data => {
-//     axios
-//      .post(
-//          'http://localhost:8000/tran',
-//          data,
-//          { headers: { 'Content-Type': 'application/json' }}
-//       )
-//      .then(response => {console.log(response.data)})
-//      .catch(error => {console.log(error.data)});
-//  };
+  const onSubmit = data => {
+    axios
+     .post(
+         'https://api.nilecruisez.com/api/inquiries',
+         data,
+         { headers: { 'Content-Type': 'application/json' }}
+      )
+     .then(response => {console.log(response.data)})
+     .catch(error => {console.log(error.data)});
+ };
+
 
  if(data){
   router.push('/Test')
  }
+//  onSubmit={handleSubmit((data) =>
+//   setData({ ...data, aduies: aduitsNumber, cikdren: childrenNumber })
+  
+// )}
   return (
     <form
       id="InquireFrom"
       className="relative"
-      onSubmit={handleSubmit((data) =>
-        setData({ ...data, aduies: aduitsNumber, cikdren: childrenNumber })
-        
-      )}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <div ref={divfixrd}>
         <div className={showform ? ` md:fixed top-0` : " md:absolute md:top-20"}>
@@ -235,7 +238,7 @@ function FormInquire() {
               {/* counter  */}
               <div className="flex  w-[90%] mx-auto gap-7 justify-center  ">
                 <div className="w-[45%] flex flex-col gap-2">
-                  <h1 className="text-sm text-[#777]">Adults(+12)</h1>
+                  <p className="text-sm text-[#777]">Adults(+12)</p>
                   <div className="flex justify-center items-center border bg-white rounded-lg py-3 ">
                     <div
                       onClick={() => hanbleIncrement("aduits")}
@@ -255,7 +258,7 @@ function FormInquire() {
                   </div>
                 </div>
                 <div className="w-[45%] flex flex-col gap-2 ">
-                  <h1 className="text-sm text-[#777]"> children(+12)</h1>
+                  <p className="text-sm text-[#777]"> children(+12)</p>
                   <div className="flex justify-center items-center border bg-white rounded-lg py-3">
                     <div
                       onClick={() => hanbleIncrement("children")}

@@ -38,9 +38,10 @@ const handelRightArrow=()=>{
               width={100}
               height={100}
               className={"rounded-full "}
+            
             />
-            <h1 className=" text-xl font-bold font-Poppins text-[#029e9d] mt-4">{testimonialsData[selected].name}</h1>
-            <h1 className="text-[#777]">{testimonialsData[selected].status}</h1>
+            <h5 className=" text-xl font-bold font-Poppins text-[#029e9d] mt-4">{testimonialsData[selected].name}</h5>
+            <h5 className="text-[#777]">{testimonialsData[selected].status}</h5>
           </div>
 
           {/* content  */}
@@ -65,6 +66,7 @@ const handelRightArrow=()=>{
           width={500}
           height={500}
           layout={"intrinsic"}
+          alt="testimonailis"
           />
           </a>
           </Link>

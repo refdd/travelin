@@ -22,6 +22,7 @@ function Test() {
               height={100}
               layout={"intrinsic"}
               loading="lazy"
+              alt="Instagram"
             />
           </div>
         </li>
