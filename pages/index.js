@@ -11,7 +11,6 @@ import PerfectTour from "../components/PerfectTour";
 import SelectPackagess from "../components/SelectPackagess";
 import Testimonails from "../components/Testimonails";
 import { fetchApi, baseUrl } from "../utils/ferchApi";
-import imagescema from "../public/assets/images/Nile Cruises 2.webp"
 import {
   useStateContext,
 } from "../contexts/ContextProvider";
@@ -25,7 +24,6 @@ export default function Home({
   types,
   tours,
   plogList,
-  videoHeader
 }) {
   const {openSearch } = useStateContext()
  
@@ -76,7 +74,7 @@ export default function Home({
 
       </Head>
       <NavBar />
-      <Header videoHeader={videoHeader}  />
+      <Header  />
       <BookingSearch />
      { openSearch &&   <BoxSearch/>}
       {types &&
@@ -125,7 +123,6 @@ export async function getStaticProps() {
   const types = await fetchApi(`${baseUrl}/types`);
   const tours = await fetchApi(`${baseUrl}/tours`);
   const plogList = await fetchApi(`${baseUrl}/posts`);
-  const videoHeader = await fetchApi(`${baseUrl}/settings`);
   return {
     props: {
       FandQAPI: FandQAPI.data,
@@ -133,7 +130,6 @@ export async function getStaticProps() {
       types: types.data,
       tours: tours.data,
       plogList: plogList.data,
-      videoHeader: videoHeader.data,
     },
     revalidate: 10,
   };

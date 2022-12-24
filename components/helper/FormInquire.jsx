@@ -12,7 +12,7 @@ return  { value: item.dial_code , label: ` ${item.code } _ ${item.dial_code }`}
 })
 function FormInquire() {
   const [showform, setShowform] = useState(false);
-  const [stopScroll, setStopScroll] = useState(-3102);
+  const [stopScroll, setStopScroll] = useState(-2694);
   const divfixrd = useRef();
 
   const [aduitsNumber, setAduitsNumber] = useState(0);
@@ -50,9 +50,13 @@ function FormInquire() {
       if (!divfixrd.current) return;
       const { top, bottom } = divfixrd.current.getBoundingClientRect();
       // if(pathname.includes("/tour/")){
-      //   setStopScroll(-2912)
+      //   setStopScroll(-1797)
       
       // }
+      if(pathname.includes("/river-nile-cruises")){
+        setStopScroll(-1797)
+      
+      }
       if(pathname == "/Egypt"){
         setStopScroll(-798.5)
        
