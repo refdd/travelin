@@ -12,7 +12,7 @@ return  { value: item.dial_code , label: ` ${item.code } _ ${item.dial_code }`}
 })
 function FormInquire() {
   const [showform, setShowform] = useState(false);
-  const [stopScroll, setStopScroll] = useState(-6095);
+  const [stopScroll, setStopScroll] = useState(-3102);
   const divfixrd = useRef();
 
   const [aduitsNumber, setAduitsNumber] = useState(0);
@@ -49,18 +49,19 @@ function FormInquire() {
     const handlebottomfiexd = () => {
       if (!divfixrd.current) return;
       const { top, bottom } = divfixrd.current.getBoundingClientRect();
-      if(pathname.includes("/tour/")){
-        setStopScroll(-2912)
+      // if(pathname.includes("/tour/")){
+      //   setStopScroll(-2912)
       
-      }
+      // }
       if(pathname == "/Egypt"){
-        setStopScroll(-1009)
+        setStopScroll(-798.5)
        
       }
-      if(pathname == "/BlogList"){
-       setStopScroll(-1255)
+      if(pathname == "/egypt-travel-blog"){
+       setStopScroll(-403)
        
       }
+      console.log(bottom);
       if (bottom <= stopScroll ) {
         setShowform(false);
       }
