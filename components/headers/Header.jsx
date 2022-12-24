@@ -8,7 +8,6 @@ function Header({videoHeader}) {
     const videoUrl = videoHeader.find(item => item.name == "video")
     setUrlVideao(videoUrl)
   },[videoHeader])
-  console.log(urlVideao);
    if(!urlVideao){
     return <Loding/>
    }
@@ -25,9 +24,9 @@ function Header({videoHeader}) {
           </div>
 
           {/* content  */}
-          <div className="absolute top-0 flex flex-col  justify-center items-center w-full h-full text-slate-100 "> 
+          {/* <div className="absolute top-0 flex flex-col  justify-center items-center w-full h-full text-slate-100 "> 
            <h1 className="text-white text-center text-xl w-[285px] md:text-6xl md:w-full mt-[-75px] md:font-bold font-Poppins md:mt-[-277px]  ">Joyful Nile Cruise Trips </h1>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

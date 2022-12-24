@@ -11,9 +11,7 @@ import Testimonails from "../../components/Testimonails";
 import Head from "next/head";
 
 function Pages({singelpage}) {
-    console.log('====================================');
-    console.log(singelpage);
-    console.log('====================================');
+   
   return (
     <div>
        <Head>

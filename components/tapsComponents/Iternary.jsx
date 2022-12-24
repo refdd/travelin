@@ -33,14 +33,15 @@ function Iternary({iternaryData}) {
   <div key={item.id} className='container mx-auto pt-3'>
   <div className='flex flex-col gap-2 '>
   <h1 className='text-3xl text-[#17233e] font-semibold  font-Poppins capitalize  my-3 md:text-4xl '>{item.title}</h1>
-  <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'> {item.description}</p>
-      <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'>The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts 
-          of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</p>
+  {/* <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'> {item.description}</p> */}
+  <div dangerouslySetInnerHTML={{__html:item.description}} /> 
+
+      
  </div>
  {item.days.map(day => (
  <div key={day.id} className='pt-5'>
  <Faq data={{ ... data , styles  , 
-  rows : [ { title : <h2 className="text-[#17233e] text-[10px]  py-3 font-Poppins capitalize"> {day.title}</h2> ,
+  rows : [ { title : <h5 className="text-[#17233e] text-[18px]  py-3 font-Poppins capitalize"> {day.title}</h5> ,
              content: <div dangerouslySetInnerHTML={{__html:day.description}} />   } ]
    }}  config={config} />
  </div>

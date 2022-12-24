@@ -1,17 +1,36 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef } from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 
 function BottomInquire() {
   const [showBottom , setshowBottom] = useState(true)
- 
+  const [stopScroll , setStopScroll] = useState(true)
+  const divfixrd = useRef();
+  useEffect(() => {
+      const handleShadow = () => {
+        if (!divfixrd.current) return;
+        const { top, bottom } = divfixrd.current.getBoundingClientRect();  
+        if (top <= 496) {
+          setshowBottom(true);
+        } else {
+          setshowBottom(false);
+        }
+      };
+      // const handlebottomfiexd = () => {
+      //   if (!divfixrd.current) return;
+      //   const { top, bottom } = divfixrd.current.getBoundingClientRect();
+      // };
+  
+      window.addEventListener("scroll", handleShadow);
+      // window.addEventListener("scroll", handlebottomfiexd);
+    }, []);
   const handleShowBottom = () =>{
     setshowBottom(false)
   }
   
   return (
-    <div className={ showBottom ? 'md:hidden fixed bottom-0 container mx-auto z-50  ': " hidden" }>
+    <div ref={divfixrd} className={ showBottom ? 'md:hidden fixed bottom-0 container mx-auto z-50  ': " hidden" }>
       <Link href={"#InquireFrom"}>
       <div
       onClick={handleShowBottom}

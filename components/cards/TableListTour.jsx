@@ -2,7 +2,6 @@ import Link from 'next/link'
 import React from 'react'
 
 function TableListTour({listTour}) {
-    console.log(listTour)
   return (
   <div className='container mx-auto pt-9 ' >  
    

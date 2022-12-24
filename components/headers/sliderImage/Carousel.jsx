@@ -53,7 +53,7 @@ function Carousel({gallery}) {
        className="rounded-lg"
        layout='intrinsic'
        alt={item.meta_title ? item.meta_title : "Egypt tour " }
-       loading={'eager'}
+       loading={'lazy'}
        />
       </div>
         )

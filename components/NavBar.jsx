@@ -24,6 +24,7 @@ function NavBar() {
                   alt="loge travel website"
                   width={200}
                   height={50}
+                  loading={"eager"}
                 />
               </div>
             </div>

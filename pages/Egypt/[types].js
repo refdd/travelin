@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 import HeaderParts from "../../components/headers/HeaderParts";
 import NavBar from "../../components/NavBar";
-import { ToursOfTyps } from "../../data/dammyData";
 import Select from "react-select";
 import { BsFillGrid3X3GapFill, BsList } from "react-icons/bs";
 import CardTorList from "../../components/cards/CardTorList";
@@ -38,6 +37,8 @@ function PackageList({typesall , tours } ) {
  
   const structuredData =  tours.map(item => {
      return  {
+      "@context": "http://schema.org",
+      "@type": "Table",
       fields: [
         {
           name: "NAME TOUR",

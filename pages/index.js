@@ -49,7 +49,7 @@ export default function Home({
     name: "Nile Cruises Video    ",
     description: "Explore the ancient Egyptian civilization through the best travel offers and nile cruises 2023 Book Today",
     thumbnailUrl: [
-      imagescema,
+      "https://api.nilecruisez.com/images/tours/2022-12-06-1670341356638f62ec896b32.21223139b7da2be5-5e57-4b1a-a392-0d2feb2bc363-1.webp.webp"
      ],
     uploadDate: "2016-03-31T08:00:00+08:00",
     duration: "PT1M54S",
