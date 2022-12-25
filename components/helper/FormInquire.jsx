@@ -5,6 +5,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useRouter } from 'next/router'
 import {countary , CodeCountery } from "../../data/dammyData"
 import axios from "axios";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 
 const code = CodeCountery.map(item => {
@@ -14,6 +15,7 @@ function FormInquire() {
   const [showform, setShowform] = useState(false);
   const [stopScroll, setStopScroll] = useState(-2694);
   const divfixrd = useRef();
+const {fromDirction,setFromDirction} = useStateContext()
 
   const [aduitsNumber, setAduitsNumber] = useState(0);
   const [childrenNumber, setChildrenNumber] = useState(0);
@@ -39,7 +41,7 @@ function FormInquire() {
     const handleShadow = () => {
       if (!divfixrd.current) return;
       const { top, bottom } = divfixrd.current.getBoundingClientRect();
-      
+      setFromDirction({fromTop :top , formBottom : bottom } )
       if (top <= 0) {
         setShowform(true);
       } else {
@@ -65,7 +67,6 @@ function FormInquire() {
        setStopScroll(-403)
        
       }
-      console.log(bottom);
       if (bottom <= stopScroll ) {
         setShowform(false);
       }
@@ -152,8 +153,9 @@ function FormInquire() {
               <div className="w-full felx justify-center items-center gap-3">
                 <div className="flex  justify-center items-center gap-5 w-[90%] mx-auto ">
                   <div className=" w-[50%]  flex flex-col gap-1 ">
+                    <label className="capitalize text-[#777] font-Poppins " > start date</label>
                     <input
-                      type="text"
+                      type="date"
                       className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                       placeholder="start"
                       onFocus={(e) => (e.target.type = "date")}
@@ -166,8 +168,9 @@ function FormInquire() {
 
                   </div>
                   <div className=" w-[50%]  flex flex-col gap-1 ">
+                  <label className="capitalize text-[#777] font-Poppins " > End date</label>
                     <input
-                      type="text"
+                      type="date"
                       className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                       placeholder="Arrival"
                       onFocus={(e) => (e.target.type = "date")}

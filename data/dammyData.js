@@ -1,28 +1,31 @@
-import imageAfater from "../public/assets/images/img1.jpg";
+import TyphanieImage from "../public/assets/images/egypt-packagestt.webp";
+import packagesrrimage  from "../public/assets/images/egypt-packagesrr.webp";
+import packages44image from "../public/assets/images/egypt-packages44.webp";
+import packagesImage from "../public/assets/images/egypt-packages.webp";
 export const testimonialsData = [
   {
-    image: imageAfater,
+    image: TyphanieImage,
     review:
       "I've utilize Around Egypt Tours numerous times! Professional Guides/Egyptologists, excellent service, and they go above abd beyond for an enriching experience. You won't regret booking with them! They're the best in Egypt!",
     name: "Typhanie L",
     status: "USA",
   },
   {
-    image: imageAfater,
+    image: packagesrrimage,
     review:
       "Everything we have in our tour was enjoyable experience the rides were nice with our guided tour was so patience.want to be back again with same guided tour.",
     name: "Kuucela G",
     status: "USA",
   },
   {
-    image: imageAfater,
+    image: packages44image,
     review:
       "Every sight being Visited with our guide we had fun together . Welcomed so well from airport to Aswan.      ",
     name: "Charles G ",
     status: "USA",
   },
   {
-    image: imageAfater,
+    image: packagesImage,
     review:
       "Gawisch and all those who are a part of his group worked tirelessly to ensure we had a wonderful experience. He ensured that our tour guide was versed in the history of Egypt, has an awesome personality, and attentive to our safety. He was always available to fix any unforeseen circumstances. We could never had a better tour group and I look forward to my next adventure with them.",
     name: "VENEICE C",

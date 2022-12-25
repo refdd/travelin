@@ -63,13 +63,15 @@ export default function Home({
   return (
     <div>
       <Head>
+      <link rel="canonical" href="https://www.nilecruisez.com"/>
+        <link rel="alternate" href="https://www.nilecruisez.com/" hreflang="en"/>
+
         <title>Nile Cruises | Nile Cruises 2023 | Travel to Egypt</title>
         <StructuredData data={structuredData} />
         <StructuredData data={structuredDataVideo} />
         <meta
           name="description"
           content={"Travel to Egypt, Explore the ancient Egyptian civilization through the best travel offers and nile cruises 2023. Book Today!"}
-        
         />
 
       </Head>

@@ -34,16 +34,18 @@ const {desplaygrid , setdesplauGrid} = useStateContext()
     {/* content */}
     <div className={" flex flex-col gap-2 justify-center   items-center  " }>
       {/* right side */}
-     <div className={"flex flex-col gap-2 justify-center items-center " }>
       <Link href={`/egypt-tours/${item.slug}`}>
+   <a>
+   <div className={"flex flex-col gap-2 justify-center items-center " }>
       <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer "> {item.title}</h2>
-      </Link>
     <div className=" flex gap-3 flex-col md:flex-row items-center">
     <p className="text-[16px] text-center md:text-left text-[#777] font-Poppins "> {item.duration} Days {item.type} </p>
      <h4 className="text-[16px] text-center md:text-left text-[#777] font-Poppins capitalize "> cities : {item.destinations}</h4>
     </div>
         <p className="text-[#029e9d] text-center md:text-left text-[16px] font-Poppins "> {item.overview}</p>
      </div>
+   </a>
+      </Link>
      {/* left side */}
     <div className={ "flex flex-col gap-2 justify-center items-center md:flex-row md:flex-wrap "
   }>
