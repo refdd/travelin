@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { lazy, useEffect, useState } from "react";
+import { BsCalendar3, BsStarFill } from "react-icons/bs";
+import { blogsData } from "../data/dammyData";
 function BlogCard({blogsList}) {
   const [blags,setBlogs ] = useState(null)
  
@@ -32,19 +34,19 @@ function BlogCard({blogsList}) {
            
           </div>
           {/* content  */}
-          <Link href={`/blog/${item.slug}`}>
-          <a>
           <div className="flex flex-col gap-3 border-b mx-4 mt-5">
+            
+            <Link href={`/blog/${item.slug}`}>
+            
             <h2 className="font-Poppins  text-[#212529] text-2xl font-bold">
             {item.title}
             </h2>
+            </Link>
+
             <p className="text-[#777] text-left leading-6 mb-3 ">
             {item.description.replace(/<[^>]*>?/gm, '').substring(0 , 120 )}
             </p>
           </div>
-          </a>
-          </Link>
-
           {/* price  */}
           <div className=" flex w-full justify-between mb-3 px-4">
             <div className="flex  justify-center items-center gap-2 ">

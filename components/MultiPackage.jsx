@@ -6,9 +6,9 @@ import {
 import PackageCard from "./PackageCard";
 import HeaderSection from "./helper/HeaderSection";
 import OfferPackageCard from "./OfferPackageCard";
-import BlogCard from "../components/BlogCard";
+import  BlogCard from "../components/BlogCard"
 import Link from "next/link";
-function MultiPackage({ offerSection, tours, blogsList, descount }) {
+function MultiPackage({ offerSection , tours , blogsList , descount }) {
   const rowRef = useRef(null);
   const [isMoved, setIsMoved] = useState(false);
   const handleClick = (direction) => {
@@ -32,16 +32,12 @@ function MultiPackage({ offerSection, tours, blogsList, descount }) {
 
   return (
     <div className="h-full space-y-0.5 md:space-y-2 bg-[#e6eef5] relative  ">
-      {offerSection ? (
-        <HeaderSection
-          titel={"Top Offers"}
-          partOne={" Egypt Special"}
-          partTwo={" Offers & Discount Packages"}
-          decs={""}
-        />
-      ) : (
-        ""
-      )}
+      {offerSection ? <HeaderSection 
+      titel={"Top Offers"}
+        partOne={" Egypt Special"}
+         partTwo={" Offers & Discount Packages"}
+          decs={""} 
+          /> : ""}
       <div className="group  relative md:ml-2 ">
         <BsFillArrowLeftCircleFill
           className={`absolute top-0 bottom-0 left-2 z-40 m-auto h-9 w-9 
@@ -54,11 +50,7 @@ function MultiPackage({ offerSection, tours, blogsList, descount }) {
           ref={rowRef}
           className="flex  items-center gap-5 overflow-x-scroll scrollbar-hide sspace-x-2.5 pl-4"
         >
-          {!offerSection ? (
-            <BlogCard blogsList={blogsList} />
-          ) : (
-            <OfferPackageCard tours={tours} />
-          )}
+        { !offerSection ? <BlogCard blogsList={blogsList}/>: <OfferPackageCard tours={tours} />}      
         </div>
         <BsFillArrowRightCircleFill
           className=" absolute top-0 bottom-0   right-2 z-40 m-auto h-9 w-9
@@ -67,19 +59,21 @@ function MultiPackage({ offerSection, tours, blogsList, descount }) {
         />
       </div>
       <div className="  group w-full py-3  md:pt-1  md:pb-3 flex justify-center items-center  ">
-        {!offerSection ? (
-          <Link href={`/egypt-travel-blog`}>
-           <a>
-           <button className=" wrapper w-[50%] md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
-              <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
-              read more
-            </button>
-           </a>
-          </Link>
-        ) : (
-          ""
-        )}
-      </div>
+        {!offerSection ? 
+      <Link href={`/egypt-travel-blog`}>
+      <button className=" wrapper w-[50%] md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
+               <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
+                read more
+                </button>
+      </Link>
+      :
+     ""
+      }
+              
+            </div>
+
+
+
     </div>
   );
 }
