@@ -10,7 +10,7 @@ import axios from "axios";
 const code = CodeCountery.map(item => {
 return  { value: item.dial_code , label: ` ${item.code } _ ${item.dial_code }`}
 })
-function FormInquire() {
+function FormInquire({singletour}) {
   const [showform, setShowform] = useState(false);
   const [stopScroll, setStopScroll] = useState(-6095);
   const divfixrd = useRef();
@@ -87,7 +87,6 @@ function FormInquire() {
          data,
          { headers: {
            'Content-Type': 'application/json',
-          " Access-Control-Allow-Origin" : "*"
            }}
       )
      .then(response => {console.log(response.data)})
@@ -115,8 +114,8 @@ function FormInquire() {
               {/* header */}
               <div className="w-full bg-[#029e9d] flex justify-center items-center py-5">
                 <div className="text-2xl capitalize font-Poppins text-white ">
-                  {" "}
-                  inquire Now
+                  {singletour ? <p  className="capitalize  text-2xl  text-center  md:text-right text-white font-Poppins font-medium  " > from <span className= " font-bold   text-white"> $ {singletour.start_price  - singletour.start_price * singletour.discount / 100   } </span> </p> : "inquire Now"}
+                      
                 </div>
               </div>
               {/* input mail and name  */}
