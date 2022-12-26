@@ -78,7 +78,7 @@ export default function Home({
       <NavBar />
       <Header  />
       <BookingSearch />
-     { openSearch &&   <BoxSearch/>}
+     { openSearch &&   <BoxSearch tours={tours}/>}
       {types &&
         types.map((item) => (
           <section key={item.id} className=" md:pt-16  bg-[#e6eef5]  ">

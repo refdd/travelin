@@ -91,7 +91,10 @@ const {fromDirction,setFromDirction} = useStateContext()
      .post(
          'https://api.nilecruisez.com/api/inquiries',
          data,
-         { headers: { 'Content-Type': 'application/json' }}
+         { headers: {
+           'Content-Type': 'application/json',
+          " Access-Control-Allow-Origin" : "*"
+           }}
       )
      .then(response => {console.log(response.data)})
      .catch(error => {console.log(error.data)});

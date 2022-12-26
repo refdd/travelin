@@ -3,26 +3,32 @@ import React, { useEffect, useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { useStateContext } from "../../contexts/ContextProvider";
 import Loding from "./Loding";
-function BoxSearch() {
+import NotFonundResults from "./NotFonundResults";
+function BoxSearch({tours}) {
   const { setopenSearch, dataSearch } = useStateContext();
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
-  {
-    "Cairo", 1;
-  }
-  useEffect(() => {
+  // useEffect(() => {
+  //   setLoading(true);
+  //   fetch(
+  //     `https://api.nilecruisez.com/api/tours?search=${dataSearch.place}&type_id=${dataSearch.type}`
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     });
+  // }, []);
+  // console.log(dataSearch.place);
+  useEffect(()=>{
     setLoading(true);
-    fetch(
-      `https://api.nilecruisez.com/api/tours?search=${dataSearch.place}&type_id=${dataSearch.type}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
+    const tourWithSearch = tours.filter(item => item.type_id == dataSearch.type && item.overview.toLowerCase().includes(dataSearch.place.toLowerCase()) )
         setLoading(false);
-      });
-  }, []);
+    setData(tourWithSearch)
+  },[dataSearch])
   if (isLoading) return <Loding />;
   if (!data) return <p>No profile data</p>;
+ 
   return (
     <div className="fixed top-0 left-0 w-full h-screen bg-[#00000052] z-[1000]">
       <div className=" w-[90%] h-[80%] overflow-y-auto mx-auto bg-slate-200 p-2 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 rounded-xl">
@@ -39,7 +45,7 @@ function BoxSearch() {
         <div className="flex flex-col gap-3 pt-4">
           {/* results */} 
           
-           { data.data.length == 0 ?  <p className="text-center text-xl font-Poppins capitalize font-bold">  no tour her please search  again   </p>     : data.data.map((item) => {
+           { data.length == 0 ? <NotFonundResults/>     : data.map((item) => {
             
             return (
               <div
