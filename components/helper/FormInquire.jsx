@@ -5,7 +5,6 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useRouter } from 'next/router'
 import {countary , CodeCountery } from "../../data/dammyData"
 import axios from "axios";
-import { useStateContext } from "../../contexts/ContextProvider";
 
 
 const code = CodeCountery.map(item => {
@@ -13,9 +12,8 @@ return  { value: item.dial_code , label: ` ${item.code } _ ${item.dial_code }`}
 })
 function FormInquire() {
   const [showform, setShowform] = useState(false);
-  const [stopScroll, setStopScroll] = useState(-2694);
+  const [stopScroll, setStopScroll] = useState(-6095);
   const divfixrd = useRef();
-const {fromDirction,setFromDirction} = useStateContext()
 
   const [aduitsNumber, setAduitsNumber] = useState(0);
   const [childrenNumber, setChildrenNumber] = useState(0);
@@ -41,7 +39,7 @@ const {fromDirction,setFromDirction} = useStateContext()
     const handleShadow = () => {
       if (!divfixrd.current) return;
       const { top, bottom } = divfixrd.current.getBoundingClientRect();
-      setFromDirction({fromTop :top , formBottom : bottom } )
+      
       if (top <= 0) {
         setShowform(true);
       } else {
@@ -51,20 +49,16 @@ const {fromDirction,setFromDirction} = useStateContext()
     const handlebottomfiexd = () => {
       if (!divfixrd.current) return;
       const { top, bottom } = divfixrd.current.getBoundingClientRect();
-      // if(pathname.includes("/tour/")){
-      //   setStopScroll(-1797)
-      
-      // }
-      if(pathname.includes("/river-nile-cruises")){
-        setStopScroll(-1797)
+      if(pathname.includes("/tour/")){
+        setStopScroll(-2912)
       
       }
       if(pathname == "/Egypt"){
-        setStopScroll(-798.5)
+        setStopScroll(-1009)
        
       }
-      if(pathname == "/egypt-travel-blog"){
-       setStopScroll(-403)
+      if(pathname == "/BlogList"){
+       setStopScroll(-1255)
        
       }
       if (bottom <= stopScroll ) {
@@ -156,9 +150,8 @@ const {fromDirction,setFromDirction} = useStateContext()
               <div className="w-full felx justify-center items-center gap-3">
                 <div className="flex  justify-center items-center gap-5 w-[90%] mx-auto ">
                   <div className=" w-[50%]  flex flex-col gap-1 ">
-                    <label className="capitalize text-[#777] font-Poppins " > start date</label>
                     <input
-                      type="date"
+                      type="text"
                       className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                       placeholder="start"
                       onFocus={(e) => (e.target.type = "date")}
@@ -171,9 +164,8 @@ const {fromDirction,setFromDirction} = useStateContext()
 
                   </div>
                   <div className=" w-[50%]  flex flex-col gap-1 ">
-                  <label className="capitalize text-[#777] font-Poppins " > End date</label>
                     <input
-                      type="date"
+                      type="text"
                       className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                       placeholder="Arrival"
                       onFocus={(e) => (e.target.type = "date")}

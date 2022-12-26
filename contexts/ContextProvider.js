@@ -22,8 +22,6 @@ export const ContextProvider = ({ children }) => {
   const [ToursShow, setToursShow] = useState(initialTours);
   const [openSearch, setopenSearch] = useState(false);
   const [dataSearch, setdataSearch] = useState(null);
-  const [fromDirction, setFromDirction] = useState(null);
-
   // to whow tour in single blog 
   const handleShowTours = (clicked) =>
   setToursShow({ ...initialTours, [clicked]: true });
@@ -58,9 +56,8 @@ export const ContextProvider = ({ children }) => {
         setToursShow,
         openSearch, 
         setopenSearch,
-        dataSearch, setdataSearch,
-        fromDirction,
-         setFromDirction,
+        dataSearch, setdataSearch
+
       }}
     >
       {children}

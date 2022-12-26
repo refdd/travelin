@@ -71,12 +71,10 @@ function CardlistBlog({ packages, valueState }) {
                 }
               >
                 <Link href={`/blog/${item.slug}`}>
-                 <a >
-                 <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer ">
+                  <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer ">
                     {" "}
                     {item.title}
                   </h2>
-                 </a>
                 </Link>
                 <p className="text-[#777]  leading-6 mb-3  text-center md:text-left ">
                   {item.description.replace(/<[^>]*>?/gm, '').substring(0 , 170 )}
@@ -92,8 +90,7 @@ function CardlistBlog({ packages, valueState }) {
                 }
               >
                 <Link href={`/blog/${item.id}`}>
-               <a>
-               <button
+                  <button
                     className={
                       desplaygrid
                         ? "wrapper   group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden   "
@@ -102,7 +99,6 @@ function CardlistBlog({ packages, valueState }) {
                     <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
                     see more
                   </button>
-               </a>
                 </Link>
                
               </div>

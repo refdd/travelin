@@ -4,6 +4,7 @@ import {HiUserGroup} from "react-icons/hi"
 import {AiFillCalendar , AiOutlineUser , AiFillFileText} from "react-icons/ai"
 import {BiMapAlt} from "react-icons/bi"
 function Highlifht({highlightData}) {
+
   return (
     <div className='container mx-auto pt-4' >
        <div className='flex flex-col gap-2 '>
@@ -49,6 +50,7 @@ function Highlifht({highlightData}) {
 
                     </li> */}
         <div dangerouslySetInnerHTML={{__html:highlightData.included}} />
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi repellendus nihil dicta eum eius ratione totam molestiae, \ <br/> \consequuntur placeat, fugiat velit aspernatur et neque, nam voluptatibus quia odio quas eveniet!</p>
                     {/* <li className="flex gap-2 my-3 items-center ">
                       {" "}
                       <BsCheckLg /> 3 Nights Hotel Accomodation

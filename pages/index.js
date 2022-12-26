@@ -11,6 +11,7 @@ import PerfectTour from "../components/PerfectTour";
 import SelectPackagess from "../components/SelectPackagess";
 import Testimonails from "../components/Testimonails";
 import { fetchApi, baseUrl } from "../utils/ferchApi";
+import imagescema from "../public/assets/images/Nile Cruises 2.webp"
 import {
   useStateContext,
 } from "../contexts/ContextProvider";
@@ -24,6 +25,7 @@ export default function Home({
   types,
   tours,
   plogList,
+  videoHeader
 }) {
   const {openSearch } = useStateContext()
  
@@ -63,20 +65,18 @@ export default function Home({
   return (
     <div>
       <Head>
-      <link rel="canonical" href="https://www.nilecruisez.com"/>
-        <link rel="alternate" href="https://www.nilecruisez.com/" hreflang="en"/>
-
         <title>Nile Cruises | Nile Cruises 2023 | Travel to Egypt</title>
         <StructuredData data={structuredData} />
         <StructuredData data={structuredDataVideo} />
         <meta
           name="description"
           content={"Travel to Egypt, Explore the ancient Egyptian civilization through the best travel offers and nile cruises 2023. Book Today!"}
+        
         />
 
       </Head>
       <NavBar />
-      <Header  />
+      <Header videoHeader={videoHeader}  />
       <BookingSearch />
      { openSearch &&   <BoxSearch tours={tours}/>}
       {types &&
@@ -125,6 +125,7 @@ export async function getStaticProps() {
   const types = await fetchApi(`${baseUrl}/types`);
   const tours = await fetchApi(`${baseUrl}/tours`);
   const plogList = await fetchApi(`${baseUrl}/posts`);
+  const videoHeader = await fetchApi(`${baseUrl}/settings`);
   return {
     props: {
       FandQAPI: FandQAPI.data,
@@ -132,6 +133,7 @@ export async function getStaticProps() {
       types: types.data,
       tours: tours.data,
       plogList: plogList.data,
+      videoHeader: videoHeader.data,
     },
     revalidate: 10,
   };
