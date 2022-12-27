@@ -9,7 +9,7 @@ function Explore({partners}) {
   const [showvideo, setShowvideo] = useState(false);
   return (
     <>
-      <div className=" relative container mx-auto px-4  py-14  ">
+      <div className=" relative container mx-auto px-4  py-14 bg-[#e6eef5]   ">
         <div
           style={{ backgroundImage: `url(${bg.src})` }}
           className=" h-[72vh] md:h-screen w-full bg-bottom bg-contain 	 bg-no-repeat md:bg-right-bottom   rounded-2xl  overflow-hidden	  "

@@ -19,7 +19,7 @@ function HeaderSingelBlog({singelSlug}) {
             </div>
         </div>
       
-        <div className=" w-full  h-48 md:h-96 relative bg-white rounded-t-lg">
+        <div className=" w-[90%] mx-auto  h-48 md:h-[600px] relative bg-white rounded-t-lg">
                 <Image
                  loader={() =>{
                   return `${singelSlug.image}`;

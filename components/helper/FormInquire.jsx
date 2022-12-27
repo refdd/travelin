@@ -5,6 +5,7 @@ import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { useRouter } from 'next/router'
 import {countary , CodeCountery } from "../../data/dammyData"
 import axios from "axios";
+import { useStateContext } from "../../contexts/ContextProvider";
 
 
 const code = CodeCountery.map(item => {
@@ -14,6 +15,7 @@ function FormInquire({singletour}) {
   const [showform, setShowform] = useState(false);
   const [stopScroll, setStopScroll] = useState(-6095);
   const divfixrd = useRef();
+  const {setFormDirction} = useStateContext()
 
   const [aduitsNumber, setAduitsNumber] = useState(0);
   const [childrenNumber, setChildrenNumber] = useState(0);
@@ -39,36 +41,18 @@ function FormInquire({singletour}) {
     const handleShadow = () => {
       if (!divfixrd.current) return;
       const { top, bottom } = divfixrd.current.getBoundingClientRect();
-      
+      setFormDirction(top)
       if (top <= 0) {
         setShowform(true);
       } else {
         setShowform(false);
       }
     };
-    const handlebottomfiexd = () => {
-      if (!divfixrd.current) return;
-      const { top, bottom } = divfixrd.current.getBoundingClientRect();
-      if(pathname.includes("/tour/")){
-        setStopScroll(-2912)
-      
-      }
-      if(pathname == "/Egypt"){
-        setStopScroll(-1009)
-       
-      }
-      if(pathname == "/BlogList"){
-       setStopScroll(-1255)
-       
-      }
-      if (bottom <= stopScroll ) {
-        setShowform(false);
-      }
-    };
+   
 
     window.addEventListener("scroll", handleShadow);
-    window.addEventListener("scroll", handlebottomfiexd);
-  }, [stopScroll]);
+    return () => window.removeEventListener("scroll", handleShadow);
+  }, []);
 
   const {
     register,
@@ -101,6 +85,7 @@ function FormInquire({singletour}) {
 //   setData({ ...data, aduies: aduitsNumber, cikdren: childrenNumber })
   
 // )}
+
   return (
     <form
       id="InquireFrom"

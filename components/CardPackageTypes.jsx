@@ -10,7 +10,8 @@ if(!packagetype) return <Loding/>
       return(
         <div key={item.id} className="wrapper h-full min-w-[350px] cursor-pointer  " >
            <Link href={`/egypt-tours/${item.slug}`}>
-        <div className="relative flex flex-col gap-3  bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
+     <a >
+     <div className="relative flex flex-col gap-3  bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
           {/* image and days  */}
           <div className=" relative w-full first-letter:first-line:flex flex-col justify-center items-center  ">
             <div className="relative  h-[267px]  cursor-pointer overflow-hidden">
@@ -72,6 +73,7 @@ if(!packagetype) return <Loding/>
           {/* border botton  */}
           <div className="absolute mt-2  bottom-0 b-b-width h-[5px] bg-[#029e9d]"></div>
         </div>
+     </a>
         </Link>
       </div>
       )

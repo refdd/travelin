@@ -85,7 +85,7 @@ export async function getStaticPaths() {
     paths: listBlog.data.map((item) => ({
       params: { slug: item.slug.toString() },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
 export  async  function getStaticProps({params}){

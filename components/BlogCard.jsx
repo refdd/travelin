@@ -14,33 +14,35 @@ function BlogCard({blogsList}) {
         <div className="relative flex flex-col gap-3  bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
           {/* image and days  */}
           <div className=" relative w-full first-letter:first-line:flex flex-col justify-center items-center  ">
-            <div className="relative  h-[300px]  cursor-pointer overflow-hidden">
+            <div className="relative  h-[267px]  cursor-pointer overflow-hidden">
               <Image
                loader={() =>{
                 return `${item.image}`;
               }
              }
-                src={item.image}
-                alt="Picture of the author"
-                width={500}
-                height={500}
+                src={item?.image}
+                alt={item.meta_title}
+                width={400}
+                height={300}
                 layout={"intrinsic"}
                 loading="lazy"
                 className=" transition duration-200 ease-out  md:hover:scale-105"
               />
             </div>
             {/* layout */}
-            <div className=" absolute top-0 left-0 bg-[#000000] opacity-[0.4] w-full h-full"></div>
-           
+            {/* <div className=" absolute top-0 left-0 bg-[#000000] opacity-[0.4] w-full h-full"></div> */}
+        
           </div>
           {/* content  */}
           <div className="flex flex-col gap-3 border-b mx-4 mt-5">
             
             <Link href={`/blog/${item.slug}`}>
             
-            <h2 className="font-Poppins  text-[#212529] text-2xl font-bold">
+          <a>
+          <h2 className="font-Poppins  text-[#212529] text-2xl font-bold">
             {item.title}
             </h2>
+          </a>
             </Link>
 
             <p className="text-[#777] text-left leading-6 mb-3 ">
@@ -66,11 +68,13 @@ function BlogCard({blogsList}) {
               <span className="text-xl text-[#777] font-Poppins ">{item.author.name}</span>
             </div>
             <Link href={`/blog/${item.slug}`}>
-            <div className="  group flex justify-center items-center  ">
+          <a >
+          <div className="  group flex justify-center items-center  ">
               <button className=" wrapper  group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
                  <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
                   read more</button>
             </div>
+          </a>
             </Link>
           </div>
           

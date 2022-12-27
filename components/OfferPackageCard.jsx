@@ -67,10 +67,12 @@ function OfferPackageCard({tours}) {
           {/* content  */}
           <div className="flex flex-col gap-3 border-b mx-4 mt-5">
           <Link href={`/egypt-tours/${item.slug}`}>
-          
-            <h2 className="font-Poppins my-2 text-[#212529] text-2xl font-bold">
+          <a>
+            
+          <h2 className="font-Poppins my-2 text-[#212529] text-2xl font-bold">
             {item.title}
             </h2>
+          </a>
             </Link>
             <div className="flex space-x-2 items-center  ">
               <BsStarFill color="#ffc107" />

@@ -5,11 +5,9 @@ function Partners({partners}) {
   if(!partners){
     return
   }
-  const myLoader=({src})=>{
-    return `https://api.nilecruisez.com/${item.icon}`;
-  }
+
   return (
-   <div className=' relative py-6 container mx-auto '>
+   <div className=' relative py-6 container mx-auto bg-[#e6eef5] '>
     <HeaderSection titel="Our Partners" partOne="Our Awesome" partTwo="Partners" />
      <div className=' flex w-full gap-2  md:justify-around justify-center items-center  '>
       {partners && partners.map(item => {

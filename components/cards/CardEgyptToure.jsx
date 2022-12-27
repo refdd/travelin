@@ -36,7 +36,10 @@ const {desplaygrid , setdesplauGrid} = useStateContext()
       {/* right side */}
      <div className={"flex flex-col gap-2 justify-center items-center " }>
       <Link href={`/egypt-tours/${item.slug}`}>
+        <a >
       <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer "> {item.title}</h2>
+
+        </a>
       </Link>
     <div className=" flex gap-3 flex-col md:flex-row items-center">
     <p className="text-[16px] text-center md:text-left text-[#777] font-Poppins "> {item.duration} Days {item.type} </p>
@@ -61,10 +64,12 @@ const {desplaygrid , setdesplauGrid} = useStateContext()
         </div>
         <p className="text-right text-sm font-Poppins capitalize  text-[#029e9d]">Per Person</p>
         <Link href={`/egypt-tours/${item.slug}`}>
-        <button className=" wrapper w-full md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
+      <a>
+      <button className=" wrapper w-full md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden  ">
                  <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
                   see more
                   </button>
+      </a>
         </Link>
     </div>
     </div>

@@ -12,6 +12,9 @@ function SelectPackagess({sypTypes ,id,partOne , partTwo , decs , alltour }) {
     const [catagorys, setCatagorys] = useState(null);
     const [toursall, settoursall] = useState([]);
     useEffect(()=>{
+      setActiveId(5)
+    },[])
+    useEffect(()=>{
    const gitCatagorys = sypTypes.filter( item  =>item.type_id ==  id   )
    setCatagorys(gitCatagorys)
     } , [id])
@@ -19,6 +22,7 @@ function SelectPackagess({sypTypes ,id,partOne , partTwo , decs , alltour }) {
       const activeElement = sypTypes.find((item , id)=> id === id )
       activeElement && setActiveId(id)
       settoursall( tours)
+      
     }
     useEffect(() =>{ 
 const gittour = sypTypes.map(item => item.tours)

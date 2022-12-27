@@ -16,6 +16,8 @@ function MyDocument() {
   return (
     <Html>
       <Head>
+      <link rel="canonical" href="https://www.nilecruisez.com"/>
+        <link rel="alternate" href="https://www.nilecruisez.com/" hreflang="en" />
       <meta name="google-site-verification" content="cTY9mgEtIaLzII0QSD0Psv6GbTR2RqdFWInOJnWsVJc" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com/&display=swap" crossorigin />
