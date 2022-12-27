@@ -13,10 +13,11 @@ return  { value: item.dial_code , label: ` ${item.code } _ ${item.dial_code }`}
 })
 function FormInquire({singletour}) {
   const [showform, setShowform] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState(null);
   const [stopScroll, setStopScroll] = useState(-6095);
   const divfixrd = useRef();
   const {setFormDirction} = useStateContext()
-
+  const router = useRouter()
   const [aduitsNumber, setAduitsNumber] = useState(0);
   const [childrenNumber, setChildrenNumber] = useState(0);
   const hanbleIncrement = (type) => {
@@ -53,7 +54,10 @@ function FormInquire({singletour}) {
     window.addEventListener("scroll", handleShadow);
     return () => window.removeEventListener("scroll", handleShadow);
   }, []);
-
+useEffect(()=>{
+  const pathname= window.location.pathname;
+  setCurrentUrl(pathname)
+},[])
   const {
     register,
     handleSubmit,
@@ -63,12 +67,11 @@ function FormInquire({singletour}) {
   const [startDate, setStartDate] = useState(new Date());
 
   const [data, setData] = useState("");
-  const router = useRouter()
   const onSubmit = data => {
-    axios
-     .post(
+   
+    axios.post(
          'https://api.nilecruisez.com/api/inquiries',
-         data,
+         { ...data, adult: aduitsNumber, kid: childrenNumber , url:currentUrl },
          { headers: {
            'Content-Type': 'application/json',
            }}
@@ -112,11 +115,11 @@ function FormInquire({singletour}) {
          border border-solid border-gray-300  rounded transition ease-in-out m-0
           focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
-                  {...register("Email", { required: true })}
+                  {...register("email", { required: true })}
                   id="exampleEmail0"
                   placeholder="Email * "
                 />
-     {errors.Email && <span className="text-lg font-medium text-red-700">This field is required</span>}
+     {errors.email && <span className="text-lg font-medium text-red-700">This field is required</span>}
 
                 <input
                   type="text"
@@ -125,9 +128,9 @@ function FormInquire({singletour}) {
       "
                   id="exampleFormControlInput1"
                   placeholder="Name *"
-                  {...register("Name", { required: true })}
+                  {...register("name", { required: true })}
                 />
-                    {errors.Name && <span className="text-lg font-medium text-red-700">This field is required</span>}
+                    {errors.name && <span className="text-lg font-medium text-red-700">This field is required</span>}
 
               </div>
               {/* input date */}
@@ -140,11 +143,11 @@ function FormInquire({singletour}) {
                       placeholder="start"
                       onFocus={(e) => (e.target.type = "date")}
                       onBlur={(e) => (e.target.type = "text")}
-                      {...register("startdate", {
+                      {...register("start_date", {
                         required: true,
                       })}
                     />
-                                       {errors.startdate && <span className="  md:text-lg font-medium text-red-700">This field is required</span>}
+                                       {errors.start_date && <span className="  md:text-lg font-medium text-red-700">This field is required</span>}
 
                   </div>
                   <div className=" w-[50%]  flex flex-col gap-1 ">
@@ -154,9 +157,9 @@ function FormInquire({singletour}) {
                       placeholder="Arrival"
                       onFocus={(e) => (e.target.type = "date")}
                       onBlur={(e) => (e.target.type = "text")}
-                      {...register("endDate", { required: true })}
+                      {...register("end_date", { required: true })}
                     />
-                           {errors.endDate && <span className="  md:text-lg font-medium text-red-700">This field is required</span>}
+                           {errors.end_date && <span className="  md:text-lg font-medium text-red-700">This field is required</span>}
 
                   </div>
                 </div>
@@ -166,20 +169,20 @@ function FormInquire({singletour}) {
                 <Controller
                   control={control}
                   rules={{ required: true }}
-                  name="Nationailty"
+                  name="nationality"
                   render={({ field: { onChange, value, ref } }) => (
                     <Select
                       placeholder={<div>Nationailty *</div>}
-                      defaultValue={countary[0].value}
+                      defaultValue={countary[0].label}
                       inputRef={ref}
                       classNamePrefix="addl-class"
                       options={countary}
-                      value={countary.find((c) => c.value === value)}
-                      onChange={(val) => onChange(val.value)}
+                      value={countary.find((c) => c.label === value)}
+                      onChange={(val) => onChange(val.label)}
                     />
                   )}
                 />
-                           {errors.Nationailty && <span className="  md:text-lg font-medium text-red-700">This field is required</span>}
+                           {errors.nationality && <span className="  md:text-lg font-medium text-red-700">This field is required</span>}
  
               </div>
               {/* code and whats app  */}
@@ -215,9 +218,9 @@ function FormInquire({singletour}) {
       "
                       id="exampleEmail0"
                       placeholder="whate app number * "
-                      {...register("whatsapp", { required: true })}
+                      {...register("phone", { required: true })}
                     />
-                       {errors.whatsapp && <span className=" text-sm  md:text-lg font-medium text-red-700">This field is required</span>}
+                       {errors.phone && <span className=" text-sm  md:text-lg font-medium text-red-700">This field is required</span>}
 
                   </div>
                 </div>
@@ -269,7 +272,7 @@ function FormInquire({singletour}) {
               <div className="flex flex-col justify-center items-center">
                 <textarea
                   id="message"
-                  {...register("desc", { required: true })}
+                  {...register("comment", { required: true })}
                   rows="4"
                   className=" p-2.5 w-[90%] text-sm text-[#777] bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                   placeholder="Your message..."

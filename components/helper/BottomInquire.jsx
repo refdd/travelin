@@ -45,7 +45,6 @@ useEffect(() =>{
 
 }, [  ])
 
-  console.log(showBottom);
   return (
     <div ref={divfixrd} onClick={handleShowBottom} className={ showBottom ? 'md:hidden fixed bottom-0 container mx-auto z-50  ': " hidden" }>
       <div

@@ -12,6 +12,16 @@ const structuredData = {
     reviewCount: "745",
   },
 };
+const structuredDataLogoWebsite ={
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  url: "https://www.nilecruisez.com/",
+  name: "nilecruisez",
+  image:
+  [
+    "https://www.nilecruisez.com/_next/static/media/logo-new.7252b7b9.svg",
+  ]
+}
 function MyDocument() {
   return (
     <Html>
@@ -29,6 +39,11 @@ function MyDocument() {
           key="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        <script
+          key="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredDataLogoWebsite) }}
         />
       </Head>
       <body>

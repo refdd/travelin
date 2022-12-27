@@ -37,7 +37,7 @@ function FandQ({dataFandQ}) {
     }
   };
   return (
-    <div className="h-auto  md:pt-6 bg-[#e6eef5] "  >
+    <div className="h-auto  md:pt-6 "  >
       <HeaderSection
       titel="FAQ"
       partOne="Frequently Asked "

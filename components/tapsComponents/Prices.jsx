@@ -7,9 +7,7 @@ import NotsPriceSection from "./NotsPriceSection";
 function Prices({notsPrise , template_prices}) {
 
  
-  console.log('====================================');
-  // console.log(Array(5).fill(<BiStar  size={24} color="#ffbc00" /> ));
-  console.log('====================================');
+
   return (
     <div className="container mx-auto pt-5 ">
       {template_prices.map(item => (
