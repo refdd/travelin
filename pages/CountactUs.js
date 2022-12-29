@@ -11,6 +11,7 @@ import Explore from "../components/Explore";
 import FandQ from "../components/FandQ";
 import Footer from "../components/Footer";
 import Head from "next/head";
+import axios from "axios";
 
 function CountactUs() {
     const {
@@ -20,6 +21,24 @@ function CountactUs() {
         formState: { errors },
       } = useForm();
       const [data, setData] = useState("");
+      const onSubmit = (data) => {
+        axios
+          .post(
+            "https://api.nilecruisez.com/api/contact_us",
+            data,
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+          .then((response) => {
+            console.log(response.data);
+          })
+          .catch((error) => {
+            console.log(error.data);
+          });
+      };
   return (
     <div>
         <Head>
@@ -97,40 +116,25 @@ function CountactUs() {
           </div>
           {/* form */}
           <form className="md:flex-1"
-          onSubmit={handleSubmit((data) => setData(data))}
+         onSubmit={handleSubmit(onSubmit)}
           >
             <div className="flex flex-col gap-4  md:flex-row md:flex-wrap ">
               <div className=" md:w-[45%]">
                
                 <input
                   type="text"
-              {...register("first_name", { required: true })}
+              {...register("full_name", { required: true })}
                  
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 focus:outline-none "
-                  placeholder="First Name"
+                  placeholder="Full Name"
                 />
-                  {errors.first_name && (
+                  {errors.full_name && (
               <span className="text-xl text-red-700">
                 This field is required
               </span>
             )}
               </div>
-              <div className=" md:w-[45%]">
-               
-                <input
-                  type="text"
-              {...register("last_name", { required: true })}
-                 
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-4 focus:outline-none "
-                  placeholder="last Name"
-                  
-                />
-                 {errors.last_name && (
-              <span className="text-xl text-red-700">
-                This field is required
-              </span>
-            )}
-              </div>
+      
               <div className=" md:w-[45%]">
                
                 <input

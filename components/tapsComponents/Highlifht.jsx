@@ -6,7 +6,7 @@ import {BiMapAlt} from "react-icons/bi"
 function Highlifht({highlightData}) {
 
   return (
-    <div className='container mx-auto pt-4' >
+    <div className='' >
        <div className='flex flex-col gap-2 '>
         <h5 className='text-3xl text-[#17233e] font-semibold  font-Poppins capitalize  my-3 md:text-4xl '>Description</h5>
         <p className='text-[#777] text-lg font-Poppins capitalize  leading-7'></p> 
@@ -36,7 +36,7 @@ function Highlifht({highlightData}) {
             </ul>
 
         </div>
-        <div className="container mx-auto  pt-12">
+        <div className=" pt-12">
             <div className=" flex flex-col gap-4   ">
               {/* left side  */}
               <div className=" bg-[#e6eef5]  rounded-lg md:rounded-t-lg p-4 ">

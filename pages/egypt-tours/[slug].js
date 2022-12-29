@@ -34,7 +34,7 @@ function SingelTour({singletour}) {
       <NavBar />
       <p className=' font-Poppins capitalize text-lg text-center md:text-left text-[#029e9d]   md:my-3 md:ml-2'><span className='' >Home</span> | {singletour.title } </p>
       
-      <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
+      <div className=" grid grid-cols-1 md:grid-cols-6 md:gap-3  ">
         {/* left content side */}
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
          <div className=" flex flex-col gap-3 md:flex-row md:justify-between">
@@ -63,7 +63,7 @@ function SingelTour({singletour}) {
       <Testimonails />
 
           {/* <Comments/> */}
-          <AddRevews/> 
+          {/* <AddRevews/>  */}
         
         </div>
         {/* right form iqurire */}

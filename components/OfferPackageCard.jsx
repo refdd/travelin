@@ -79,7 +79,7 @@ function OfferPackageCard({tours}) {
               <BsStarFill color="#ffc107" />
               <BsStarFill color="#ffc107" />
               <BsStarFill color="#ffc107" />
-              <span className="text-[#777]">(23)</span>
+              <span className="text-[#777]">({item.start_price - 10 })</span>
             </div>
             <p className="text-[#777] text-left leading-6 mb-3 ">
             {item.overview}
