@@ -52,7 +52,7 @@ function InquireNow() {
     axios
       .post(
         "https://api.nilecruisez.com/api/inquiries",
-        { ...data, adult: aduitsNumber, kid: childrenNumber, url: currentUrl , phone:value },
+        { ...data, adult: aduitsNumber, kid: childrenNumber, url: `https://www.nilecruisez.com${currentUrl}`, phone:value },
         {
           headers: {
             "Content-Type": "application/json",
@@ -65,6 +65,7 @@ function InquireNow() {
       .catch((error) => {
         console.log(error.data);
       });
+      router.push("/Thank_you");
   };
   return (
     <div>
@@ -148,7 +149,7 @@ function InquireNow() {
                   start date
                 </label>
                 <input
-                  type="text"
+                  type="date"
                   className=" form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                   placeholder="start"
                   onFocus={(e) => (e.target.type = "date")}
@@ -170,7 +171,7 @@ function InquireNow() {
                 </label>
 
                 <input
-                  type="text"
+                  type="date"
                   className=" form-control block w-full px-3 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
                   placeholder="Arrival"
                   onFocus={(e) => (e.target.type = "date")}
