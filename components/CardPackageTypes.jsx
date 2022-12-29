@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BsCalendar3, BsStarFill } from "react-icons/bs";
 import Loding from "../components/helper/Loding"
  function CardPackageTypes({packagetype  }) {
-if(!packagetype) return <Loding/>
+if(!packagetype) return <Loding/>    
   return (
     <>
     {packagetype && packagetype.map((item)=>{

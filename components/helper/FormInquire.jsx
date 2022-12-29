@@ -169,7 +169,7 @@ function FormInquire({ singletour }) {
                       {...register("start_date", {
                         required: true,
                       })}
-                    />
+                    />    
                     {errors.start_date && (
                       <span className="  md:text-lg font-medium text-red-700">
                         This field is required
