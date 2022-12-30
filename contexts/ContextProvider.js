@@ -23,6 +23,8 @@ export const ContextProvider = ({ children }) => {
   const [openSearch, setopenSearch] = useState(false);
   const [dataSearch, setdataSearch] = useState(null);
   const [formDirction, setFormDirction] = useState(null);
+  const [tableDerction, settableDerction] = useState(null);
+  const [stopBottom , setStopBottom] =useState(null)
   // to whow tour in single blog 
   const handleShowTours = (clicked) =>
   setToursShow({ ...initialTours, [clicked]: true });
@@ -59,6 +61,8 @@ export const ContextProvider = ({ children }) => {
         setopenSearch,
         dataSearch, setdataSearch,
         formDirction, setFormDirction,
+        tableDerction, settableDerction,
+        stopBottom , setStopBottom
       }}
     >
       {children}

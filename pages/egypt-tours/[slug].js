@@ -79,21 +79,30 @@ function SingelTour({singletour}) {
 }
 
 export default SingelTour;
-export async function getStaticPaths() {
-  const listBlog = await fetchApi(`${baseUrl}/tours`);
-  return {
-    paths: listBlog.data.map((item) => ({
-      params: { slug: item.slug.toString() },
-    })),
-    fallback: false,
-  };
-}
-export  async  function getStaticProps({params}){
+// export async function getStaticPaths() {
+//   const listBlog = await fetchApi(`${baseUrl}/tours`);
+//   return {
+//     paths: listBlog.data.map((item) => ({
+//       params: { slug: item.slug.toString() },
+//     })),
+//     fallback: false,
+//   };
+// }
+// export  async  function getStaticProps({params}){
+//   const singletour = await fetchApi(`${baseUrl}/tours/${params.slug}`);
+//   return{
+//     props:{
+//       singletour:singletour.data
+//     },
+//     revalidate: 10,
+//   }
+//  }
+ export async function getServerSideProps({params}) {
   const singletour = await fetchApi(`${baseUrl}/tours/${params.slug}`);
-  return{
-    props:{
+
+  return {
+    props: {
       singletour:singletour.data
-    },
-    revalidate: 10,
+    }, // will be passed to the page component as props
   }
- }
+}

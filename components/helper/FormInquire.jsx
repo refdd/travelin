@@ -36,26 +36,25 @@ function FormInquire({ singletour }) {
       setChildrenNumber((curent) => curent - 1);
     }
   };
+  // useEffect(() => {
+  //   const handleShadow = () => {
+  //     if (!divfixrd.current) return;
+  //     const { top, bottom } = divfixrd.current.getBoundingClientRect();
+  //     setFormDirction(bottom);
+ 
+  //   };
+  //   window.addEventListener("scroll", handleShadow);
+  //   return () => window.removeEventListener("scroll", handleShadow);
+  // }, []);
   useEffect(() => {
     const pathname = window.location.pathname;
-    const handleShadow = () => {
-      if (!divfixrd.current) return;
+    if (!divfixrd.current) return;
       const { top, bottom } = divfixrd.current.getBoundingClientRect();
-      setFormDirction(top);
-      if (top <= 0) {
-        setShowform(true);
-      } else {
-        setShowform(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleShadow);
-    return () => window.removeEventListener("scroll", handleShadow);
-  }, []);
-  useEffect(() => {
-    const pathname = window.location.pathname;
+      setFormDirction(bottom);
     setCurrentUrl(pathname);
   }, []);
+
+  
   const {
     register,
     handleSubmit,

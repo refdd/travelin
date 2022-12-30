@@ -5,8 +5,8 @@ import { useState } from 'react'
 import { useStateContext } from '../../contexts/ContextProvider'
 
 function BottomInquire() {
-  const [showBottom , setshowBottom] = useState(true)
-  const {formDirction} = useStateContext()
+  const [showBottom , setshowBottom] = useState()
+  const {stopBottom} = useStateContext()
   const divfixrd = useRef();
   // useEffect(() => {
   //     const handleShadow = () => {
@@ -26,24 +26,34 @@ function BottomInquire() {
   //     window.addEventListener("scroll", handleShadow);
   //     // window.addEventListener("scroll", handlebottomfiexd);
   //   }, []);
+
   const handleShowBottom = () =>{
     var FormInquire = document.getElementById("InquireFrom");
     setshowBottom(false)
     FormInquire.scrollIntoView({behavior: 'smooth'}, true);
   }
-useEffect(() =>{
-  if (!divfixrd.current) return;
-  if (!formDirction) return;
-      const { top, bottom } = divfixrd.current.getBoundingClientRect();  
-      if (bottom < formDirction) {
-        setshowBottom(true)
-       }
-  if (bottom > formDirction){
-    setshowBottom(false)
-
-  }
-
-}, [  ])
+  useEffect(()=>{
+    if(!stopBottom) return
+    if (!divfixrd.current) return;
+          const { top , bottom } = divfixrd.current.getBoundingClientRect();  
+          // console.log(bottom + 200 , stopBottom);
+          if(bottom == 0 ){
+            if(stopBottom < bottom + 600){
+              setshowBottom(false)
+             }else{
+          setshowBottom(true)
+              
+             }
+          }else{
+            if(stopBottom < bottom){
+              setshowBottom(false)
+             }else{
+          setshowBottom(true)
+              
+             }
+          }
+      
+    },[stopBottom])
 
   return (
     <div ref={divfixrd} onClick={handleShowBottom} className={ showBottom ? 'md:hidden fixed bottom-0 container mx-auto z-50  ': " hidden" }>

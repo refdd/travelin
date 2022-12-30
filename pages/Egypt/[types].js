@@ -19,6 +19,8 @@ import Loding from "../../components/helper/Loding"
 import TableListTour from "../../components/cards/TableListTour";
 import bgtour from "../../public/assets/images/slider-Egyptian-Museum.webp"
 import StructuredData from "../../components/dataStructured/StructuredData";
+import StickyBox from "react-sticky-box";
+
 const array = ["egypt-tour-packages", "river-nile-cruises"];
 
 const options1 = [
@@ -28,10 +30,12 @@ const options1 = [
 
 
 function PackageList({typesall , tours } ) {
-  const { setdesplauGrid, desplaygrid } = useStateContext();
+  const { setdesplauGrid, desplaygrid  , formDirction, tableDerction } = useStateContext();
   const [valueState, setValueState] = useState("");
   const [selectedTyps, setselectedTyps] = useState(null);
   const [listTour, setlistTour] = useState(null);
+  const [showFrom , setShowFrom ]=useState(true)
+
   const router = useRouter();
   const { types } = router.query;
  
@@ -71,9 +75,24 @@ function PackageList({typesall , tours } ) {
     const value = event.value;
     setValueState(value);
   };
+
+useEffect(()=>{
+if(!tableDerction) return
+
+  if(window.innerWidth < 760 ){
+    setShowFrom(true)
+  }else{
+    if(formDirction < tableDerction ){
+      setShowFrom(true)
+    }else{
+      setShowFrom(false)
+  
+    }
+  }
+
+},[tableDerction])
   if (!types) return <Loding/> ;
   if (!selectedTyps) return <Loding/> ;
-
   return (
     <div className="">
       <Head>
@@ -131,7 +150,10 @@ function PackageList({typesall , tours } ) {
           <CardTorList valueState={valueState} packages={listTour} />
         </div>
         <div className="  w-full col-start-1 col-end-6  md:col-start-5 md:col-end-7   ">
-          <FormInquire />
+        <StickyBox offsetTop={-70} offsetBottom={100} style={ showFrom ? {  display: "block"} : {  display: "none"} } >
+        <FormInquire />
+          </StickyBox>
+          
         </div>
       </div>
          <TableListTour listTour={listTour} />
