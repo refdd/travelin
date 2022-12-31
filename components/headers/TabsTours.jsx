@@ -7,7 +7,7 @@ function TabsTours() {
     setIsClicked({Highlight:true})
     },[])
   return (
-    <div className="pt-11 container mx-auto">
+    <div className="pt-11 container mx-auto ">
       <ul className=" flex flex-wrap justify-center items-center gap-1s md:gap-4 shadow-lg py-6 rounded-lg ">
         <li  className={
             isClicked.Highlight

@@ -18,6 +18,7 @@ import FandQ from "../../components/FandQ";
 import Footer from "../../components/Footer";
 import { baseUrl, fetchApi } from "../../utils/ferchApi";
 import Testimonails from "../../components/Testimonails";
+import StickyBox from "react-sticky-box";
 import Head from "next/head";
 function SingelTour({singletour}) {
   const {isClicked} =useStateContext()
@@ -53,7 +54,10 @@ function SingelTour({singletour}) {
           </div>
          </div>
           <Carousel gallery={singletour.gallery} />
+          <StickyBox offsetTop={-30} offsetBottom={100} style={{ zIndex: 1000, position: "relative" , background:"#fff" }}  >
           <TabsTours/>
+         
+          </StickyBox>
           <div className="container mx-auto pt-10" >
        {/* tabs components */}
        {/* {isClicked.AddReviwes && <AddRevews/> } */}
