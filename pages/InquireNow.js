@@ -13,6 +13,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { countary} from "../data/dammyData";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 
 function InquireNow() {
@@ -22,6 +23,8 @@ function InquireNow() {
     control,
     formState: { errors },
   } = useForm();
+  const router = useRouter();
+
   const [aduitsNumber, setAduitsNumber] = useState(0);
   const [childrenNumber, setChildrenNumber] = useState(0);
   const [currentUrl, setCurrentUrl] = useState(null);

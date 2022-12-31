@@ -12,9 +12,9 @@ import "react-phone-input-2/lib/style.css";
 function FormInquire({ singletour }) {
   const [showform, setShowform] = useState(false);
   const [currentUrl, setCurrentUrl] = useState(null);
-  const [stopScroll, setStopScroll] = useState(-6095);
+  const [scrollTop, setScrollTop] = useState(0);
   const divfixrd = useRef();
-  const { setFormDirction } = useStateContext();
+  const { setFormDirction ,   setStopBottom } = useStateContext();
   const router = useRouter();
   const [value, setValue] = useState();
   const [aduitsNumber, setAduitsNumber] = useState(0);
@@ -36,16 +36,7 @@ function FormInquire({ singletour }) {
       setChildrenNumber((curent) => curent - 1);
     }
   };
-  // useEffect(() => {
-  //   const handleShadow = () => {
-  //     if (!divfixrd.current) return;
-  //     const { top, bottom } = divfixrd.current.getBoundingClientRect();
-  //     setFormDirction(bottom);
- 
-  //   };
-  //   window.addEventListener("scroll", handleShadow);
-  //   return () => window.removeEventListener("scroll", handleShadow);
-  // }, []);
+  
   useEffect(() => {
     const pathname = window.location.pathname;
     if (!divfixrd.current) return;
@@ -54,7 +45,16 @@ function FormInquire({ singletour }) {
     setCurrentUrl(pathname);
   }, []);
 
-  
+  useEffect(() => {
+    function onScroll() {
+        if (!divfixrd.current) return;
+                const { top, bottom } = divfixrd.current.getBoundingClientRect();  
+                setStopBottom(top)
+     
+    }
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollTop]);
   const {
     register,
     handleSubmit,
@@ -85,10 +85,7 @@ function FormInquire({ singletour }) {
   };
 
 
-  //  onSubmit={handleSubmit((data) =>
-  //   setData({ ...data, aduies: aduitsNumber, cikdren: childrenNumber })
-
-  // )}
+ 
 
   return (
     <form

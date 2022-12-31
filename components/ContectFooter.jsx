@@ -3,6 +3,7 @@ import logoFooter from "../public/assets/images/logo-new.svg";
 import bg from "../public/assets/images/background_patte.webp"
 import Image from "next/image";
 import Link from "next/link";
+import SubscrbeMail from "./helper/SubscrbeMail";
 
 function ContectFooter() {
   return (
@@ -88,18 +89,8 @@ function ContectFooter() {
         Jin our community of over 20,000 global readers who 
         receives emails filled with news, promotions, and other good stuff
         </p>
-        <div className="flex w-full flex-col md:flex-row ">
-       <input  className=" w-full h-12 py-3 px-4 mb-1 text-[#777]  rounded-l-2xl" placeholder="email Address" type="text" name="email"  />
-       <div className="  group flex justify-center items-center  md:justify-start ">
-              <button
-                style={{ background: "#029e9d" }}
-                className=" wrapper w-full ring-2 shadow-md ring-[#ffffff1a] ring-inset group-hover:text-white  px-5 py-3 rounded-r-2xl z-10 text-white overflow-hidden  "
-              >
-                <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
-                subscrbe
-              </button>
-            </div>
-        </div>
+        < SubscrbeMail/>
+        
       </div>
       {/* <div className=" w-full  bg-white  col-start-9 col-end-13  ">fsdfjdkjflksjfldjslkfjsdlk</div> */}
     </div>

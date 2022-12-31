@@ -8,24 +8,23 @@ function BoxSearch({tours}) {
   const { setopenSearch, dataSearch } = useStateContext();
   const [data, setData] = useState(null);
   const [isLoading, setLoading] = useState(false);
-  // useEffect(() => {
-  //   setLoading(true);
-  //   fetch(
-  //     `https://api.nilecruisez.com/api/tours?search=${dataSearch.place}&type_id=${dataSearch.type}`
-  //   )
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setData(data);
-  //       setLoading(false);
-  //     });
-  // }, []);
-  // console.log(dataSearch.place);
-  useEffect(()=>{
+  useEffect(() => {
     setLoading(true);
-    const tourWithSearch = tours.filter(item => item.type_id == dataSearch.type && item.overview.toLowerCase().includes(dataSearch.place.toLowerCase()) )
+    fetch(
+      `https://api.nilecruisez.com/api/tours?search=${dataSearch.place}&type_id=${dataSearch.type}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
         setLoading(false);
-    setData(tourWithSearch)
-  },[dataSearch])
+      });
+  }, []);
+  // useEffect(()=>{
+  //   setLoading(true);
+  //   const tourWithSearch = tours.filter(item => item.type_id == dataSearch.type && item.overview.toLowerCase().includes(dataSearch.place.toLowerCase()) )
+  //       setLoading(false);
+  //   setData(tourWithSearch)
+  // },[dataSearch])
   if (isLoading) return <Loding />;
   if (!data) return <p>No profile data</p>;
  
@@ -45,7 +44,7 @@ function BoxSearch({tours}) {
         <div className="flex flex-col gap-3 pt-4">
           {/* results */} 
           
-           { data.length == 0 ? <NotFonundResults/>     : data.map((item) => {
+           { data.data.length == 0 ? <NotFonundResults/>     : data.data.map((item) => {
             
             return (
               <div

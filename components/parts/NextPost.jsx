@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 function NextPost({ allposts }) {
+ 
   return (
     <div className="container mx-auto pt-7 ">
            <div className="flex gap-1">
@@ -13,11 +15,12 @@ function NextPost({ allposts }) {
       </div>
    <div className="flex flex-col md:flex-row gap-2">
    {allposts.slice(0, 2).map((item) => (
-        <div
+      <Link key={item.id} href={`${item.slug}`}>
+      <a >
+      <div
           key={item.id}
           className="flex gap-3 justify-center items-center border-b mt-5 flex-1 pb-3"
         >
-         
           <div className=" w-[40%] mx-auto  h-48 md:h-[200px] relative bg-white rounded-t-lg">
             <Image
               loader={() => {
@@ -39,6 +42,8 @@ function NextPost({ allposts }) {
             </span>
           </div>
         </div>
+      </a>
+      </Link>
       ))}
    </div>
     </div>
