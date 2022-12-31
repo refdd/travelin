@@ -38,10 +38,9 @@ function CardlistBlog({ packages, valueState }) {
               }
             >
               <Image
-              loader={() =>{
-                return `${item.image}`;
-              }
-             }
+                loader={() => {
+                  return `${item.image}`;
+                }}
                 src={item.image}
                 alt={item.meta_title}
                 width={400}
@@ -71,41 +70,40 @@ function CardlistBlog({ packages, valueState }) {
                 }
               >
                 <Link href={`/blog/${item.slug}`}>
-                  <a >
-                  <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer ">
-                    {" "}
-                    {item.title}
-                  </h2>
+                  <a>
+                    <h2 className="text-center md:text-left text-2xl capitalize font-Poppins cursor-pointer ">
+                      {" "}
+                      {item.title}
+                    </h2>
                   </a>
                 </Link>
                 <p className="text-[#777]  leading-6 mb-3  text-center md:text-left ">
-                  {item.description.replace(/<[^>]*>?/gm, '').substring(0 , 170 )}
-                  
+                  {item.description.replace(/<[^>]*>?/gm, "").substring(0, 170)}
                 </p>
               </div>
               {/* left side */}
-              <div
-                className={
-                  desplaygrid
-                    ? "flex  gap-7 justify-center items-center  "
-                    : "flex gap-7 md:justify-end md:items-end md:flex-col md:w-[20%] "
-                }
-              >
-                <Link href={`/blog/${item.id}`}>
-               <a >
-               <button
+              <Link href={`/blog/${item.id}`}>
+                <a>
+                  <div
                     className={
                       desplaygrid
-                        ? "wrapper   group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden   "
-                        : "wrapper w-[40%] md:w-auto group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden   "
-                    }>
-                    <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
-                    see more
-                  </button>
-               </a>
-                </Link>
-               
-              </div>
+                        ? "flex  gap-7 justify-center items-center  "
+                        : "md:flex md:gap-7 md:justify-end md:items-end md:flex-col  "
+                    }
+                  >
+                    <button
+                      className={
+                        desplaygrid
+                          ? "wrapper   group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden   "
+                          : "wrapper md:w-[40%] group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white md:overflow-hidden   "
+                      }
+                    >
+                      <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
+                      see more
+                    </button>
+                  </div>
+                </a>
+              </Link>
             </div>
           </div>
         ))}

@@ -21,6 +21,11 @@ if(valueState == "price"){
 }
 
 } , [  valueState  ])
+const priceAndDiscount = (price , descount )=>{
+  const TotalPrice = price - price * descount / 100 
+  const total = TotalPrice.toFixed()
+  return total
+}
   return (
     <>
     {
@@ -77,10 +82,10 @@ if(valueState == "price"){
         <AiFillStar size={16} color="#ffc107"/>
         <AiFillStar size={16} color="#ffc107"/>
         </div>
-        <p className="text-right text-lg text-[#777] font-Poppins " >200 review</p>
+        <p className="text-right text-lg text-[#777] font-Poppins " >({item.start_price - 10 }) review</p>
         <div className={desplaygrid ? "flex gap-3  md:flex-row" : "flex gap-3  md:flex-col"}>
         <span className="text-[#777] font-Poppins text-lg md:text-right  "> Start from</span>
-        <h4 className="text-right font-mono font-bold text-[24px] "> $ {item.start_price  - item.start_price * item.discount / 100   }</h4>
+        <h4 className="text-right font-mono font-bold text-[24px] "> $ {priceAndDiscount( item.start_price ,item.discount  )  }</h4>
         </div>
         <p className="text-right text-sm font-Poppins capitalize  text-[#029e9d]">Per Person</p>
         <Link href={`/egypt-tours/${item.slug}`}>

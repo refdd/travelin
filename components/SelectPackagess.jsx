@@ -7,7 +7,6 @@ import PackageTyps from './PackageTyps';
 
 
 function SelectPackagess({sypTypes ,id,partOne , partTwo , decs , alltour }) {
-  const { setDisplayType } = useStateContext() 
     const [activeId, setActiveId] = useState(null);
     const [catagorys, setCatagorys] = useState(null);
     const [toursall, settoursall] = useState([]);

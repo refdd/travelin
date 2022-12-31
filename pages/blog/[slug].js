@@ -14,8 +14,10 @@ import { baseUrl, fetchApi } from "../../utils/ferchApi";
  import Loding from "../../components/helper/Loding.jsx"
  import StructuredData from "../../components/dataStructured/StructuredData"
 import Head from "next/head";
-function SingelBlog({singelSlug}) {
-  const structuredData = {
+import NextPost from "../../components/parts/NextPost";
+function SingelBlog({singelSlug , allposts}) {
+  console.log(allposts);
+  const structuredData = { 
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline:singelSlug.title ,
@@ -55,9 +57,9 @@ function SingelBlog({singelSlug}) {
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
          
           <DescSingleBlog singelSlug={singelSlug} />
-          <Comments singelSlugComments={singelSlug.comments} singelSlug={singelSlug}  />
+          {/* <Comments singelSlugComments={singelSlug.comments} singelSlug={singelSlug}  /> */}
           
-          <AddRevews/> 
+          {/* <AddRevews/>  */}
         
         </div>
         {/* right form iqurire */}
@@ -66,9 +68,11 @@ function SingelBlog({singelSlug}) {
           <RelatedTous relatedTous={singelSlug.tours } />
         </div>
       </div>
+      <NextPost allposts={allposts}/>
       <Explore />
       <FandQ />
       <Footer />
+
     </div>
   );
 }
@@ -85,10 +89,12 @@ export async function getStaticPaths() {
 }
 export async function getStaticProps({params}) {
   const singelSlug = await fetchApi(`${baseUrl}/posts/${params.slug}`);
+  const allposts = await fetchApi(`${baseUrl}/posts`);
   
   return {
     props: {
       singelSlug: singelSlug.data,
+      allposts: allposts.data,
     },
     revalidate: 10,
   };

@@ -111,7 +111,7 @@ if(!tableDerction) return
       <div className=" grid grid-cols-1 md:grid-cols-6 gap-3  ">
         <div className="flex flex-col gap-3 col-start-1 col-end-6   w-full md:col-span-4">
           {/* left side */}
-          <div className="flex flex-col md:flex-row gap-3  justify-center items-center md:justify-between ">
+          <div className="flex flex-col md:flex-row gap-3  justify-center items-center ">
             <p className=" text-center md:text-left md:pl-2  text-xl text-[#777] font-Poppins capitalize">
               showing {tours.length} tours
             </p>
@@ -136,14 +136,14 @@ if(!tableDerction) return
               >
                 <BsFillGrid3X3GapFill size={30} />{" "}
               </span>
-              <div className="w-[250px]">
+              {/* <div className="w-[250px]">
                 <Select
                   placeholder={<div> Sort...</div>}
                   defaultValue={options1[0].value}
                   options={options1}
                   onChange={handler}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
           {/* tour list */}

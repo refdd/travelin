@@ -21,6 +21,11 @@ import Testimonails from "../../components/Testimonails";
 import Head from "next/head";
 function SingelTour({singletour}) {
   const {isClicked} =useStateContext()
+  const priceAndDiscount = (price , descount )=>{
+    const TotalPrice = price - price * descount / 100 
+    const total = TotalPrice.toFixed()
+    return total
+  }
   return (
     <div>
       <Head>
@@ -44,7 +49,7 @@ function SingelTour({singletour}) {
             reviews={"(1,186 Reviews)"}
           />
           <div className=" flex justify-center md:justify-end items-center rounded-xl  cursor-pointer hover:opacity-90">
-          <p  className=" block capitalize md:hidden   text-xl  text-center  md:text-right text-[#029e9d] font-Poppins font-medium  " >start from <span className="text-gray-500"> $ {singletour.start_price  - singletour.start_price * singletour.discount / 100   } </span> </p>
+          <p  className=" block capitalize md:hidden   text-xl  text-center  md:text-right text-[#029e9d] font-Poppins font-medium  " >start from <span className="text-gray-500"> $ { priceAndDiscount(  singletour.start_price  , singletour.discount  )   } </span> </p>
           </div>
          </div>
           <Carousel gallery={singletour.gallery} />

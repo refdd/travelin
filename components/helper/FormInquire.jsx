@@ -157,8 +157,9 @@ function FormInquire({ singletour }) {
               </div>
               {/* input date */}
               <div className="w-full felx justify-center items-center gap-3">
-                <div className="flex  justify-center items-center gap-5 w-[90%] mx-auto ">
+                <div className="flex  justify-center items-center gap-1 w-[90%] mx-auto ">
                   <div className=" w-[50%]  flex flex-col gap-1 ">
+                    <label className="text-gray-900 font-Poppins font-medium capitalize text-[16px] ml-2" > start date</label>
                     <input
                       type="date"
                       className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
@@ -176,6 +177,8 @@ function FormInquire({ singletour }) {
                     )}
                   </div>
                   <div className=" w-[50%]  flex flex-col gap-1 ">
+                  <label className="text-gray-900 font-Poppins font-medium capitalize text-[16px] ml-2" > end date</label>
+
                     <input
                       type="date"
                       className=" form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
