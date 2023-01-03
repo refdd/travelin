@@ -78,24 +78,35 @@ function SingelBlog({singelSlug , allposts}) {
 }
 
 export default SingelBlog;
-export async function getStaticPaths() {
-  const listBlog = await fetchApi(`${baseUrl}/posts`);
-  return {
-    paths: listBlog.data.map((item) => ({
-      params: { slug: item.slug.toString() },
-    })),
-    fallback: false,
-  };
-}
-export async function getStaticProps({params}) {
-  const singelSlug = await fetchApi(`${baseUrl}/posts/${params.slug}`);
-  const allposts = await fetchApi(`${baseUrl}/posts`);
+// export async function getStaticPaths() {
+//   const listBlog = await fetchApi(`${baseUrl}/posts`);
+//   return {
+//     paths: listBlog.data.map((item) => ({
+//       params: { slug: item.slug.toString() },
+//     })),
+//     fallback: false,
+//   };
+// }
+// export async function getStaticProps({params}) {
+//   const singelSlug = await fetchApi(`${baseUrl}/posts/${params.slug}`);
+//   const allposts = await fetchApi(`${baseUrl}/posts`);
   
+//   return {
+//     props: {
+//       singelSlug: singelSlug.data,
+//       allposts: allposts.data,
+//     },
+//     revalidate: 10,
+//   };
+// }
+export async function getServerSideProps({params}) {
+  const singelSlug = await fetchApi(`${baseUrl}/posts/${params.slug}`);
+    const allposts = await fetchApi(`${baseUrl}/posts`);
+
   return {
     props: {
       singelSlug: singelSlug.data,
-      allposts: allposts.data,
-    },
-    revalidate: 10,
-  };
+            allposts: allposts.data,
+    }, // will be passed to the page component as props
+  }
 }

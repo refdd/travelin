@@ -95,7 +95,7 @@ function CardlistBlog({ packages, valueState }) {
                       className={
                         desplaygrid
                           ? "wrapper   group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white overflow-hidden   "
-                          : "wrapper md:w-[40%] group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white md:overflow-hidden   "
+                          : "wrapper md:w-[100%] group-hover:text-white bg-[#029e9d] px-4 py-3 rounded-2xl z-10 text-white md:overflow-hidden   "
                       }
                     >
                       <span className="absolute w-0 top-0 left-0 b-b-width bg-[#ffc107] -z-10 h-full"></span>
